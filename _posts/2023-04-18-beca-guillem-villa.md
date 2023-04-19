@@ -1,9 +1,18 @@
----
-title: "<p>Guillem Vila joins the group!</p>"
-subtitle: <b>April 18, 2023</b>
-featured: ../members/photos/GuillemVilaSiles.JPG
-layout: post
----
-
-<br>
-<P ALIGN="justify"> <font size="5"> Welcome to Guillem Vila who has recieved a Joan Oró scholarship. He will join Eduard Matito and Josep Maria Luis and will conduct with us his PhD. His topic of research will be Non Linear Optical Properties (NLOPs). Congratulations, Guillem!</font></p>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Guillem Vila Receives PhD Scholarship</title>
+    <style>
+        /* CSS for font size and alignment */
+        .announcement {
+            font-size: 18px;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome Guillem Vila!</h1>
+    <p class="announcement">We are thrilled to announce that Guillem Vila has been awarded the prestigious Joan Oró scholarship to pursue his PhD with our group. Guillem will be working under the supervision of Eduard Matito and Josep Maria Luis, conducting research on Nonlinear Optical Properties (NLOPs). Congratulations, Guillem!</p>
+    <img src="../members/photos/GuillemVilaSiles.JPG" alt="Guillem Vila" width="200">
+</body>
+</html>
