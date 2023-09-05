@@ -1,7 +1,7 @@
 ---
 title: "Welcome Maria and Petru: Our New Summer Interns!"
 subtitle: September 5, 2023
-featured: ../members/photos/math_image.jpeg
+featured: ../assets/images/math_image.jpeg
 layout: post
 ---
 
