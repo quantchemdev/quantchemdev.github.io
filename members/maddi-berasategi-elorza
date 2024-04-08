@@ -22,7 +22,10 @@ layout: main
 
 				<!-- Content -->
 				<div id="content" class="9u skel-cell-important">
-					
+					<section>
+						<header class="major">
+		 			           <h2><font color="green">Nina Szczotka</font></h2> 
+                         </header>
 				</div>
 
 			</div>
