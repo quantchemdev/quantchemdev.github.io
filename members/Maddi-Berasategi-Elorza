@@ -1,0 +1,30 @@
+---
+title: Alumni
+layout: main
+---
+
+<!-- Main -->
+	<div id="main" class="wrapper style1">
+		<div class="container">
+			<div class="row">
+
+				<!-- Sidebar -->
+				<div id="sidebar" class="3u sidebar">
+					<section>
+						<header class="major">
+							<h2>Alumni</h2>
+						</header>
+						<ul class="default">
+                                                    {% include visitors_list.html %}
+						</ul>
+					</section>
+				</div>
+
+				<!-- Content -->
+				<div id="content" class="9u skel-cell-important">
+					
+				</div>
+
+			</div>
+		</div>
+	</div>
