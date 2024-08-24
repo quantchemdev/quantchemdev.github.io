@@ -18,3 +18,8 @@ sass:
 plugins: [jekyll-paginate]
 paginate: 4
 paginate_path: "/blog/page:num/"
+
+collections:
+  members:
+    output: true
+    permalink: /members/:path/
