@@ -2,7 +2,10 @@
 layout: default
 title: Members
 ---
-
+<head>  
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/members-styles.css"> <!-- Incluir el CSS específico para miembros -->
+</head>
+<body>
 <div class="members-page">
   <h1>Members</h1>
   <img src="{{ site.url }}{{ site.baseurl }}/assets/member_photos/group2022_06-22.jpg" alt="Group Photo">
@@ -100,3 +103,4 @@ title: Members
   {% endfor %}
   </ul>
 </div>
+</body>
