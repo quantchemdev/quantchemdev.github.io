@@ -1,0 +1,18 @@
+title: "Postdoc"
+content:
+  name_surname: "Dr. Rubén R. Ferradás"
+  position: "Postdoc"
+  photo: "ruben.jpg"
+  email: "rubenferradas@gmail.com"
+  personal_web: "https://rferradas.com"
+  experience:
+    - "2016-2019: Postdoc with the project 'Magneto-Optical properties of Solids from TDCDFT', Laboratoire de Chimie et Physique Quantiques (LCPQ, Université Paul Sabatier), Toulouse, France."
+  education:
+    - "2016: Ph.D. in Condensed Matter Physics, Universidad de Oviedo (UNIOVI), Oviedo, Spain."
+    - "2010: M.S. in Condensed Matter Physics, Universidad Autónoma de Madrid (UAM), Madrid, Spain."
+    - "2009: B.S. in Physics, Universidad de Vigo (UVIGO), Spain."
+  research_topics:
+    - "Electron correlation, Coulomb holes and Density Functional development."
+    - "Time-Dependent (Current)-Density Functional Theory"
+    - "Theory and Modelization of electronic structure"
+    - "Development of ab initio codes for the study of electronic structure"

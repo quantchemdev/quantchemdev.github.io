@@ -1,0 +1,24 @@
+title: "Leader"
+content:
+  name_surname: "Dr. Eduard Matito"
+  position: "Leader"
+  photo: "eduard.png"
+  email: "ematito@gmail.com"
+  personal_web: "https://ematito.dipc.org"
+  experience:
+    - "Since Jan. 2024: Ikerbasque Professor at the Donostia International Physics Center (DIPC)."
+    - "Mar. 2020: Ikerbasque Associate Researcher at the Donostia International Physics Center (DIPC)."
+    - "Feb. 2018 – Mar. 2020: Ikerbasque Research Fellow at the Donostia International Physics Center (DIPC)."
+    - "Apr. 2015 – Feb. 2018: Ikerbasque Research Fellow at the UPV/EHU and the Donostia International Physics Center (DIPC)."
+    - "Dec. 2011 - Mar. 2015: Junior Group Leader, IQCC, UdG."
+#    - "Apr. 2011 - Nov. 2011: Postdoctoral position, Kimika Fakultatea, Euskal Herriko Unibertsitatea, (UPV/EHU) Donostia [Spain](Supervisor: Prof. J. Ugalde)."
+#    - "Apr. 2009 - Mar. 2011: Marie Curie IEF postdoctoral fellow. Institute of Physics, USz.(Supervisor: Prof. J. Cioslowski)."
+#    - "Sep. 2007 - Mar. 2009: Postdoctoral position, Univ. Aarhus [Denmark](Supervisor: Prof. O. Christiansen)."                            
+#    - "Jan. 2007 - Sep. 2007: Project Manager.IQC, UdG."
+#    - "Aug. 2006 - Dec. 2006: Postdoctoral Visitor. Institute of Physics, Univ. Szczecin (USz) [Poland](Supervisor: Prof. Jerzy Cioslowski)."
+  education:
+    - "2006: Ph.D. in Chemistry; thesis supervised by Prof. Miquel Solà i Puig and Prof. Miquel Duran i Portas, Universitat de Girona, Girona, Spain."
+    - "2004: M.S. in Chemistry, University of Girona, Girona, Spain."
+    - "2002: B.S. in Chemistry, Universitat de Girona, Girona, Spain."
+  research_topics:
+    - "Currently he works in the development of electronic structure methods in the frameoworks of density functional theory (DFT), reduced density matrix functional theory (RDMFT), and wavefunction theory. Lately, part of his research is devoted to the adequacy of electronic structure methods to compute molecular properties. He also works in the fields of chemical bonding analysis and aromaticity."

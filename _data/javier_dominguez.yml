@@ -1,0 +1,11 @@
+title: "PhD student"
+content:
+  name_surname: "Javier Dominguez"
+  position: "PhD student"
+  photo: "javier.jpeg"
+  email: "javier.dom.cal@gmail.com"
+  education:
+    - "2019: Master in Theoretical Chemistry and Computational Modeling, Spain."
+    - "2015: Bachelor in Chemistry, University of Valladolid, Spain."
+  research_topics:
+    - "Development of new density functional approximations."

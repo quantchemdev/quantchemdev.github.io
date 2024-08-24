@@ -1,0 +1,20 @@
+title: "Scientific staff"
+content:
+  name_surname: "Dr. Eloy Ramos-Cordoba"
+  position: "Scientific staff"
+  photo: "Eloy-2.jpg"
+  email: "eloy.raco@gmail.com"
+  personal_web: "https://eloyramoscordoba.wordpress.com"
+  experience:
+    - "August 2019-Currently: Juan de la Cierva Incorporation fellow, University of the Basque Country."
+    - "January 2019-July 2019: Researcher at Donostia International Physics Center."
+    - "January 2016-December 2018: Marie Sklodowska-Curie International Outgoing fellowship (Horizon 2020). University of California, Berkeley (Prof. Head-Gordon Group). Project: AccuCT (660943)"
+    - "January 2015- December 2015: Post-Doctoral research contract at the Donostia International Physics Center (DIPC)."
+    - "January 2014- December 2014: Post-Doctoral research contract, funded by the Ministerio de economía y competividad (Europa excelencia project) under the lead of Dr. Eduard Matito at the Institut de Química Computacional i Catàlisi of the Universitat de Girona, Spain."
+  education:
+    - "2014: Ph.D. in Chemistry; thesis supervised by Dr. Pedro Salvador, Universitat de Girona, Girona, Spain."
+    - "2009: M.S. in Theoretical and Computational Chemistry. Universitat Rovira i Virgili, Tarragona, Spain."
+    - "2008: B.S. in Chemistry, Universitat de Girona, Girona, Spain."
+  research_topics:
+    - "Time-Dependent Density Functional Theory"
+    - "Electron correlation, Coulomb holes and Density Functional development."

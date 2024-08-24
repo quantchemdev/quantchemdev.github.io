@@ -1,0 +1,14 @@
+title: "Postdoc"
+content:
+  name_surname: "Dr. Mesías Orozco-Ic"
+  position: "Scientific staff"
+  photo: "mesias_orozco.png"
+  email: "mesiorozco@gmail.com"
+  postdoc_experience:
+    - "2021-2023: University of Helsinki, Finland under the co-direction of Prof. Dage Sundholm."
+  education:
+    - "2021: Ph.D. at the Centro de Investigación y de Estudios Avanzados (CINVESTAV-Mérida) in Mexico under the direction of Prof. Gabriel Merino. Part of his doctoral research (2019-2020) was conducted at the University of Helsinki, Finland under the co-direction of Prof. Dage Sundholm."
+    - "2009: M.S. at the Centro de Investigación y de Estudios Avanzados (CINVESTAV-Mérida) in Mexico under the direction of Prof. Gabriel Merino."
+  research_topics:
+    - "Molecular magnetic response properties."
+    - "Three-dimensional aromaticity."
