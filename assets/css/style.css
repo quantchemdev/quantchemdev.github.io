@@ -9,6 +9,70 @@
 
 /* Basic */
 
+/* Normalize CSS for cross-browser consistency */
+@import url('normalize.css');
+
+/* Basic Box Model */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Body and Container Setup */
+body {
+    min-width: 320px; /* Adjusted for mobile compatibility */
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 20px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.container.small {
+    max-width: 900px;
+}
+
+.container.big {
+    max-width: 1500px;
+}
+
+/* Modern Grid System using CSS Grid */
+.row {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); /* 12 columns flexible grid */
+    gap: 20px;
+}
+
+.col-12 { grid-column: span 12; }
+.col-11 { grid-column: span 11; }
+.col-10 { grid-column: span 10; }
+.col-9  { grid-column: span 9;  }
+.col-8  { grid-column: span 8;  }
+.col-7  { grid-column: span 7;  }
+.col-6  { grid-column: span 6;  }
+.col-5  { grid-column: span 5;  }
+.col-4  { grid-column: span 4;  }
+.col-3  { grid-column: span 3;  }
+.col-2  { grid-column: span 2;  }
+.col-1  { grid-column: span 1; }
+
+/* Modern Row Handling using Flexbox */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -20px; /* Adjust depending on column gap */
+}
+
+.row > * {
+    padding-left: 20px; /* Adjust depending on column gap */
+}
+
+.row.flush > * {
+    padding-left: 0;
+}
+
+
 	body {
 		background: #222833;
 	}
