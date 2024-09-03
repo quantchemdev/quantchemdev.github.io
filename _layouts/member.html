@@ -1,9 +1,19 @@
 ---
-layout: default
+layout: main
 title: "{{ page.name_surname }}"
 ---
 
-<div class="members-page-body member-profile">
+
+<main id="main" class="wrapper style1">
+    <div class="container">
+        <div class="row">
+            <!-- Content -->
+            <div id="content" class="8u skel-cell-important">
+                <section>
+                    <header class="major">
+                        <h1>{{ page.name_surname }}</h1>
+                    </header>
+<div class="member-profile">
   <img src="{{ site.url }}{{ site.baseurl }}/assets/member_photos/{{ page.photo }}" alt="{{ page.name_surname }}">
   <h1>{{ page.name_surname }}</h1>
   <p><strong>Position:</strong> {{ page.position }}</p>
@@ -42,3 +52,8 @@ title: "{{ page.name_surname }}"
     <p>{{ page.visit_period }}</p>
   {% endif %}
 </div>
+</section>
+</div>
+</div>
+</div>
+</main>
