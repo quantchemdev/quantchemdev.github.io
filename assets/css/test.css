@@ -1,0 +1,14 @@
+body {
+    background-color: #f0f0f0;
+}
+
+h1 {
+    color: #ff0000;
+    text-align: center;
+}
+
+.members-page {
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
