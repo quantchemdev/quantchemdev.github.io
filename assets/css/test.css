@@ -1,14 +1,45 @@
+/* Basic */
+
 body {
-    background-color: #f0f0f0;
+    background-color: #f0f0f0; /* Manteniendo el fondo claro */
+    color: #555555;
+    font-family: 'Raleway', sans-serif;
+    font-size: 13pt;
+    font-weight: 300;
+    line-height: 1.75em;
+}
+
+a {
+    color: #3ac984;
+    text-decoration: underline;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+strong, b {
+    font-weight: 700;
+}
+
+em, i {
+    font-style: italic;
+}
+
+p, ul, ol, dl, table, blockquote {
+    margin: 0 0 2em 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.75em;
+    margin-bottom: 1em;
 }
 
 h1 {
-    color: #ff9900;
-    text-align: center;
+    color: #ff9900; /* Manteniendo el naranja para h1 */
 }
 
-.members-page {
-    background-color: #ffffff;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+h2, h3 {
+    color: #2c3e50; /* Color específico para h2 y h3 */
 }
