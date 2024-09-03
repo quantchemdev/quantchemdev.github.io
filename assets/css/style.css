@@ -729,22 +729,7 @@
 
 /* Otros estilos generales */
 
-.members-page-body body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f5f5f5;
-  color: #333;
-}
-
-.members-page-body h1, 
-.members-page-body h2, 
-.members-page-body h3 {
-  color: #2c3e50;
-  text-align: center;
-}
-
-.members-page-body .members-page {
+.members-page {
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
@@ -752,7 +737,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.members-page-body .members-page img {
+.members-page img {
   display: block;
   margin: 20px auto;
   max-width: 100%;
@@ -760,7 +745,7 @@
   border-radius: 5px;
 }
 
-.members-page-body .members-page ul {
+.members-page ul {
   list-style-type: none;
   padding: 0;
   display: grid;
@@ -769,35 +754,35 @@
 }
 
 /* Define the grid layout for different categories */
-.members-page-body .members-page .group-leader {
+.members-page .group-leader {
   grid-template-columns: repeat(1, 1fr);
 }
 
-.members-page-body .members-page .scientific-staff {
+.members-page .scientific-staff {
   grid-template-columns: repeat(1, 1fr);
 }
 
-.members-page-body .members-page .postdoc,
-.members-page-body .members-page .phd-student {
+.members-page .postdoc,
+.members-page .phd-student {
   grid-template-columns: repeat(2, 1fr);
 }
 
-.members-page-body .members-page .master-student {
+.members-page .master-student {
   grid-template-columns: repeat(3, 1fr);
 }
 
-.members-page-body .members-page .alumni,
-.members-page-body .members-page .visitor {
+.members-page .alumni,
+.members-page .visitor {
   grid-template-columns: repeat(5, 1fr);
 }
 
-.members-page-body .members-page ul li {
+.members-page ul li {
   margin: 15px 0;
   text-align: center;
   box-sizing: border-box;
 }
 
-.members-page-body .members-page ul li a {
+.members-page ul li a {
   text-decoration: none;
   color: #3498db;
   display: block;
@@ -809,12 +794,12 @@
   height: 100%;
 }
 
-.members-page-body .members-page ul li a:hover {
+.members-page ul li a:hover {
   color: #2980b9;
   transform: scale(1.05);
 }
 
-.members-page-body .members-page ul li img {
+.members-page ul li img {
   width: 150px;
   height: 150px;
   object-fit: cover;
@@ -823,7 +808,8 @@
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.members-page-body .member-profile {
+
+.member-profile {
   padding: 20px;
   max-width: 800px;
   margin: 20px auto;
@@ -832,7 +818,7 @@
   text-align: center;
 }
 
-.members-page-body .member-profile img {
+.member-profile img {
   width: 200px;
   height: 200px;
   object-fit: cover;
@@ -841,63 +827,35 @@
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.members-page-body .member-profile h1 {
+.member-profile h1 {
   margin-top: 0;
 }
 
-.members-page-body .member-profile p {
+.member-profile p {
   font-size: 1.1em;
   margin: 10px 0;
 }
 
-.members-page-body .member-profile a {
+.member-profile a {
   color: #3498db;
   text-decoration: none;
 }
 
-.members-page-body .member-profile a:hover {
+.member-profile a:hover {
   color: #2980b9;
 }
 
-.members-page-body .member-profile h2 {
+.member-profile h2 {
   margin-top: 30px;
 }
 
-.members-page-body .member-profile ul {
+.member-profile ul {
   list-style-type: disc;
   margin: 10px 0 0 20px;
   padding: 0;
   text-align: left;
 }
 
-.members-page-body .member-profile ul li {
+.member-profile ul li {
   margin-bottom: 5px;
 }
-
-/* Responsive design */
-@media (max-width: 1024px) {
-  .members-page-body .members-page .group-leader,
-  .members-page-body .members-page .scientific-staff {
-    grid-template-columns: repeat(1, 1fr);
-  }
-  .members-page-body .members-page .postdoc,
-  .members-page-body .members-page .phd-student,
-  .members-page-body .members-page .master-student,
-  .members-page-body .members-page .alumni,
-  .members-page-body .members-page .visitor {
-    grid-template-columns: repeat(2, 1fr); /* Adjust to two columns on medium screens */
-  }
-}
-
-@media (max-width: 768px) {
-  .members-page-body .members-page .group-leader,
-  .members-page-body .members-page .scientific-staff,
-  .members-page-body .members-page .postdoc,
-  .members-page-body .members-page .phd-student,
-  .members-page-body .members-page .master-student,
-  .members-page-body .members-page .alumni,
-  .members-page-body .members-page .visitor {
-    grid-template-columns: repeat(1, 1fr); /* Adjust to single column on smaller screens */
-  }
-}
-
