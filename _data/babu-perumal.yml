@@ -1,0 +1,11 @@
+title: "PhD student"
+content:
+  name_surname: "Janaarthana Babu Perumal Marisami"
+  position: "PhD student"
+  photo: "babu.jpg"
+  email: "janaarthana.perumal@dipc.org"
+  education:
+    - "2023: Master’s degree in Chemistry (IISER-TVM)"
+    - "2024: PhD student at the University of the Basque Country in Spain (DIPC)"
+  research_topics:
+    - "New Excited State Wavefunction Methods for Optoelectronics (ExcOpto)"

@@ -1,12 +1,15 @@
-title: "Scientific staff"
+title: "Leader"
 content:
   name_surname: "Dr. Eloy Ramos-Cordoba"
-  position: "Scientific staff"
+  position: "Leader"
   photo: "Eloy-2.jpg"
-  email: "eloy.raco@gmail.com"
+  email: "eloy.ramos@iqac.csic.es"
   personal_web: "https://eloyramoscordoba.wordpress.com"
   experience:
-    - "August 2019-Currently: Juan de la Cierva Incorporation fellow, University of the Basque Country."
+    - "January 2024: Permanent Researcher at the Institute for Advanced Chemistry of Catalonia (IQAC-CSIC)"
+    - "March 2023 - December 2023: Ikerbasque Fellow at the University of the Basque Country"
+    - "July 2022 - February 2023: Researcher at Donostia International Physics Center."
+    - "August 2019-June 2022: Juan de la Cierva Incorporation fellow, University of the Basque Country."
     - "January 2019-July 2019: Researcher at Donostia International Physics Center."
     - "January 2016-December 2018: Marie Sklodowska-Curie International Outgoing fellowship (Horizon 2020). University of California, Berkeley (Prof. Head-Gordon Group). Project: AccuCT (660943)"
     - "January 2015- December 2015: Post-Doctoral research contract at the Donostia International Physics Center (DIPC)."
@@ -16,5 +19,5 @@ content:
     - "2009: M.S. in Theoretical and Computational Chemistry. Universitat Rovira i Virgili, Tarragona, Spain."
     - "2008: B.S. in Chemistry, Universitat de Girona, Girona, Spain."
   research_topics:
-    - "Time-Dependent Density Functional Theory"
+    - "Chemical bonding."
     - "Electron correlation, Coulomb holes and Density Functional development."

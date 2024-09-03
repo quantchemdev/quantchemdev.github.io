@@ -17,7 +17,7 @@ title: Members
   <h2>Current Members</h2>
   
   {% assign group_leader = site.members | where: "position", "Leader" %}
-  {% assign scientific_staff = site.members | where: "position", "Scientific staff" %}
+ <!-- {% assign scientific_staff = site.members | where: "position", "Scientific staff" %}-->
   {% assign postdocs = site.members | where: "position", "Postdoc" %}
   {% assign phd_students = site.members | where: "position", "PhD student" %}
   {% assign masters_students = site.members | where: "position", "Master student" %}
@@ -36,7 +36,7 @@ title: Members
   {% endfor %}
   </ul>
 
-  <h3>Scientific Staff</h3>
+<!--   <h3>Scientific Staff</h3>
   <ul class="scientific-staff">
   {% for member in scientific_staff %}
     <li>
@@ -46,7 +46,7 @@ title: Members
       </a>
     </li>
   {% endfor %}
-  </ul>
+  </ul> -->
 
   <h3>Postdocs</h3>
   <ul class="postdoc">
