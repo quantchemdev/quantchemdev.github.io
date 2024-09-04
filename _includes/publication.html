@@ -1,0 +1,13 @@
+<li>
+  <div class="publication-box">
+    <a href="{{ entry.url }}" target="_blank" class="publication-title">
+      <b>{{ entry.title }}</b>
+    </a><br>
+    <span class="publication-authors">
+      {{ entry.author | join: ', ' }}
+    </span><br>
+    <span class="publication-details">
+      <i>{{ entry.journal }}</i>, <b>{{ entry.year }}</b>, <i>{{ entry.volume }}</i>, {{ entry.pages }}
+    </span>
+  </div>
+</li>
