@@ -24,27 +24,21 @@ def parse_bibtex(content):
 def create_single_file(entries, output_file):
     """Generates a single Markdown file containing all the publications."""
     with open(output_file, 'w') as post_file:
-        # Write the YAML front matter for Jekyll
-        post_file.write("---\n")
-        post_file.write("layout: pub\n")
-        post_file.write("title: Publications\n")
-        post_file.write("---\n\n")
-        
-        post_file.write("# List of Publications\n")
-        post_file.write("<ul>\n")
-
-        # Organize the entries by year
+        # Organize the entries by year, ensuring reverse chronological order
         entries_by_year = {}
-        for entry in reversed(entries):
+        for entry in entries:
             year = entry.get('year', '')
             if year not in entries_by_year:
                 entries_by_year[year] = []
             entries_by_year[year].append(entry)
 
+        # Sort years in reverse order to show the most recent first
+        sorted_years = sorted(entries_by_year.keys(), reverse=True)
+
         # Generate the content for each publication
-        for year, entries in entries_by_year.items():
-            post_file.write(f"## {year}\n")
-            for entry in entries:
+        publication_count = 1
+        for year in sorted_years:
+            for entry in entries_by_year[year]:
                 url = entry.get('url', '')
                 title = entry.get('title', 'No Title Available Yet')
                 journal = entry.get('journal', 'No Journal Available Yet')
@@ -53,21 +47,31 @@ def create_single_file(entries, output_file):
                 pages = entry.get('pages', '')
                 extra = entry.get('extra', '')
                 
-                post_file.write("<li>\n")
-                post_file.write(f"**{title}**<br>\n")
-                post_file.write(f"<em>{', '.join([author.strip() for author in authors])}</em><br>\n")
-                post_file.write(f"{journal}, {volume}, {pages}, {year}<br>\n")
-                if url:
-                    post_file.write(f"[Link to publication]({url})<br>\n")
-                post_file.write(f"{extra}<br>\n")
-                post_file.write("</li>\n")
+                # Writing each publication in the required format
+                post_file.write("---\n")
+                post_file.write(f'exturl: "{url}"\n' if url else "exturl: \n")
+                post_file.write(f"title: \"{title}\"\n")
+                post_file.write("authors:\n")
+                for author in authors:
+                    post_file.write(f" - {author.strip()}\n")
+                post_file.write(f"journal: {journal}\n")
+                post_file.write(f"year: {year}\n")
+                post_file.write(f"extra: {extra}\n")
+                post_file.write(f"volume: {volume}\n")
+                post_file.write(f"pages: {pages}\n")
+                post_file.write(f"n: {publication_count}\n")
+                post_file.write("---\n\n")
 
-        post_file.write("</ul>\n")
+                publication_count += 1
 
 if __name__ == "__main__":
     bibtex_file = './_data/publications.bib'
-    output_file = './_posts/publications.md'  # Single output file
+    output_file = './_publications/publications.md'  # Output file in _publications directory
     
+    # Ensure the output directory exists
+    os.makedirs(os.path.dirname(output_file), exist_ok=True)
+    
+    # Process the BibTeX file and create the markdown file
     bibtex_content = read_bibtex(bibtex_file)
     entries = parse_bibtex(bibtex_content)
     create_single_file(entries, output_file)
