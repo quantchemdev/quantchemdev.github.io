@@ -31,9 +31,22 @@ layout: main
           </header>
 
           <div class="publication-list">
-  <ul>
-  {% for entry in site.scholar.bibliography %}
-    {% include publication.html entry=entry %}
+<ul>
+  {% assign sorted_publications = site.publications | sort: 'year' | reverse %}
+  {% for publication in sorted_publications %}
+    <li>
+      <div class="publication-box">
+        <a href="{{ publication.url }}" target="_blank" class="publication-title">
+          <b>{{ publication.title }}</b>
+        </a><br>
+        <span class="publication-authors">
+          {{ publication.authors | join: ', ' }}
+        </span><br>
+        <span class="publication-details">
+          <i>{{ publication.journal }}</i>, <b>{{ publication.year }}</b>, <i>{{ publication.volume }}</i>, {{ publication.pages }}
+        </span>
+      </div>
+    </li>
   {% endfor %}
 </ul>
 </div>
