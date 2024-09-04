@@ -23,3 +23,6 @@ collections:
   members:
     output: true
     permalink: /members/:path/
+
+#paginate: 10  # Número de publicaciones por página
+#paginate_path: "/publications/page:num"
