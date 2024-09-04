@@ -32,22 +32,10 @@ layout: main
 
           <div class="publication-list">
   <ul>
-    {% for post in site.publications %}
-      <li>
-        <div class="publication-box">
-          <a href="{{ post.exturl }}" target="_blank" class="publication-title">
-            <b>{{ post.title }}</b>
-          </a><br>
-          <span class="publication-authors">
-            {{ post.authors | join: ', ' }}
-          </span><br>
-          <span class="publication-details">
-            <i>{{ post.journal }}</i>, <b>{{ post.year }}</b>, <i>{{ post.volume }}</i>, {{ post.pages }}
-          </span>
-        </div>
-      </li>
-    {% endfor %}
-  </ul>
+  {% for entry in site.scholar.bibliography %}
+    {% include publication.html entry=entry %}
+  {% endfor %}
+</ul>
 </div>
 
         </section>

@@ -29,3 +29,11 @@ collections:
 
 #paginate: 10  # Número de publicaciones por página
 #paginate_path: "/publications/page:num"
+
+plugins:
+  - jekyll-scholar
+
+scholar:
+  style: apa # Puedes cambiar el estilo de citas, por ejemplo, APA o IEEE
+  source: _bibliography
+  bibliography: references.bib # Archivo BibTeX con tus referencias
