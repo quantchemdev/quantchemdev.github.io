@@ -1,6 +1,9 @@
 ---
 title: Publications
 layout: main
+pagination: 
+  enabled: true
+  collection: publications
 ---
 
 <!-- Main -->
@@ -51,6 +54,16 @@ layout: main
 </ul>
 </div>
 
+<!-- Paginación -->
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path }}" class="pagination-previous">Previous</a>
+  {% endif %}
+
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}" class="pagination-next">Next</a>
+  {% endif %}
+</div>
         </section>
       </div>
     </div>
