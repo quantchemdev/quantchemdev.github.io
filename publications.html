@@ -32,7 +32,8 @@ layout: main
 
           <!-- Incluir el contenido del archivo publications.md -->
           <div class="publication-list">
-            {{ site.posts | where: "title", "Publications" | first.content }}
+            {% assign publication = site.publications | where: "title", "Publications" | first %}
+            {{ publication.content }}
           </div>
 
         </section>
