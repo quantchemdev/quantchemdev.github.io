@@ -11,4 +11,6 @@ url: "https://onlinelibrary.wiley.com/doi/pdf/10.1002/9783527610709.ch15"
 extra: "R. J. Boyd and C. F. Matta, Eds., Wiley-VCH, New York"
 ---
 
-Descripción opcional de la publicación.
+<meta http-equiv="refresh" content="0; URL='https://onlinelibrary.wiley.com/doi/pdf/10.1002/9783527610709.ch15'" />
+
+If you are not redirected, [click here to view the publication](https://onlinelibrary.wiley.com/doi/pdf/10.1002/9783527610709.ch15).

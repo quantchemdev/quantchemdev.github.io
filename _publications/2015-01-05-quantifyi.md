@@ -11,4 +11,6 @@ url: "https://pubs.rsc.org/no/content/articlelanding/2015/cs/c5cs00066a/unauth#!
 extra: ""
 ---
 
-Descripción opcional de la publicación.
+<meta http-equiv="refresh" content="0; URL='https://pubs.rsc.org/no/content/articlelanding/2015/cs/c5cs00066a/unauth#!divAbstract'" />
+
+If you are not redirected, [click here to view the publication](https://pubs.rsc.org/no/content/articlelanding/2015/cs/c5cs00066a/unauth#!divAbstract).

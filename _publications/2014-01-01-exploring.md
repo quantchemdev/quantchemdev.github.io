@@ -11,4 +11,6 @@ url: "https://chemistry-europe.onlinelibrary.wiley.com/doi/abs/10.1002/chem.2013
 extra: "Selected for inside cover"
 ---
 
-Descripción opcional de la publicación.
+<meta http-equiv="refresh" content="0; URL='https://chemistry-europe.onlinelibrary.wiley.com/doi/abs/10.1002/chem.201304685'" />
+
+If you are not redirected, [click here to view the publication](https://chemistry-europe.onlinelibrary.wiley.com/doi/abs/10.1002/chem.201304685).

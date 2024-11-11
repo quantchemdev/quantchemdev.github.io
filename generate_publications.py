@@ -65,7 +65,9 @@ url: "{url}"
 extra: "{extra}"
 ---
 
-Descripción opcional de la publicación.
+<meta http-equiv="refresh" content="0; URL='{url}'" />
+
+If you are not redirected, [click here to view the publication]({url}).
 """
 
         # Escribir el archivo Markdown

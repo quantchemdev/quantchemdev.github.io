@@ -11,4 +11,6 @@ url: "https://onlinelibrary.wiley.com/doi/abs/10.1002/jcc.21621"
 extra: ""
 ---
 
-Descripción opcional de la publicación.
+<meta http-equiv="refresh" content="0; URL='https://onlinelibrary.wiley.com/doi/abs/10.1002/jcc.21621'" />
+
+If you are not redirected, [click here to view the publication](https://onlinelibrary.wiley.com/doi/abs/10.1002/jcc.21621).

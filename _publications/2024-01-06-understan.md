@@ -1,6 +1,6 @@
 ---
 layout: publication
-title: "Understanding the bonding and aromaticity of [Au_3C_4H_4(X)_4E_3]$^-$ (X = CF_3, CN, BO; E = Si, Ge): trinuclear gold superhalogens"
+title: "Understanding the bonding and aromaticity of [Au<sub>3</sub>C<sub>4</sub>H<sub>4</sub>(<em>X</em>)<sub>4</sub><em>E</em>3]<sup>-</sup> (X = CF<sub>3</sub>, CN, BO; E = Si, Ge): trinuclear gold superhalogens"
 authors:
   - Das, Subhra
   - Sinha, Swapan
@@ -16,4 +16,6 @@ url: "https://xlink.rsc.org/?DOI=D3NJ05422E"
 extra: ""
 ---
 
-Descripción opcional de la publicación.
+<meta http-equiv="refresh" content="0; URL='https://xlink.rsc.org/?DOI=D3NJ05422E'" />
+
+If you are not redirected, [click here to view the publication](https://xlink.rsc.org/?DOI=D3NJ05422E).

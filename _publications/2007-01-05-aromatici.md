@@ -11,4 +11,6 @@ url: "http://yadda.icm.edu.pl/yadda/element/bwmeta1.element.baztech-article-BUJ5
 extra: ""
 ---
 
-Descripción opcional de la publicación.
+<meta http-equiv="refresh" content="0; URL='http://yadda.icm.edu.pl/yadda/element/bwmeta1.element.baztech-article-BUJ5-0014-0041'" />
+
+If you are not redirected, [click here to view the publication](http://yadda.icm.edu.pl/yadda/element/bwmeta1.element.baztech-article-BUJ5-0014-0041).

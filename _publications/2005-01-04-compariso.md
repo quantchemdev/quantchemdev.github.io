@@ -11,4 +11,6 @@ url: "https://pubs.acs.org/doi/10.1021/jp0538464"
 extra: ""
 ---
 
-Descripción opcional de la publicación.
+<meta http-equiv="refresh" content="0; URL='https://pubs.acs.org/doi/10.1021/jp0538464'" />
+
+If you are not redirected, [click here to view the publication](https://pubs.acs.org/doi/10.1021/jp0538464).

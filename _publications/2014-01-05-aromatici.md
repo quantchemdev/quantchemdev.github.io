@@ -11,4 +11,6 @@ url: "https://link.springer.com/chapter/10.1007%2F978-3-642-45149-2_5"
 extra: ""
 ---
 
-Descripción opcional de la publicación.
+<meta http-equiv="refresh" content="0; URL='https://link.springer.com/chapter/10.1007%2F978-3-642-45149-2_5'" />
+
+If you are not redirected, [click here to view the publication](https://link.springer.com/chapter/10.1007%2F978-3-642-45149-2_5).

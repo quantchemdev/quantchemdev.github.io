@@ -17,4 +17,6 @@ url: "https://linkinghub.elsevier.com/retrieve/pii/S0020169324004407"
 extra: ""
 ---
 
-Descripción opcional de la publicación.
+<meta http-equiv="refresh" content="0; URL='https://linkinghub.elsevier.com/retrieve/pii/S0020169324004407'" />
+
+If you are not redirected, [click here to view the publication](https://linkinghub.elsevier.com/retrieve/pii/S0020169324004407).

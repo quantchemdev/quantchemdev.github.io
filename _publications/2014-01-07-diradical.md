@@ -11,4 +11,6 @@ url: "https://pubs.rsc.org/en/content/articlelanding/2014/CP/c4cp00939h#!divAbst
 extra: ""
 ---
 
-Descripción opcional de la publicación.
+<meta http-equiv="refresh" content="0; URL='https://pubs.rsc.org/en/content/articlelanding/2014/CP/c4cp00939h#!divAbstract'" />
+
+If you are not redirected, [click here to view the publication](https://pubs.rsc.org/en/content/articlelanding/2014/CP/c4cp00939h#!divAbstract).

@@ -11,4 +11,6 @@ url: "https://doi.org/10.1016/B978-0-12-822723-7.00007-8"
 extra: ""
 ---
 
-Descripción opcional de la publicación.
+<meta http-equiv="refresh" content="0; URL='https://doi.org/10.1016/B978-0-12-822723-7.00007-8'" />
+
+If you are not redirected, [click here to view the publication](https://doi.org/10.1016/B978-0-12-822723-7.00007-8).
