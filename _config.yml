@@ -1,34 +1,23 @@
-name: Horizons
-description: Horizons template for Jekyll
-
+# Site settings
+name: Quantum Chemistry Development Group
+description: Website for the Quantum Chemistry Development Group at DIPC
 author:
-  name      : 'Quantum development group'
-  #email    : hi@nandomoreira.me
-  url       : "https://quantchemdev.github.io" # the base hostname & protocol for your site
-  baseurl   : '/' #subpath of the web
-  #facebook : http://facebook.com/fernando.dev
-  #twitter  : http://twitter.com/nandomoreirame
+  name: Quantum Chemistry Development Group
+  email: quantchemdev@gmail.com
+  url: "https://quantchemdev.github.io"
+  baseurl: "/"
 
+# Social media and repository links
 github: https://github.com/quantchemdev
-#disqus_shortname: "fernandomoreira"
-#google_analytics: UA-52446115-1
+twitter: https://twitter.com/DonostiaChemDev
+
+# Build settings
+markdown: kramdown
 sass:
   sass_dir: assets/css
- 
-# Agregar el plugin jekyll-paginate-v2
-plugins: 
-  - jekyll-paginate-v2
+  style: compressed
 
-paginate: 4
-paginate_path: "/blog/page:num/"
-
-pagination:
-  enabled: true
-  collection: publications
-  per_page: 5  # Número de publicaciones por página
-  permalink: "/publications/page:num/"
-  title: "Publicaciones"
-
+# Collections
 collections:
   members:
     output: true
@@ -37,6 +26,51 @@ collections:
     output: true
     permalink: /publications/:path/
 
-#paginate: 10  # Número de publicaciones por página
-#paginate_path: "/publications/page:num"
+# Pagination
+plugins:
+  - jekyll-paginate-v2
+  - jekyll-sitemap
 
+pagination:
+  enabled: true
+  per_page: 5
+  permalink: "/page/:num/"
+  title: " - page :num"
+  limit: 0
+  sort_field: "date"
+  sort_reverse: true
+
+# Publication pagination
+autopages:
+  enabled: true
+  collections:
+    enabled: true
+    permalink: "/collection/:coll/page/:num/"
+  tags:
+    enabled: true
+    permalink: "/tag/:tag/page/:num/"
+  categories:
+    enabled: true
+    permalink: "/category/:cat/page/:num/"
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "members"
+    values:
+      layout: "member"
+  - scope:
+      path: ""
+      type: "publications"
+    values:
+      layout: "publication"
+  - scope:
+      path: ""
+    values:
+      layout: "default"

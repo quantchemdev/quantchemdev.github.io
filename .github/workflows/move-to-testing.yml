@@ -1,0 +1,72 @@
+# .github/workflows/move-to-testing.yml
+name: Move to Testing when PR approved
+
+on:
+  pull_request_review:
+    types: [submitted]
+
+jobs:
+  move_to_testing:
+    runs-on: ubuntu-latest
+    if: github.event.review.state == 'approved'
+    steps:
+      - name: Move PR to Testing column
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const pr_number = context.payload.pull_request.number;
+
+            // Find the item in the project
+            const PROJECT_NUMBER = 4;
+            const PROJECT_ID = "PVT_kwHOA6JyGM4Azg59";
+
+            // First, get the node ID of the PR
+            const query = `query {
+              pullRequest(number: ${pr_number}, owner: "${context.repo.owner}", name: "${context.repo.repo}") {
+                id
+                projectItems(first: 10) {
+                  nodes {
+                    id
+                    project {
+                      number
+                    }
+                  }
+                }
+              }
+            }`;
+
+            const result = await github.graphql(query);
+            const projectItems = result.pullRequest.projectItems.nodes;
+
+            // Find the project item for our specific project
+            const projectItem = projectItems.find(item => item.project.number === PROJECT_NUMBER);
+
+            if (!projectItem) {
+              console.log(`Item not found in project ${PROJECT_NUMBER}`);
+              return;
+            }
+
+            // Update the status field to "Testing"
+            const STATUS_FIELD_ID = "PVTSSF_lAHOA6JyGM4Azg59zgpS0h0";
+            const TESTING_OPTION_ID = "497a797b";
+
+            const updateMutation = `mutation {
+              updateProjectV2ItemFieldValue(
+                input: {
+                  projectId: "${PROJECT_ID}",
+                  itemId: "${projectItem.id}",
+                  fieldId: "${STATUS_FIELD_ID}",
+                  value: {
+                    singleSelectOptionId: "${TESTING_OPTION_ID}"
+                  }
+                }
+              ) {
+                projectV2Item {
+                  id
+                }
+              }
+            }`;
+
+            await github.graphql(updateMutation);
+            console.log(`Updated PR #${pr_number} to Testing`);

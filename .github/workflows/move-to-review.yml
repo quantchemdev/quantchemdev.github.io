@@ -1,0 +1,71 @@
+# .github/workflows/move-to-review.yml
+name: Move to Review when PR ready for review
+
+on:
+  pull_request:
+    types: [ready_for_review]
+
+jobs:
+  move_to_review:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Move PR to Review column
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const pr_number = context.payload.pull_request.number;
+
+            // Find the item in the project
+            const PROJECT_NUMBER = 4;
+            const PROJECT_ID = "PVT_kwHOA6JyGM4Azg59";
+
+            // First, get the node ID of the PR
+            const query = `query {
+              pullRequest(number: ${pr_number}, owner: "${context.repo.owner}", name: "${context.repo.repo}") {
+                id
+                projectItems(first: 10) {
+                  nodes {
+                    id
+                    project {
+                      number
+                    }
+                  }
+                }
+              }
+            }`;
+
+            const result = await github.graphql(query);
+            const projectItems = result.pullRequest.projectItems.nodes;
+
+            // Find the project item for our specific project
+            const projectItem = projectItems.find(item => item.project.number === PROJECT_NUMBER);
+
+            if (!projectItem) {
+              console.log(`Item not found in project ${PROJECT_NUMBER}`);
+              return;
+            }
+
+            // Update the status field to "Review"
+            const STATUS_FIELD_ID = "PVTSSF_lAHOA6JyGM4Azg59zgpS0h0";
+            const REVIEW_OPTION_ID = "64f693fa";
+
+            const updateMutation = `mutation {
+              updateProjectV2ItemFieldValue(
+                input: {
+                  projectId: "${PROJECT_ID}",
+                  itemId: "${projectItem.id}",
+                  fieldId: "${STATUS_FIELD_ID}",
+                  value: {
+                    singleSelectOptionId: "${REVIEW_OPTION_ID}"
+                  }
+                }
+              ) {
+                projectV2Item {
+                  id
+                }
+              }
+            }`;
+
+            await github.graphql(updateMutation);
+            console.log(`Updated PR #${pr_number} to Review`);
