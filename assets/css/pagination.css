@@ -1,0 +1,92 @@
+/* Pagination Controls Styles */
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.pagination-controls a,
+.pagination-controls span {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin: 0.25rem;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.3s ease;
+    font-size: 0.9em;
+}
+
+.pagination-controls a:hover {
+    background-color: #f5f5f5;
+    border-color: #aaa;
+}
+
+.pagination-controls .current {
+    background-color: #4a90e2;
+    color: white;
+    border-color: #4a90e2;
+    cursor: default;
+    font-weight: bold;
+}
+
+.pagination-controls .disabled {
+    color: #ccc;
+    cursor: not-allowed;
+    background-color: #f9f9f9;
+}
+
+/* First and Last buttons */
+.pagination-controls a:first-child,
+.pagination-controls a:last-child {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+/* Publication Item Styles */
+.publication-box {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.publication-box:last-child {
+    border-bottom: none;
+}
+
+.publication-title {
+    font-size: 1.1em;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.publication-title:hover {
+    color: #4a90e2;
+}
+
+.publication-authors {
+    display: block;
+    margin: 0.5rem 0;
+    color: #555;
+}
+
+.publication-details {
+    display: block;
+    color: #777;
+    font-size: 0.9em;
+}
+
+/* Publication List Styles */
+.publication-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.publication-list li {
+    margin-bottom: 1.5rem;
+}

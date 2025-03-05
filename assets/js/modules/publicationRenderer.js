@@ -1,5 +1,5 @@
 // Publication Renderer Module
-// Renders publication objects to HTML
+// Renders publication objects to HTML without year groupings
 
 /**
  * Renders a list of publications into the specified container
@@ -21,47 +21,14 @@ export function renderPublications(publications, container) {
   const publicationList = document.createElement('ul');
   publicationList.className = 'publication-list';
 
-  // Group publications by year
-  const publicationsByYear = groupPublicationsByYear(publications);
+  // Add each publication to the list
+  publications.forEach(publication => {
+    const listItem = createPublicationElement(publication);
+    publicationList.appendChild(listItem);
+  });
 
-  // Render each year group
-  Object.keys(publicationsByYear)
-    .sort((a, b) => parseInt(b) - parseInt(a)) // Sort years descending
-    .forEach(year => {
-      // Add year heading
-      const yearHeading = document.createElement('h3');
-      yearHeading.id = year;
-      yearHeading.textContent = year;
-      container.appendChild(yearHeading);
-
-      // Create list for this year
-      const yearList = document.createElement('ul');
-
-      // Add publications for this year
-      publicationsByYear[year].forEach(publication => {
-        const listItem = createPublicationElement(publication);
-        yearList.appendChild(listItem);
-      });
-
-      container.appendChild(yearList);
-    });
-}
-
-/**
- * Group publications by their publication year
- *
- * @param {Array} publications - Array of publication objects
- * @returns {Object} - Object with years as keys and arrays of publications as values
- */
-function groupPublicationsByYear(publications) {
-  return publications.reduce((groups, pub) => {
-    const year = pub.year || 'Unknown';
-    if (!groups[year]) {
-      groups[year] = [];
-    }
-    groups[year].push(pub);
-    return groups;
-  }, {});
+  // Add the list to the container
+  container.appendChild(publicationList);
 }
 
 /**
