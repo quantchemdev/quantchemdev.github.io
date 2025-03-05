@@ -1,9 +1,6 @@
 ---
 title: Publications
 layout: main
-pagination: 
-  enabled: true
-  collection: publications
 ---
 
 <!-- Main -->
@@ -18,10 +15,8 @@ pagination:
             <h2>Years</h2>
           </header>
           <ul class="default">
-            <!-- Aquí puedes agregar enlaces a los años de las publicaciones -->
-            <li><a href="#2023">2023</a></li>
-            <li><a href="#2022">2022</a></li>
-            <!-- Añadir más años según tus publicaciones -->
+            <!-- Year links will be populated dynamically by JavaScript -->
+            <li><span>Loading years...</span></li>
           </ul>
         </section>
       </div>
@@ -33,39 +28,15 @@ pagination:
             <h2>Publications</h2>
           </header>
 
-          <div class="publication-list">
-<ul>
-  {% assign sorted_publications = site.publications | sort: 'year' | reverse %}
-  {% for publication in sorted_publications %}
-    <li>
-      <div class="publication-box">
-        <a href="{{ publication.url }}" target="_blank" class="publication-title">
-          <b>{{ publication.title }}</b>
-        </a><br>
-        <span class="publication-authors">
-          {{ publication.authors | join: ', ' }}
-        </span><br>
-        <span class="publication-details">
-          <i>{{ publication.journal }}</i>, <b>{{ publication.year }}</b>, <i>{{ publication.volume }}</i>, {{ publication.pages }}
-        </span>
-      </div>
-    </li>
-  {% endfor %}
-</ul>
-</div>
-
-<!-- Paginación -->
-<div class="pagination">
-  {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}" class="pagination-previous">Previous</a>
-  {% endif %}
-
-  {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path }}" class="pagination-next">Next</a>
-  {% endif %}
-</div>
+          <!-- Publications container where JavaScript will render publications -->
+          <div id="publications-container">
+            <p>Loading publications...</p>
+          </div>
         </section>
       </div>
     </div>
   </div>
 </div>
+
+<!-- Load the publications system -->
+<script type="module" src="{{ site.baseurl }}/assets/js/publications.js"></script>
