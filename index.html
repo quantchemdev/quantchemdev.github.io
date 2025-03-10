@@ -3,49 +3,113 @@ title: Landing Page
 layout: landing
 ---
 
-<!-- Main -->
+<!-- Featured News Section -->
+<section class="wrapper style2">
+    <div class="container">
+        <header class="section-header">
+            <h2>Recent News</h2>
+            <p class="section-description">Updates from our research group</p>
+        </header>
+
+        <div class="news-row">
+            <!-- Featured Post 1 -->
+            <article class="news-item">
+                {% for post in site.posts offset: 0 limit: 1 %}
+                <div class="news-image">
+                    <img src="{{ site.baseurl }}/assets/{{ post.featured }}" alt="{{ post.title }}">
+                </div>
+                <div class="news-content">
+                    <span class="news-date">{{ post.date | date: "%B %d, %Y" }}</span>
+                    <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+                    <p class="news-excerpt">{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
+                </div>
+                {% endfor %}
+            </article>
+
+            <!-- Featured Post 2 -->
+            <article class="news-item">
+                {% for post in site.posts offset: 1 limit: 1 %}
+                <div class="news-image">
+                    <img src="{{ site.baseurl }}/assets/{{ post.featured }}" alt="{{ post.title }}">
+                </div>
+                <div class="news-content">
+                    <span class="news-date">{{ post.date | date: "%B %d, %Y" }}</span>
+                    <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+                    <p class="news-excerpt">{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
+                </div>
+                {% endfor %}
+            </article>
+            <article class="news-item">
+                {% for post in site.posts offset: 2 limit: 1 %}
+                <div class="news-image">
+                    <img src="{{ site.baseurl }}/assets/{{ post.featured }}" alt="{{ post.title }}">
+                </div>
+                <div class="news-content">
+                    <span class="news-date">{{ post.date | date: "%B %d, %Y" }}</span>
+                    <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+                    <p class="news-excerpt">{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
+                </div>
+                {% endfor %}
+            </article>
+            <!-- Twitter Feed -->
+
+
+        <div class="text-center">
+            <a href="{{ site.baseurl }}/blog" class="button primary">See more News &#10171;</a>
+        </div>
+    </div>
+</section>
+
+<!-- Main Research Themes -->
 <main id="main" class="wrapper style1">
     <section class="container">
-        <header class="major">
-            <h1>Research Themes</h1>
-            <p class="byline">Quantum Chemistry Development and Computational Chemistry</p>
+        <header class="section-header">
+            <h2>Research Themes</h2>
+            <p class="section-description">Quantum Chemistry Development and Computational Chemistry</p>
         </header>
-        <div class="row">
+
+        <div class="research-grid">
             <!-- Research Theme 1 -->
-            <article class="6u">
-                <section>
-                    <ul class="style">
-                        <li>
-                            <span class="fa fa-flask" aria-hidden="true"></span>
-                            <h2>DFT & DMFT</h2>
-                            <p>Development of Density and Density-Matrix Functionals Methods.</p>
-                        </li>
-                        <li>
-                            <span class="fa fa-cloud" aria-hidden="true"></span>
-                            <h2>Electron Correlation</h2>
-                            <p>Separation of strong and weak correlations, Modeling dispersion.</p>
-                        </li>
-                    </ul>
-                </section>
-            </article>
-            
+            <div class="research-card">
+                <div class="research-icon">
+                    <span class="fa fa-flask" aria-hidden="true"></span>
+                </div>
+                <h3>DFT & DMFT</h3>
+                <p>Development of Density and Density-Matrix Functionals Methods</p>
+                <a href="{{ site.baseurl }}/research.html" class="learn-more">Learn more</a>
+            </div>
+
             <!-- Research Theme 2 -->
-            <article class="6u">
-                <section>
-                    <ul class="style">
-                        <li>
-                            <span class="fa fa-laptop" aria-hidden="true"></span>
-                            <h2>Wavefunction Analysis</h2>
-                            <p>Aromaticity, Chemical Bonding Descriptors, Electron Sharing Indices (ESIs).</p>
-                        </li>
-                        <li>
-                            <span class="fa fa-flask" aria-hidden="true"></span>
-                            <h2>Molecular Properties</h2>
-                            <p>Development of Non-Linear Optical Properties, NLO switches with large vdW interaction.</p>
-                        </li>
-                    </ul>
-                </section>
-            </article>
+            <div class="research-card">
+                <div class="research-icon">
+                    <span class="fa fa-flash" aria-hidden="true"></span>
+                </div>
+                <h3>Electron Correlation</h3>
+                <p>Separation of strong and weak correlations, modelling dispersion
+                    effects.</p>
+                <a href="{{ site.baseurl }}/research.html" class="learn-more">Learn more</a>
+            </div>
+
+            <!-- Research Theme 3 -->
+            <div class="research-card">
+                <div class="research-icon">
+                    <span class="fa fa-laptop" aria-hidden="true"></span>
+                </div>
+                <h3>Wavefunction Analysis</h3>
+                <p>Aromaticity, Chemical Bonding Descriptors, Electron Sharing Indices (ESIs)</p>
+                <a href="{{ site.baseurl }}/research.html" class="learn-more">Learn more</a>
+            </div>
+
+            <!-- Research Theme 4 -->
+            <div class="research-card">
+                <div class="research-icon">
+                    <span class="fa fa-lightbulb-o" aria-hidden="true"></span>
+                </div>
+                <h3>Molecular Properties</h3>
+                <p>Development of Non-Linear Optical Properties, NLO switches with large vdW interaction
+                </p>
+                <a href="{{ site.baseurl }}/research.html" class="learn-more">Learn more</a>
+            </div>
         </div>
     </section>
 </main>
