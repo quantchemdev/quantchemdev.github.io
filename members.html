@@ -15,7 +15,7 @@ title: Members
   <img src="{{ site.url }}{{ site.baseurl }}/assets/member_photos/FotoGrupo-2024.jpg" alt="Group Photo">
 
   <h2>Current Members</h2>
-  
+
   {% assign group_leader = site.members | where: "position", "Leader" %}
  <!-- {% assign scientific_staff = site.members | where: "position", "Scientific staff" %}-->
   {% assign postdocs = site.members | where: "position", "Postdoc" %}
@@ -100,9 +100,7 @@ title: Members
   <ul class="visitor">
   {% for member in visitors %}
     <li class="visitor">
-      <a href="{{ site.url }}{{ site.baseurl }}{{ member.url }}">
         {{ member.name_surname}}
-      </a>
     </li>
   {% endfor %}
   </ul>
