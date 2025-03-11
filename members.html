@@ -2,111 +2,38 @@
 layout: main
 title: Members
 ---
-<main id="main" class="wrapper style1">
-    <div class="container">
-        <div class="row">
-            <!-- Content -->
-            <div id="content" class="8u skel-cell-important">
-                <section>
-                    <header class="major">
-                        <h1>Members</h1>
-                    </header>
-<div class="members-page">
-  <img src="{{ site.url }}{{ site.baseurl }}/assets/member_photos/FotoGrupo-2024.jpg" alt="Group Photo">
 
-  <h2>Current Members</h2>
+<!-- Main -->
+<div id="main" class="wrapper style1">
+  <div class="container">
+    <div class="row">
+      <!-- Content -->
+      <div id="content" class="8u skel-cell-important">
+        <section>
+          <header class="major">
+            <h1>Members</h1>
+          </header>
 
-  {% assign group_leader = site.members | where: "position", "Leader" %}
- <!-- {% assign scientific_staff = site.members | where: "position", "Scientific staff" %}-->
-  {% assign postdocs = site.members | where: "position", "Postdoc" %}
-  {% assign phd_students = site.members | where: "position", "PhD student" %}
-  {% assign masters_students = site.members | where: "position", "Master student" %}
-  {% assign ex_members = site.members | where: "position", "Alumni" %}
-  {% assign visitors = site.members | where: "position", "Visitor" %}
+          <!-- Group photo -->
+          <div>
+            <img src="{{ site.baseurl }}/assets/member_photos/FotoGrupo-2024.jpg" alt="Group Photo"
+              style="max-width:100%; height:auto;">
+          </div>
 
-  <h3>Group Leader</h3>
-  <ul class="group-leader">
-  {% for member in group_leader %}
-    <li>
-      <a href="{{ site.url }}{{ site.baseurl }}{{ member.url }}">
-        <img src="{{ site.url }}{{ site.baseurl }}/assets/member_photos/{{ member.photo }}" alt="{{ member.name_surname}}">
-        {{ member.name_surname}}
-      </a>
-    </li>
-  {% endfor %}
-  </ul>
+          <!-- Members container - will be populated by JavaScript -->
+          <div id="members-container" class="members-page">
+            <!-- Content will be dynamically inserted here -->
+          </div>
+        </section>
+      </div>
 
-<!--   <h3>Scientific Staff</h3>
-  <ul class="scientific-staff">
-  {% for member in scientific_staff %}
-    <li>
-      <a href="{{ site.url }}{{ site.baseurl }}{{ member.url }}">
-        <img src="{{ site.url }}{{ site.baseurl }}/assets/member_photos/{{ member.photo }}" alt="{{ member.name_surname}}">
-        {{ member.name_surname}}
-      </a>
-    </li>
-  {% endfor %}
-  </ul> -->
-
-  <h3>Postdocs</h3>
-  <ul class="postdoc">
-  {% for member in postdocs %}
-    <li>
-      <a href="{{ site.url }}{{ site.baseurl }}{{ member.url }}">
-        <img src="{{ site.url }}{{ site.baseurl }}/assets/member_photos/{{ member.photo }}" alt="{{ member.name_surname}}">
-        {{ member.name_surname}}
-      </a>
-    </li>
-  {% endfor %}
-  </ul>
-
-  <h3>PhD Students</h3>
-  <ul class="phd-student">
-  {% for member in phd_students %}
-    <li>
-      <a href="{{ site.url }}{{ site.baseurl }}{{ member.url }}">
-        <img src="{{ site.url }}{{ site.baseurl }}/assets/member_photos/{{ member.photo }}" alt="{{ member.name_surname}}">
-        {{ member.name_surname}}
-      </a>
-    </li>
-  {% endfor %}
-  </ul>
-
-  <h3>Master's Students</h3>
-  <ul class="master-student">
-  {% for member in masters_students %}
-    <li>
-      <a href="{{ site.url }}{{ site.baseurl }}{{ member.url }}">
-        <img src="{{ site.url }}{{ site.baseurl }}/assets/member_photos/{{ member.photo }}" alt="{{ member.name_surname}}">
-        {{ member.name_surname}}
-      </a>
-    </li>
-  {% endfor %}
-  </ul>
-
-  <h2>Former Members</h2>
-  <ul class="alumni">
-  {% for member in ex_members %}
-    <li>
-      <a href="{{ site.url }}{{ site.baseurl }}{{ member.url }}">
-        <img src="{{ site.url }}{{ site.baseurl }}/assets/member_photos/{{ member.photo }}" alt="{{ member.name_surname}}">
-        {{ member.name_surname}}
-      </a>
-    </li>
-  {% endfor %}
-  </ul>
-
-  <h2>Visitors</h2>
-  <ul class="visitor">
-  {% for member in visitors %}
-    <li class="visitor">
-        {{ member.name_surname}}
-    </li>
-  {% endfor %}
-  </ul>
+      <!-- Sidebar -->
+      <div id="sidebar" class="4u">
+        <!-- Any sidebar content you want to keep -->
+      </div>
+    </div>
+  </div>
 </div>
-</section>
-</div>
-</div>
-</div>
-</main>
+
+<!-- Load the members script -->
+<script type="module" src="{{ site.baseurl }}/assets/js/members-display.js"></script>
