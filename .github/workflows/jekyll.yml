@@ -19,10 +19,8 @@ jobs:
           bundler-cache: false
 
       - name: Update RubyGems
-        run: |
-          gem update --system
-          gem --version
-        
+        run: gem update --system
+       
 
       - name: Install dependencies
         run: bundle install
