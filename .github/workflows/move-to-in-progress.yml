@@ -1,0 +1,74 @@
+# .github/workflows/move-to-in-progress.yml
+name: Move to In Progress when assigned
+
+on:
+  issues:
+    types: [assigned]
+  pull_request:
+    types: [assigned]
+
+jobs:
+  move_to_in_progress:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get project data
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const issue_number = context.payload.issue?.number || context.payload.pull_request?.number;
+            const issue_type = context.payload.issue ? 'issue' : 'pull_request';
+
+            // Find the item in the project
+            const PROJECT_NUMBER = 4;
+            const PROJECT_ID = "PVT_kwHOA6JyGM4Azg59";
+
+            // First, get the node ID of the issue/PR
+            const query = `query {
+              ${issue_type}(number: ${issue_number}, owner: "${context.repo.owner}", name: "${context.repo.repo}") {
+                id
+                projectItems(first: 10) {
+                  nodes {
+                    id
+                    project {
+                      number
+                    }
+                  }
+                }
+              }
+            }`;
+
+            const result = await github.graphql(query);
+            const projectItems = result[issue_type].projectItems.nodes;
+
+            // Find the project item for our specific project
+            const projectItem = projectItems.find(item => item.project.number === PROJECT_NUMBER);
+
+            if (!projectItem) {
+              console.log(`Item not found in project ${PROJECT_NUMBER}`);
+              return;
+            }
+
+            // Update the status field to "In Progress"
+            const STATUS_FIELD_ID = "PVTSSF_lAHOA6JyGM4Azg59zgpS0h0";
+            const IN_PROGRESS_OPTION_ID = "47fc9ee4";
+
+            const updateMutation = `mutation {
+              updateProjectV2ItemFieldValue(
+                input: {
+                  projectId: "${PROJECT_ID}",
+                  itemId: "${projectItem.id}",
+                  fieldId: "${STATUS_FIELD_ID}",
+                  value: {
+                    singleSelectOptionId: "${IN_PROGRESS_OPTION_ID}"
+                  }
+                }
+              ) {
+                projectV2Item {
+                  id
+                }
+              }
+            }`;
+
+            await github.graphql(updateMutation);
+            console.log(`Updated ${issue_type} #${issue_number} to In Progress`);
