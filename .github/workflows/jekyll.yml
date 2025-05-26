@@ -18,6 +18,9 @@ jobs:
           ruby-version: "3.0"
           bundler-cache: true
 
+      - name: Update RubyGems
+        run: gem update --system
+
       - name: Install dependencies
         run: bundle install
 
