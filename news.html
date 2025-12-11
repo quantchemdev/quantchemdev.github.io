@@ -1,0 +1,39 @@
+---
+layout: main
+title: News
+description: Latest news and updates from our research group
+---
+
+<section class="wrapper style2">
+    <div class="container">
+        <div class="news-list">
+            {% for post in site.posts %}
+            <article class="news-line {% cycle 'news-left', 'news-right' %}">
+                <a href="{{ site.baseurl }}{{ post.url }}" class="news-line-link">
+                    {% if post.featured %}
+                    <div class="news-image-big">
+                        <img src="{{ site.baseurl }}/assets/{{ post.featured }}" alt="{{ post.title }}" loading="lazy">
+                        <div class="news-date-overlay">{{ post.date | date: "%B %d, %Y" }}</div>
+                    </div>
+                    {% endif %}
+                    <div class="news-content-enhanced">
+                        <h3 class="news-title-enhanced">{{ post.title }}</h3>
+                        {% assign excerpt_words = post.excerpt | strip_html | number_of_words %}
+                        {% assign truncated_excerpt = post.excerpt | strip_html | truncatewords: 35 %}
+                        <p class="news-excerpt-enhanced">
+                            {{ truncated_excerpt }}
+                        </p>
+                    </div>
+                </a>
+            </article>
+            {% endfor %}
+
+            {% if site.posts.size == 0 %}
+            <div class="no-posts">
+                <h3>No news available</h3>
+                <p>Check back soon for updates from our research group.</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
