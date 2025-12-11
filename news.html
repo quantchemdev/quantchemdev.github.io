@@ -1,104 +1,50 @@
 ---
-title: News
 layout: main
+title: News
+description: Latest news and updates from our research group
 ---
 
-<style>
-    .news-article {
-        border-bottom: 1px solid #eee; /* Divider line */
-        padding-bottom: 3em;
-        margin-bottom: 3em;
-    }
-
-    /* Remove border from the last item */
-    .news-article:last-child {
-        border-bottom: none;
-        margin-bottom: 0;
-    }
-
-    .news-meta {
-        font-family: "Roboto", sans-serif; /* Or your theme's font */
-        color: #888;
-        font-size: 0.9em;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-bottom: 0.5em;
-        display: block;
-    }
-
-    .news-image-container {
-        margin-bottom: 1.5em;
-        border-radius: 6px;
-        overflow: hidden;
-        border: 1px solid #ddd;
-    }
-
-    .news-image-container img {
-        width: 100%;
-        display: block;
-    }
-</style>
-
-<main id="main" class="wrapper style1">
+<section class="wrapper style2">
     <div class="container">
-        <div class="row">
+        <div class="news-list">
+            {% for post in site.posts %}
+            <article class="news-line {% cycle 'news-left', 'news-right' %}">
+                <a href="{{ site.baseurl }}{{ post.url }}" class="news-line-link">
+                    {% if post.featured %}
+                    <div class="news-image-big">
+                        <img src="{{ site.baseurl }}/assets/{{ post.featured }}" alt="{{ post.title | escape }}"
+                            width="400" height="300" loading="lazy" decoding="async" style="object-fit: cover;"
+                            onerror="this.style.display='none';">
+                        <div class="news-date-overlay">{{ post.date | date: "%B %d, %Y" }}</div>
+                    </div>
+                    {% else %}
+                    <!-- Fallback for posts without featured image -->
+                    <div class="news-image-big news-no-image">
+                        <div class="news-placeholder">
+                            <i class="fa fa-newspaper-o"></i>
+                            <span>{{ post.categories.first | default: "News" }}</span>
+                        </div>
+                        <div class="news-date-overlay">{{ post.date | date: "%B %d, %Y" }}</div>
+                    </div>
+                    {% endif %}
+                    <div class="news-content-enhanced">
+                        <h3 class="news-title-enhanced">{{ post.title }}</h3>
+                        {% assign excerpt_words = post.excerpt | strip_html | number_of_words %}
+                        {% assign truncated_excerpt = post.excerpt | strip_html | truncatewords: 35 %}
+                        <p class="news-excerpt-enhanced">
+                            {{ truncated_excerpt }}
+                        </p>
+                    </div>
+                </a>
+            </article>
+            {% endfor %}
 
-            <aside id="sidebar" class="4u sidebar">
-                <section>
-                    <header class="major">
-                        <h2>Recent Activity</h2>
-                    </header>
-                    <ul class="style2">
-                        {% for post in site.posts limit:5 %}
-                        <li>
-                            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-                            <br>
-                            <span style="font-size: 0.8em; color: #999;">{{ post.date | date: "%B %d, %Y" }}</span>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </section>
-            </aside>
-
-            <div id="content" class="8u skel-cell-important">
-                <section>
-                    <header class="major">
-                        <h2>Group News</h2>
-                        <span class="byline">Latest updates, publications, and events</span>
-                    </header>
-
-                    {% for post in site.posts %}
-                        <article class="news-article">
-
-                            <span class="news-meta">
-                                <i class="fa fa-calendar"></i> {{ post.date | date: "%B %d, %Y" }}
-                            </span>
-
-                            <header>
-                                <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-                            </header>
-
-                            {% if post.image %}
-                            <div class="news-image-container">
-                                <a href="{{ post.url | relative_url }}">
-                                    <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
-                                </a>
-                            </div>
-                            {% endif %}
-
-                            <p>
-                                {{ post.excerpt | strip_html | truncatewords: 40 }}
-                            </p>
-
-                            <a href="{{ post.url | relative_url }}" class="button small">Read Full Story</a>
-
-                        </article>
-                    {% endfor %}
-
-                </section>
+            {% if site.posts.size == 0 %}
+            <div class="no-posts">
+                <h3>No news available</h3>
+                <p>Check back soon for updates from our research group.</p>
             </div>
-
+            {% endif %}
         </div>
     </div>
-</main>
-
+</section>

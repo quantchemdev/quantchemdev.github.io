@@ -2,7 +2,6 @@
 title: Research
 layout: main
 ---
-
 <style>
     /* This creates the horizontal list layout */
     .research-item {
@@ -14,13 +13,11 @@ layout: main
         text-decoration: none; /* removes underline from link */
         border-radius: 6px;
     }
-
     /* Hover effect to show it is clickable */
     .research-item:hover {
         background-color: #f9f9f9;
         padding-left: 10px; /* slight movement for effect */
     }
-
     /* The small image container */
     .research-image {
         flex: 0 0 80px; /* Fixed width for image */
@@ -30,21 +27,18 @@ layout: main
         border-radius: 50%; /* Makes image circular */
         border: 2px solid #8cc051; /* Green border to match your theme */
     }
-
     /* Ensures the image fills the circle nicely */
     .research-image img {
         width: 100%;
         height: 100%;
         object-fit: cover;
     }
-
     /* The text styling */
     .research-text h3 {
         margin: 0;
         color: #3b3b3b;
         font-size: 1.4em;
     }
-
     /* Optional: Style for description text if you add it later */
     .research-text p {
         margin: 0.2em 0 0 0;
@@ -52,34 +46,27 @@ layout: main
         color: #666;
     }
 </style>
-
 <div id="main" class="wrapper style1">
     <div class="container">
         <div class="row">
-
             <div id="content" class="8u skel-cell-important">
                 <section>
                     <header class="major">
                         <h2>Research fields</h2>
                         <span class="byline">Explore our group's main areas of focus</span>
                     </header>
-
                     <a href="{{ site.baseurl }}/researchs/aromaticity.html" class="research-item">
                         <div class="research-image">
-                            <img src="{{ site.baseurl }}/assets/images/Aroma2.png" alt="Aromaticity" />
+                            <img src="{{ site.baseurl }}/assets/images/Aroma2.png" alt="Aromaticity" loading="lazy" />
                         </div>
                         <div class="research-text">
                             <h3>Aromaticity</h3>
                             <p>Study of electron delocalization and stability in rings.</p>
                         </div>
                     </a>
-
                     </section>
             </div>
-
             {% include researchbar.html %}
-
         </div>
     </div>
 </div>
-
