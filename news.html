@@ -12,7 +12,18 @@ description: Latest news and updates from our research group
                 <a href="{{ site.baseurl }}{{ post.url }}" class="news-line-link">
                     {% if post.featured %}
                     <div class="news-image-big">
-                        <img src="{{ site.baseurl }}/assets/{{ post.featured }}" alt="{{ post.title }}" loading="lazy">
+                        <img src="{{ site.baseurl }}/assets/{{ post.featured }}" alt="{{ post.title | escape }}"
+                            width="400" height="300" loading="lazy" decoding="async" style="object-fit: cover;"
+                            onerror="this.style.display='none';">
+                        <div class="news-date-overlay">{{ post.date | date: "%B %d, %Y" }}</div>
+                    </div>
+                    {% else %}
+                    <!-- Fallback for posts without featured image -->
+                    <div class="news-image-big news-no-image">
+                        <div class="news-placeholder">
+                            <i class="fa fa-newspaper-o"></i>
+                            <span>{{ post.categories.first | default: "News" }}</span>
+                        </div>
                         <div class="news-date-overlay">{{ post.date | date: "%B %d, %Y" }}</div>
                     </div>
                     {% endif %}

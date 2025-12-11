@@ -3,82 +3,128 @@ title: Openings
 layout: main
 ---
 
-<!-- Main -->
+<style>
+    /* Styling for the job posts to make them look uniform */
+    .job-post {
+        margin-bottom: 4em;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 2em;
+    }
+
+    .job-post:last-child {
+        border-bottom: none;
+    }
+
+    /* Badges for Open/Closed status */
+    .status-badge {
+        display: inline-block;
+        padding: 0.2em 0.8em;
+        border-radius: 4px;
+        font-size: 0.8em;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        vertical-align: middle;
+        margin-left: 10px;
+    }
+
+    .status-open {
+        background-color: #e6f9ec; /* Light Green background */
+        color: #27ae60;            /* Dark Green text */
+        border: 1px solid #27ae60;
+    }
+
+    .status-closed {
+        background-color: #f0f0f0; /* Light Grey background */
+        color: #7f8c8d;            /* Grey text */
+        border: 1px solid #95a5a6;
+    }
+
+    /* Standardizing button placement */
+    .action-button {
+        margin-top: 1em;
+    }
+</style>
+
 <main id="main" class="wrapper style1">
     <div class="container">
         <div class="row">
 
-            <!-- Sidebar -->
             <aside id="sidebar" class="4u sidebar">
                 <section>
                     <header class="major">
-                        <h2>PhD Position</h2>
+                        <h2>Quick Links</h2>
                     </header>
                     <ul class="default">
-                        <li><a href="#phd-position">New PhD Position 2021 (Closed)</a></li>
-                    </ul>
-                </section>
-                <section>
-                    <header class="major">
-                        <h2>Postdoc Position</h2>
-                    </header>
-                    <ul class="default">
-                        <li><a href="#postdoc-position">Three-Year Postdoc Position (Closed)</a></li>
-                    </ul>
-                </section>
-                <section>
-                    <header class="major">
-                        <h2>DIPC Internship</h2>
-                    </header>
-                    <ul class="default">
-                        <li><a href="#internship-aromaticity-2022">Summer 2022 Internship (Closed)</a></li>
-                        <li><a href="#dipc-internship">DIPC Internship in Summer (Closed)</a></li>
-                    </ul>
-                </section>
-                <section>
-                    <header class="major">
-                        <h2>Bachelor/Master Thesis</h2>
-                    </header>
-                    <ul class="default">
-                        <li><a href="#bachelor-master-thesis">New Thesis Projects Available</a></li>
+                        <li><a href="#bachelor-master-thesis">Bachelor/Master Thesis</a></li>
+                        <li><a href="#internship-aromaticity-2022">Summer Internship (Closed)</a></li>
+                        <li><a href="#phd-position">PhD Positions (Closed)</a></li>
+                        <li><a href="#postdoc-position">Postdoc Positions (Closed)</a></li>
                     </ul>
                 </section>
             </aside>
 
-            <!-- Content -->
             <div id="content" class="8u skel-cell-important">
-                <section>
+
+                <section class="job-post">
                     <header class="major">
-                        <a id="bachelor-master-thesis"><h2>Bachelor/Master Thesis Projects</h2></a>
+                        <a id="bachelor-master-thesis"></a> <h2>
+                            Bachelor/Master Thesis Projects
+                            <span class="status-badge status-open">Closed</span>
+                        </h2>
                         <span class="byline">Posted on March 11, 2025</span>
                     </header>
-                    <p style="text-align: justify; font-size: 20px;"><strong>Join Our Research Group!</strong> We are offering two Bachelor/Master thesis projects at the cutting edge of Electron Correlation and Aromaticity:</p>
 
-                    <p style="text-align: justify; font-size: 20px;"><strong>Project 1:</strong> Understanding Electron Correlation in Excited States – Explore dynamic vs. nondynamic correlation and help develop new accurate methods for excited states.
-                    <a href="https://dipc.ehu.eus/en/career/bachelor-theses/research/copy_of_hyperbranched_polymer" target="_blank">Link</a></p>
+                    <p><strong>Join Our Research Group!</strong> We are offering two Bachelor/Master thesis projects at the cutting edge of Electron Correlation and Aromaticity. We are looking for motivated students in chemistry or physics eager to explore computational chemistry.</p>
 
-                    <p style="text-align: justify; font-size: 20px;"><strong>Project 2:</strong> Electron delocalization and aromaticity in excited states – Investigate ground and excited-state aromaticity using DFT and identify systems that defy classical aromaticity rules.
-                    <a href="https://dipc.ehu.eus/en/career/bachelor-theses/research/copy2_of_hyperbranched_polymer" target="_blank">Link</a></p>
-
-                    <p style="text-align: justify; font-size: 20px;">We are looking for motivated students in chemistry or physics eager to explore computational chemistry and advanced electronic structure methods.</p>
-
-                    <p style="text-align: justify; font-size: 20px;">If you are interested, please visit the links above and contact us!</p>
-                    <br>
-
-                    <header class="major">
-                        <a id="internship-aromaticity-2022"><h2>Summer 2022 Internship Position (Closed)</h2></a>
-                        <span class="byline">Posted on February 24, 2022 at 11:48 AM</span>
-                    </header>
-                    <p><strong>Project Title: Aromaticity and Magnetic Properties in Large Conjugated Rings</strong></p>
-                    <p>We offer a two-month summer internship at the Quantum Chemistry Development group to work on aromaticity. The call is open for applications until the end of March.</p>
-                    <p>The candidate will learn how to quantify aromaticity using computational chemistry, including concepts like electron delocalization, delocalization error, and the electronic and magnetic aspects of aromaticity.</p>
-                    <center><a href="{{ site.baseurl }}/offers/internship_summer_2020_position.pdf" class="button">Click here for details</a></center>
-                    <br>
+                    <ul class="default">
+                        <li>
+                            <strong>Project 1: Understanding Electron Correlation in Excited States</strong><br>
+                            Explore dynamic vs. nondynamic correlation and help develop new accurate methods for excited states.<br>
+                            <a href="https://dipc.ehu.eus/en/career/bachelor-theses/research/copy_of_hyperbranched_polymer" target="_blank" class="button small">View Project Details</a>
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Project 2: Electron Delocalization & Aromaticity</strong><br>
+                            Investigate ground and excited-state aromaticity using DFT and identify systems that defy classical aromaticity rules.<br>
+                            <a href="https://dipc.ehu.eus/en/career/bachelor-theses/research/copy2_of_hyperbranched_polymer" target="_blank" class="button small">View Project Details</a>
+                        </li>
+                    </ul>
                 </section>
+
+
+                <section class="job-post">
+                    <header class="major">
+                        <a id="internship-aromaticity-2022"></a> <h2>
+                            Summer 2022 Internship
+                            <span class="status-badge status-closed">Closed</span>
+                        </h2>
+                        <span class="byline">Posted on February 24, 2022</span>
+                    </header>
+
+                    <p><strong>Project Title: Aromaticity and Magnetic Properties in Large Conjugated Rings</strong></p>
+                    <p>We offer a two-month summer internship at the Quantum Chemistry Development group to work on aromaticity. The candidate will learn how to quantify aromaticity using computational chemistry, including concepts like electron delocalization and magnetic aspects of aromaticity.</p>
+
+                    <div class="action-button">
+                        <a href="{{ site.baseurl }}/offers/internship_summer_2020_position.pdf" class="button icon fa-file-pdf-o">Download Archived PDF</a>
+                    </div>
+                </section>
+
+                <section class="job-post">
+                    <header class="major">
+                        <a id="phd-position"></a>
+                        <h2>
+                            PhD Position 2021
+                            <span class="status-badge status-closed">Closed</span>
+                        </h2>
+                        <span class="byline">Posted in 2021</span>
+                    </header>
+                    <p>This position has been filled. Please check back later for future opportunities.</p>
+                </section>
+
             </div>
 
         </div>
     </div>
 </main>
-
 

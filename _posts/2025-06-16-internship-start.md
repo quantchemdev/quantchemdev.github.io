@@ -1,7 +1,7 @@
 ---
 title: Summer 2025 Internship Position
 subtitle: <b>March 11, 2025</b>
-featured: images/internship2025.png
+featured: images/internship2022.png
 layout: post
 ---
 <p style="text-align: justify; font-size: 20px;">

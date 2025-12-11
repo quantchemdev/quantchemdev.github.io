@@ -1030,3 +1030,48 @@ body {
 		font-size: 1.4rem;
 	}
 }
+
+/* Loading shimmer effect (optional) */
+.news-image-big img[loading="lazy"] {
+	background: #f0f0f0;
+	background-image: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+	background-size: 200% 100%;
+	animation: loading-shimmer 1.5s infinite;
+}
+
+@keyframes loading-shimmer {
+	0% {
+		background-position: -200% 0;
+	}
+
+	100% {
+		background-position: 200% 0;
+	}
+}
+
+/* Fallback for posts without images (optional) */
+.news-no-image {
+	background: linear-gradient(135deg, #8cc051, #7ab842);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.news-placeholder {
+	text-align: center;
+	color: white;
+	font-size: 1.2em;
+}
+
+.news-placeholder i {
+	display: block;
+	font-size: 3em;
+	margin-bottom: 0.5em;
+	opacity: 0.8;
+}
+
+/* Accessibility focus improvement (optional) */
+.news-line-link:focus {
+	outline: 3px solid #007acc;
+	outline-offset: 2px;
+}
