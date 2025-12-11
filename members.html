@@ -12,7 +12,7 @@ title: Members
                         <h1>Members</h1>
                     </header>
 <div class="members-page">
-  <img src="{{ site.url }}{{ site.baseurl }}/assets/member_photos/FotoGrupoDonostia-2025.jpg" alt="Group Photo">
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/member_photos/FotoGrupoDonostia-2025.jpg" alt="Group Photo" loading="lazy">
 
   <h2>Current Members</h2>
 
@@ -29,7 +29,7 @@ title: Members
   {% for member in group_leader %}
     <li>
       <a href="{{ site.url }}{{ site.baseurl }}{{ member.url }}">
-        <img src="{{ site.url }}{{ site.baseurl }}/assets/member_photos/{{ member.photo }}" alt="{{ member.name_surname}}">
+        <img src="{{ site.url }}{{ site.baseurl }}/assets/member_photos/{{ member.photo }}" alt="{{ member.name_surname}}" loading="lazy">
         {{ member.name_surname}}
       </a>
     </li>
@@ -41,7 +41,7 @@ title: Members
   {% for member in scientific_staff %}
     <li>
       <a href="{{ site.url }}{{ site.baseurl }}{{ member.url }}">
-        <img src="{{ site.url }}{{ site.baseurl }}/assets/member_photos/{{ member.photo }}" alt="{{ member.name_surname}}">
+        <img src="{{ site.url }}{{ site.baseurl }}/assets/member_photos/{{ member.photo }}" alt="{{ member.name_surname}}" loading="lazy">
         {{ member.name_surname}}
       </a>
     </li>
@@ -53,7 +53,7 @@ title: Members
   {% for member in postdocs %}
     <li>
       <a href="{{ site.url }}{{ site.baseurl }}{{ member.url }}">
-        <img src="{{ site.url }}{{ site.baseurl }}/assets/member_photos/{{ member.photo }}" alt="{{ member.name_surname}}">
+        <img src="{{ site.url }}{{ site.baseurl }}/assets/member_photos/{{ member.photo }}" alt="{{ member.name_surname}}" loading="lazy">
         {{ member.name_surname}}
       </a>
     </li>
@@ -65,7 +65,7 @@ title: Members
   {% for member in phd_students %}
     <li>
       <a href="{{ site.url }}{{ site.baseurl }}{{ member.url }}">
-        <img src="{{ site.url }}{{ site.baseurl }}/assets/member_photos/{{ member.photo }}" alt="{{ member.name_surname}}">
+        <img src="{{ site.url }}{{ site.baseurl }}/assets/member_photos/{{ member.photo }}" alt="{{ member.name_surname}}" loading="lazy">
         {{ member.name_surname}}
       </a>
     </li>
@@ -77,7 +77,7 @@ title: Members
   {% for member in masters_students %}
     <li>
       <a href="{{ site.url }}{{ site.baseurl }}{{ member.url }}">
-        <img src="{{ site.url }}{{ site.baseurl }}/assets/member_photos/{{ member.photo }}" alt="{{ member.name_surname}}">
+        <img src="{{ site.url }}{{ site.baseurl }}/assets/member_photos/{{ member.photo }}" alt="{{ member.name_surname}}" loading="lazy">
         {{ member.name_surname}}
       </a>
     </li>
@@ -89,7 +89,7 @@ title: Members
   {% for member in ex_members %}
     <li>
       <a href="{{ site.url }}{{ site.baseurl }}{{ member.url }}">
-        <img src="{{ site.url }}{{ site.baseurl }}/assets/member_photos/{{ member.photo }}" alt="{{ member.name_surname}}">
+        <img src="{{ site.url }}{{ site.baseurl }}/assets/member_photos/{{ member.photo }}" alt="{{ member.name_surname}}" loading="lazy">
         {{ member.name_surname}}
       </a>
     </li>

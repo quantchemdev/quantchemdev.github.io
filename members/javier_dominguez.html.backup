@@ -26,7 +26,7 @@ layout: main
 						<header class="major">
 		 			         <h2><font color="green">Javier Dominguez</font></h2>
                          </header>
-	    <a href="#" class="image feature"><img src="{{ site.baseurl }}/members/photos/javier.jpeg" alt="" style="width: 15vw; min-width: 60px;" / loading="lazy"></a>
+	    <a href="#" class="image feature"><img src="{{ site.baseurl }}/members/photos/javier.jpeg" alt="" style="width: 15vw; min-width: 60px;" /></a>
 	    <p>Contact: javier.dom.cal@gmail.com</p>
 	    <p><b>Education:</b></p>
       <p>2019: Master in Theoretical Chemistry and Computational Modeling, Spain.</p>

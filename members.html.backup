@@ -1,15 +1,23 @@
 ---
-layout: default
+layout: main
 title: Members
 ---
+<main id="main" class="wrapper style1">
+    <div class="container">
+        <div class="row">
+            <!-- Content -->
+            <div id="content" class="8u skel-cell-important">
+                <section>
+                    <header class="major">
+                        <h1>Members</h1>
+                    </header>
 <div class="members-page">
-  <h1>Members</h1>
-  <img src="{{ site.url }}{{ site.baseurl }}/assets/member_photos/group2022_06-22.jpg" alt="Group Photo" loading="lazy">
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/member_photos/FotoGrupoDonostia-2025.jpg" alt="Group Photo">
 
   <h2>Current Members</h2>
-  
+
   {% assign group_leader = site.members | where: "position", "Leader" %}
-  {% assign scientific_staff = site.members | where: "position", "Scientific staff" %}
+ <!-- {% assign scientific_staff = site.members | where: "position", "Scientific staff" %}-->
   {% assign postdocs = site.members | where: "position", "Postdoc" %}
   {% assign phd_students = site.members | where: "position", "PhD student" %}
   {% assign masters_students = site.members | where: "position", "Master student" %}
@@ -21,31 +29,31 @@ title: Members
   {% for member in group_leader %}
     <li>
       <a href="{{ site.url }}{{ site.baseurl }}{{ member.url }}">
-        <img src="{{ site.url }}{{ site.baseurl }}/assets/member_photos/{{ member.photo }}" alt="{{ member.name_surname}}" loading="lazy">
+        <img src="{{ site.url }}{{ site.baseurl }}/assets/member_photos/{{ member.photo }}" alt="{{ member.name_surname}}">
         {{ member.name_surname}}
       </a>
     </li>
   {% endfor %}
   </ul>
 
-  <h3>Scientific Staff</h3>
+<!--   <h3>Scientific Staff</h3>
   <ul class="scientific-staff">
   {% for member in scientific_staff %}
     <li>
       <a href="{{ site.url }}{{ site.baseurl }}{{ member.url }}">
-        <img src="{{ site.url }}{{ site.baseurl }}/assets/member_photos/{{ member.photo }}" alt="{{ member.name_surname}}" loading="lazy">
+        <img src="{{ site.url }}{{ site.baseurl }}/assets/member_photos/{{ member.photo }}" alt="{{ member.name_surname}}">
         {{ member.name_surname}}
       </a>
     </li>
   {% endfor %}
-  </ul>
+  </ul> -->
 
   <h3>Postdocs</h3>
   <ul class="postdoc">
   {% for member in postdocs %}
     <li>
       <a href="{{ site.url }}{{ site.baseurl }}{{ member.url }}">
-        <img src="{{ site.url }}{{ site.baseurl }}/assets/member_photos/{{ member.photo }}" alt="{{ member.name_surname}}" loading="lazy">
+        <img src="{{ site.url }}{{ site.baseurl }}/assets/member_photos/{{ member.photo }}" alt="{{ member.name_surname}}">
         {{ member.name_surname}}
       </a>
     </li>
@@ -57,7 +65,7 @@ title: Members
   {% for member in phd_students %}
     <li>
       <a href="{{ site.url }}{{ site.baseurl }}{{ member.url }}">
-        <img src="{{ site.url }}{{ site.baseurl }}/assets/member_photos/{{ member.photo }}" alt="{{ member.name_surname}}" loading="lazy">
+        <img src="{{ site.url }}{{ site.baseurl }}/assets/member_photos/{{ member.photo }}" alt="{{ member.name_surname}}">
         {{ member.name_surname}}
       </a>
     </li>
@@ -69,7 +77,7 @@ title: Members
   {% for member in masters_students %}
     <li>
       <a href="{{ site.url }}{{ site.baseurl }}{{ member.url }}">
-        <img src="{{ site.url }}{{ site.baseurl }}/assets/member_photos/{{ member.photo }}" alt="{{ member.name_surname}}" loading="lazy">
+        <img src="{{ site.url }}{{ site.baseurl }}/assets/member_photos/{{ member.photo }}" alt="{{ member.name_surname}}">
         {{ member.name_surname}}
       </a>
     </li>
@@ -81,7 +89,7 @@ title: Members
   {% for member in ex_members %}
     <li>
       <a href="{{ site.url }}{{ site.baseurl }}{{ member.url }}">
-        <img src="{{ site.url }}{{ site.baseurl }}/assets/member_photos/{{ member.photo }}" alt="{{ member.name_surname}}" loading="lazy">
+        <img src="{{ site.url }}{{ site.baseurl }}/assets/member_photos/{{ member.photo }}" alt="{{ member.name_surname}}">
         {{ member.name_surname}}
       </a>
     </li>
@@ -92,10 +100,13 @@ title: Members
   <ul class="visitor">
   {% for member in visitors %}
     <li class="visitor">
-      <a href="{{ site.url }}{{ site.baseurl }}{{ member.url }}">
         {{ member.name_surname}}
-      </a>
     </li>
   {% endfor %}
   </ul>
 </div>
+</section>
+</div>
+</div>
+</div>
+</main>

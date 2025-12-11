@@ -14,7 +14,7 @@ title: "{{ page.name_surname }}"
                         <h1>{{ page.name_surname }}</h1>
                     </header>
 <div class="member-profile">
-  <img src="{{ site.url }}{{ site.baseurl }}/assets/member_photos/{{ page.photo }}" alt="{{ page.name_surname }}" loading="lazy">
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/member_photos/{{ page.photo }}" alt="{{ page.name_surname }}">
   <p><strong>Position:</strong> {{ page.position }}</p>
   {% if page.email %}
   <p><strong>Email:</strong> <a href="mailto:{{ page.email }}">{{ page.email }}</a></p>

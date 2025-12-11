@@ -26,7 +26,7 @@ layout: main
           <header class="major">
             <h2><font color="green">Dr. Mesías Orozco-Ic</font></h2>
           </header>
-          <a href="#" class="image feature"><img src="{{ site.baseurl }}/members/photos/mesias_orozco.png" alt="Dr. Mesías Orozco-Ic" style="width: 15vw; min-width: 60px;" / loading="lazy"></a>
+          <a href="#" class="image feature"><img src="{{ site.baseurl }}/members/photos/mesias_orozco.png" alt="Dr. Mesías Orozco-Ic" style="width: 15vw; min-width: 60px;" /></a>
           <p>Contact: mesiorozco@gmail.com &emsp; &emsp;</p>
           <p><b>Postdoc Experience:</b></p>
           <p>2021-2023: University of Helsinki, Finland under the co-direction of Prof. Dage Sundholm.</p>
