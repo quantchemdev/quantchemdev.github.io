@@ -1,0 +1,59 @@
+// Form styles - Extracted from style.css
+// Maintains exact appearance and functionality
+
+// === INPUT ELEMENTS ===
+input[type="text"],
+input[type="password"], 
+input[type="email"],
+textarea {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -o-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  background: none;
+  border: solid 1px var(--color-text-muted, #888888);
+  color: inherit;
+  display: block;
+  outline: 0;
+  padding: 0.75em;
+  text-decoration: none;
+  width: 100%;
+  
+  &:focus {
+    border-color: var(--color-primary, #3ac984);
+  }
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  line-height: 1em;
+}
+
+// === PLACEHOLDER STYLES ===
+::-webkit-input-placeholder {
+  color: inherit;
+  opacity: 0.5;
+  position: relative;
+  top: 3px;
+}
+
+:-moz-placeholder {
+  color: inherit;
+  opacity: 0.5;
+}
+
+::-moz-placeholder {
+  color: inherit;
+  opacity: 0.5;
+}
+
+:-ms-input-placeholder {
+  color: inherit;
+  opacity: 0.5;
+}
+
+.formerize-placeholder {
+  color: rgba(85, 85, 85, 0.5) !important;
+}

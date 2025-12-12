@@ -1,0 +1,17 @@
+// Resources page (fixes resources.html inline styles)
+.resources-content {
+  p {
+    text-align: justify;
+    text-justify: inter-ideograph;
+    
+    font[color="#000000"] {
+      color: #000000 !important;
+    }
+  }
+  
+  a {
+    &.no-decoration {
+      text-decoration: none;
+    }
+  }
+}

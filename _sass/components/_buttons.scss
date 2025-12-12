@@ -1,0 +1,57 @@
+// Button styles - Consolidated from style.css and quick-fixes.css
+// Maintains exact appearance from current implementation
+
+// === BUTTON BASE STYLES ===
+.button {
+  display: inline-block;
+  background: var(--color-secondary, #2c3e50);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  
+  &:hover {
+    background: #34495e; // From quick-fixes.css
+    color: white;
+    text-decoration: none;
+  }
+  
+  // Primary button variant (from quick-fixes.css)
+  &.primary {
+    background: var(--color-secondary, #2c3e50);
+    
+    &:hover {
+      background: #34495e;
+    }
+  }
+  
+  // Learn more button variant
+  .learn-more {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// === FORM BUTTON STYLES ===
+// From style.css form handling
+.form-button-submit {
+  cursor: pointer;
+}
+
+// === BUTTON UTILITIES ===
+.text-center {
+  text-align: center;
+  margin-top: 1rem;
+}

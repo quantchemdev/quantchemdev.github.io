@@ -1,0 +1,9 @@
+// Components - All UI components imported here
+// Migrated from various CSS files while maintaining exact appearance
+
+@import 'components/buttons';      // Button styles from style.css + quick-fixes.css  
+@import 'components/cards';        // Card components from quick-fixes.css
+@import 'components/navigation';   // Navigation from style.css (works with dropotron)
+@import 'components/forms';        // Form styles from style.css
+@import 'components/pagination';   // Pagination from pagination.css
+@import 'components/filters';      // Filter functionality from filters.css

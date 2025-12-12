@@ -1,0 +1,90 @@
+// Navigation styles - Extracted from style.css
+// Maintains current navigation functionality and appearance
+
+// === MAIN NAVIGATION ===
+// The navigation is primarily handled by JavaScript (dropotron)
+// These styles support the current navigation structure
+
+#nav {
+  // Navigation styles will be migrated here
+  // Currently handled by external dropotron library
+  
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  li {
+    display: inline-block;
+    position: relative;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    padding: 0.5em 1em;
+    
+    &:hover {
+      color: var(--color-primary, #3ac984);
+    }
+  }
+}
+
+// === DROPDOWN STYLES ===
+// Supporting styles for dropotron dropdowns
+.dropotron {
+  // Dropdown menu styles
+  // These work with the existing JavaScript
+  background: white;
+  border: 1px solid var(--color-border, #cdcdcd);
+  box-shadow: var(--shadow-md, 0 4px 12px rgba(0,0,0,0.1));
+  
+  li {
+    display: block;
+    border-bottom: 1px solid var(--color-border-light, #e0e0e0);
+    
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  
+  a {
+    padding: 0.75em 1em;
+    
+    &:hover {
+      background: var(--color-background-alt, #f8f9fa);
+    }
+  }
+}
+
+// === MOBILE NAVIGATION ===
+// Mobile navigation styles for smaller screens
+@media (max-width: 736px) {
+  #nav {
+    // Mobile navigation adjustments
+    
+    ul {
+      flex-direction: column;
+    }
+    
+    li {
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+// === NAVIGATION UTILITIES ===
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  
+  @media (max-width: 736px) {
+    display: block;
+  }
+}
