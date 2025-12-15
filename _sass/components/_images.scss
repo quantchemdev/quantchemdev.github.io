@@ -1,0 +1,62 @@
+// ===================================================================
+// IMAGES
+// ===================================================================
+
+@use '../abstracts' as *;
+
+.image {
+    border: 0;
+    position: relative;
+    
+    &.fit {
+        display: block;
+        
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+    
+    &.feature {
+        display: block;
+        margin: 0 0 2em 0;
+        
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+}
+
+.news-image {
+    img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+    }
+}
+
+.gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 10px;
+    
+    img {
+        width: 100%;
+        max-width: 350px;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    
+    &::after {
+        content: "";
+        width: 350px;
+    }
+}

@@ -1,0 +1,82 @@
+// ===================================================================
+// FOOTER
+// ===================================================================
+
+@use '../abstracts' as *;
+
+#footer {
+    padding: 4em 0;
+    color: #fff;
+    
+    .major {
+        h2 {
+            font-size: 2em;
+            color: #FFF;
+        }
+        
+        .byline {
+            font-size: 1.1em;
+        }
+    }
+    
+    .copyright {
+        margin-top: 3em;
+        padding-top: 3em;
+        border-top: 1px solid rgba(192, 192, 192, 0.15);
+        text-align: center;
+        color: inherit;
+    }
+    
+    a {
+        color: inherit;
+    }
+    
+    // Footer improvements
+    .footer-grid {
+        @include flex-grid;
+        margin-bottom: 2rem;
+    }
+    
+    .footer-section {
+        flex: 1;
+        min-width: 300px;
+        padding: 0 15px;
+        margin-bottom: 2rem;
+        
+        h3 {
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    }
+    
+    .footer-map-image,
+    .footer-image {
+        margin-bottom: 1rem;
+        border-radius: $border-radius-sm;
+        overflow: hidden;
+    }
+    
+    .contact-details li {
+        margin-bottom: 1.2rem;
+        list-style: none;
+    }
+    
+    .footer-links li {
+        margin-bottom: 0.5rem;
+        list-style: none;
+    }
+    
+    .partner-logos {
+        margin-bottom: 1.5rem;
+    }
+    
+    .social-icons {
+        margin-bottom: 1rem;
+        
+        a {
+            margin: 0 10px;
+            font-size: 1.1rem;
+        }
+    }
+}

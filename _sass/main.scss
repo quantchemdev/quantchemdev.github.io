@@ -1,0 +1,67 @@
+// ===================================================================
+// MAIN SCSS - Stage 5: Modular Architecture with @use
+// Modern SCSS with organized, maintainable structure
+// ===================================================================
+
+// External dependencies first (must use @import for URLs)
+@use 'vendors/external';
+
+// Foundation: Variables, mixins, functions
+@use 'abstracts';
+
+// Base styles: resets, typography, elements
+@use 'base';
+
+// Layout: containers, grid, header, footer, navigation
+@use 'layout';
+
+// Components: buttons, forms, cards, etc.
+@use 'components';
+
+// Page-specific styles
+@use 'pages';
+
+// Utilities: helpers, animations
+@use 'utilities';
+
+// Responsive styles
+@include abstracts.responsive(tablet) {
+    .news-line-link {
+        gap: 2rem;
+        padding: abstracts.$spacing-lg-rem;
+    }
+    
+    .news-image-big {
+        min-width: 250px;
+        width: 250px;
+        height: 170px;
+    }
+}
+
+@include abstracts.responsive(mobile) {
+    .news-left .news-line-link,
+    .news-right .news-line-link {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    
+    .news-image-big {
+        min-width: auto;
+        width: 100%;
+        height: 200px;
+    }
+    
+    .news-title-enhanced {
+        font-size: 1.4rem;
+    }
+    
+    .research-card {
+        flex: 100%;
+    }
+    
+    .news-item,
+    .twitter-card {
+        flex: 100%;
+    }
+}
