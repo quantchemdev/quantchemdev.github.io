@@ -1,0 +1,162 @@
+// ===================================================================
+// LISTS & ICONS
+// ===================================================================
+
+@use '../abstracts' as *;
+
+.icon {
+    position: relative;
+    
+    &:before {
+        content: "";
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        font-family: FontAwesome;
+        font-style: normal;
+        font-weight: normal;
+        text-transform: none !important;
+    }
+    
+    > .label {
+        display: none;
+    }
+}
+
+ol.default {
+    list-style: decimal;
+    padding-left: 1.25em;
+    
+    li {
+        padding-left: 0.25em;
+    }
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    
+    &.default {
+        list-style: none;
+        
+        li {
+            display: block;
+            padding: 0.60em 0;
+            border-top: 1px solid rgba(192, 192, 192, 0.15);
+        }
+        
+        > :first-child {
+            padding-top: 0;
+            border-top: none;
+        }
+    }
+    
+    &.icons {
+        cursor: default;
+        
+        li {
+            display: inline-block;
+            line-height: 1em;
+            padding-left: 0.5em;
+            
+            &:first-child {
+                padding-left: 0;
+            }
+        }
+    }
+    
+    &.actions {
+        cursor: default;
+        
+        &:last-child {
+            margin-bottom: 0;
+        }
+        
+        li {
+            display: inline-block;
+            padding: 0 0 0 1.5em;
+            
+            &:first-child {
+                padding: 0;
+            }
+        }
+        
+        &.vertical li {
+            display: block;
+            padding: 1.5em 0 0 0;
+            
+            &:first-child {
+                padding: 0;
+            }
+        }
+    }
+    
+    &.contact li {
+        padding: 1.05em 0;
+        border-top: 1px solid rgba(192, 192, 192, 0.15);
+        
+        > span {
+            display: inline-block;
+        }
+        
+        .address, .mail, .phone {
+            float: left;
+            width: 100px;
+            font-weight: 600;
+        }
+    }
+    
+    &.contact > :first-child {
+        padding-top: 0;
+        border-top: none;
+    }
+    
+    &.style {
+        li {
+            clear: both;
+            display: block;
+            padding-top: 3em;
+        }
+        
+        > :first-child {
+            padding-top: 0;
+        }
+        
+        h3 {
+            display: block;
+            margin: 0;
+            padding-bottom: 0.50em;
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #404040;
+        }
+        
+        .fa {
+            float: left;
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            margin-right: 1em;
+            background: $color-primary;
+            line-height: 80px;
+            text-align: center;
+            border-radius: 10px;
+            font-size: 2em;
+            color: white;
+        }
+    }
+    
+    &.list {
+        list-style: none;
+        
+        li {
+            display: block;
+            padding: 0.60em 0;
+            border-top: 1px solid red;
+        }
+        
+        > :first-child {
+            padding-top: 0;
+            border-top: none;
+        }
+    }
+}

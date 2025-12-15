@@ -1,0 +1,31 @@
+// ===================================================================
+// VARIABLES - Design tokens and configuration
+// ===================================================================
+
+// Colors
+$color-primary: #3ac984 !default;
+$color-secondary: #2c3e50 !default;
+$color-secondary-hover: #34495e !default;
+$color-background-dark: #222833 !default;
+$color-text: #555555 !default;
+$color-white: #ffffff !default;
+$color-border: #888888 !default;
+$color-link: #3498db !default;
+
+// Typography
+$font-family: 'Raleway', sans-serif !default;
+
+// Spacing
+$spacing-md: 2rem !default;
+$spacing-lg-rem: 1.5rem !default;
+
+// Border radius
+$border-radius-sm: 4px !default;
+$border-radius-md: 6px !default;
+
+// Shadows
+$shadow-light: 0 3px 10px rgba(0, 0, 0, 0.1) !default;
+$shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.08) !default;
+
+// Transitions
+$transition-medium: 0.3s !default;

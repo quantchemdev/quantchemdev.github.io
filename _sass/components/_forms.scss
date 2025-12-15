@@ -1,0 +1,41 @@
+// ===================================================================
+// FORMS
+// ===================================================================
+
+@use '../abstracts' as *;
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea {
+    @include appearance-none;
+    background: none;
+    border: solid 1px $color-border;
+    color: inherit;
+    display: block;
+    outline: 0;
+    padding: 0.75em;
+    text-decoration: none;
+    width: 100%;
+    
+    &:focus {
+        border-color: $color-primary;
+    }
+    
+    @include placeholder {
+        color: inherit;
+        opacity: 0.5;
+        position: relative;
+        top: 3px;
+    }
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    line-height: 1em;
+}
+
+.formerize-placeholder {
+    color: rgba(85, 85, 85, 0.5) !important;
+}

@@ -1,33 +1,23 @@
-# ===================================================================
-# QUANTUM CHEMISTRY DEVELOPMENT GROUP - WEBSITE CONFIGURATION
-# Optimized for performance and maintainability
-# ===================================================================
-
-# === SITE SETTINGS ===
+# Site settings
 name: Quantum Chemistry Development Group
 description: Website for the Quantum Chemistry Development Group at DIPC
-url: "https://quantchemdev.github.io"
-baseurl: ""
-
-# Author information
 author:
   name: Quantum Chemistry Development Group
   email: quantchemdev@gmail.com
   url: "https://quantchemdev.github.io"
+  baseurl: "/"
 
-# === SOCIAL MEDIA & REPOSITORY LINKS ===
+# Social media and repository links
 github: https://github.com/quantchemdev
 twitter: https://twitter.com/DonostiaChemDev
 
-# === BUILD SETTINGS ===
+# Build settings
 markdown: kramdown
-
-# SCSS Configuration (Updated for new architecture)
 sass:
-  sass_dir: _sass          # Standard Jekyll convention
-  style: compressed        # Minified for production
+  sass_dir: assets/css
+  style: compressed
 
-# === COLLECTIONS ===
+# Collections
 collections:
   members:
     output: true
@@ -36,12 +26,11 @@ collections:
     output: true
     permalink: /publications/:path/
 
-# === PLUGINS (Only the ones you already have) ===
+# Pagination
 plugins:
   - jekyll-paginate-v2
   - jekyll-sitemap
 
-# === PAGINATION SETTINGS ===
 pagination:
   enabled: true
   per_page: 5
@@ -51,7 +40,7 @@ pagination:
   sort_field: "date"
   sort_reverse: true
 
-# Auto-generated pages
+# Publication pagination
 autopages:
   enabled: true
   collections:
@@ -64,7 +53,7 @@ autopages:
     enabled: true
     permalink: "/category/:cat/page/:num/"
 
-# === DEFAULT FRONT MATTER ===
+# Default front matter
 defaults:
   - scope:
       path: ""
@@ -85,17 +74,3 @@ defaults:
       path: ""
     values:
       layout: "default"
-
-# === PERFORMANCE SETTINGS ===
-# Exclude files from processing
-exclude:
-  - README.md
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor
-  - .sass-cache
-  - .jekyll-cache
-  - gemfiles
-  - _scripts/
-  - "*.backup"
