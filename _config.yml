@@ -24,7 +24,7 @@ markdown: kramdown
 
 # SCSS Configuration (Updated for new architecture)
 sass:
-  sass_dir: _sass          # Standard Jekyll convention
+  sass_dir: assets/css          # Standard Jekyll convention
   style: compressed        # Minified for production
 
 # === COLLECTIONS ===
