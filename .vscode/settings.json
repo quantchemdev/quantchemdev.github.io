@@ -1,0 +1,10 @@
+{
+  "liquid.format.enable": true,
+  "files.associations": {
+    "*.html": "liquid-html"
+  },
+  "emmet.includeLanguages": {
+    "liquid": "html"
+  },
+  "jekyll.autoStartPreview": true
+}

@@ -10,7 +10,7 @@
 						{% for post in site.posts offset: 0 limit: 2 %}
 							<div class="6u">
 								<section class="box">
-									    <a href="#" class="image featured"><img src="{{ site.baseurl }}{{ post.featured }}" alt="" /></a>
+									    <a href="#" class="image featured"><img src="{{ site.baseurl }}{{ post.featured }}" alt="" / loading="lazy"></a>
 										
 									<header>
 										<h3>{{ post.title }}</h3>
