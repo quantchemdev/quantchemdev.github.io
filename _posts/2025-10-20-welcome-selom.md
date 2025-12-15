@@ -9,11 +9,11 @@ layout: post
 </p>
 
 <p style="text-align: justify; font-size: 20px;">
-    Selom will be working on the topic: **Prediction of Linear and Nonlinear Optical Properties of Organic Chromophores through Structural and Electronic Descriptors.**
+    Selom will be working on the topic: <b>Prediction of Linear and Nonlinear Optical Properties of Organic Chromophores through Structural and Electronic Descriptors.</b>
 </p>
 
 <p style="text-align: justify; font-size: 20px;">
-    This project is a **Joint PhD thesis** between the **Donostia International Physics Center (DIPC)**, supervised by Dr. Eduard Matito, and the **Institut des Sciences Moléculaires (ISM)** of the University of Bordeaux, supervised by Dr. Frédéric Castet.
+    This project is a <b>Joint PhD thesis</b> between the <b>Donostia International Physics Center (DIPC)</b>, supervised by Dr. Eduard Matito, and the <b>Institut des Sciences Moléculaires (ISM)</b> of the University of Bordeaux, supervised by Dr. Frédéric Castet.
 </p>
 
 <p style="text-align: justify; font-size: 20px;">
