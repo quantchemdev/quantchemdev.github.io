@@ -5,7 +5,7 @@ featured: images/soci-rick.jpeg
 layout: post
 ---
 <p style="text-align: justify; font-size: 20px;">
-    These few months, MSc Valerii Chuiko has visited our group. He is a current PhD student workin in the group of Dr. Paul W. Ayers.
+    These few months, MSc Valerii Chuiko has visited our group. He is a current PhD student working in the group of Dr. Paul W. Ayers (McMaster University, Hamilton, ON, Canada).
 </p>
 
 <p style="text-align: justify; font-size: 20px;">
