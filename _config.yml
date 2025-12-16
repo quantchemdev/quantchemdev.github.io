@@ -25,30 +25,8 @@ collections:
 
 # Pagination
 plugins:
-  - jekyll-paginate-v2
   - jekyll-sitemap
 
-pagination:
-  enabled: true
-  per_page: 5
-  permalink: "/page/:num/"
-  title: " - page :num"
-  limit: 0
-  sort_field: "date"
-  sort_reverse: true
-
-# Publication pagination
-autopages:
-  enabled: true
-  collections:
-    enabled: true
-    permalink: "/collection/:coll/page/:num/"
-  tags:
-    enabled: true
-    permalink: "/tag/:tag/page/:num/"
-  categories:
-    enabled: true
-    permalink: "/category/:cat/page/:num/"
 
 # Default front matter
 defaults:
