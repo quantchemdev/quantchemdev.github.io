@@ -22,9 +22,6 @@ collections:
   members:
     output: true
     permalink: /members/:path/
-  publications:
-    output: true
-    permalink: /publications/:path/
 
 # Pagination
 plugins:
@@ -65,11 +62,6 @@ defaults:
       type: "members"
     values:
       layout: "member"
-  - scope:
-      path: ""
-      type: "publications"
-    values:
-      layout: "publication"
   - scope:
       path: ""
     values:
