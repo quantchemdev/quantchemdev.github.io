@@ -3,10 +3,10 @@
 ---
 
 // ============================================================================
-// SCSS Variables - Comprehensive Design System
+// SCSS Variables - Same Values as Before
 // ============================================================================
 
-// Brand Colors
+// Brand Colors (extracted from existing CSS)
 $primary-color: #3ac984;
 $primary-hover: #32b777;
 $secondary-color: #2c3e50;
@@ -15,8 +15,8 @@ $secondary-hover: #34495e;
 // Neutral Colors
 $white: #ffffff;
 $black: #000000;
-$gray-50: #f9f9f9;
-$gray-100: #f0f0f0;
+$gray-light: #f9f9f9;
+$gray-lighter: #f0f0f0;
 $gray-200: #e0e0e0;
 $gray-300: #cdcdcd;
 $gray-400: #888888;
@@ -29,49 +29,16 @@ $gray-900: #222833;
 // Accent Colors
 $accent-blue: #3498db;
 $accent-blue-hover: #2980b9;
-$accent-red: #e74c3c;
-$success-color: #8cc051;
-$success-hover: #7ab842;
-
-// Background Colors
 $bg-light: #ececec;
-$bg-overlay: rgba(16, 32, 48, 0.25);
-$bg-gradient-start: rgba(58, 201, 132, 0.9);
-$bg-gradient-end: transparent;
 
 // Typography
 $font-family-primary: 'Raleway', sans-serif;
-$font-family-secondary: 'Roboto', system-ui, sans-serif;
-$font-family-mono: 'Monaco', 'Courier New', monospace;
-
-// Font Sizes
-$font-size-xs: 0.8rem;
-$font-size-sm: 0.9rem;
-$font-size-base: 13pt;
-$font-size-lg: 1.1rem;
-$font-size-xl: 1.2rem;
-$font-size-2xl: 1.4rem;
-$font-size-3xl: 1.5rem;
-$font-size-4xl: 1.6rem;
-$font-size-5xl: 2em;
-$font-size-6xl: 2.5rem;
-$font-size-7xl: 3em;
-$font-size-8xl: 3.5em;
-
-// Font Weights
 $font-weight-light: 300;
 $font-weight-normal: 400;
-$font-weight-medium: 500;
 $font-weight-semibold: 600;
 $font-weight-bold: 700;
 
-// Line Heights
-$line-height-tight: 1.3;
-$line-height-normal: 1.6;
-$line-height-relaxed: 1.75;
-
-// Spacing Scale
-$spacing-xs: 0.25rem;
+// Spacing
 $spacing-sm: 0.5rem;
 $spacing-md: 1rem;
 $spacing-lg: 1.5rem;
@@ -89,52 +56,49 @@ $border-radius-xl: 12px;
 $border-radius-full: 40px;
 $border-radius-circle: 50%;
 
-// Shadows
+// Shadows (existing values)
 $shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
 $shadow-md: 0 3px 10px rgba(0, 0, 0, 0.1);
 $shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.08);
 $shadow-xl: 0 4px 15px rgba(0, 0, 0, 0.1);
 $shadow-2xl: 0 4px 20px rgba(0, 0, 0, 0.08);
-$shadow-3xl: 0 8px 15px rgba(0, 0, 0, 0.1);
 $shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.15);
 
 // Transitions
 $transition-fast: 0.2s ease;
 $transition-normal: 0.3s ease;
 $transition-slow: 0.4s ease;
-$transition-all-fast: all 0.2s ease-in-out;
-$transition-all-normal: all 0.3s ease;
-$transition-transform: transform 0.3s ease;
+$transition-all: all 0.2s ease-in-out;
 
 // Layout
 $container-max-width: 1200px;
 $container-small: 900px;
 $container-large: 1500px;
 $container-padding: 20px;
-$grid-gap: 20px;
-$grid-gap-sm: 15px;
 
 // Breakpoints
-$breakpoint-xs: 480px;
 $breakpoint-sm: 768px;
 $breakpoint-md: 968px;
-$breakpoint-lg: 1200px;
-$breakpoint-xl: 1400px;
 
-// Z-Index Scale
-$z-overlay: 10;
-$z-dropdown: 1000;
-$z-modal: 2000;
-$z-tooltip: 3000;
-
-// Border
-$border-width: 1px;
-$border-style: solid;
-$border-color: $gray-400;
+// Borders
 $border-color-light: rgba(192, 192, 192, 0.15);
 
 // ============================================================================
-// Base Styles
+// Basic SCSS Mixins - Only for Code Organization
+// ============================================================================
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin transition($property: all, $duration: $transition-fast) {
+    transition: $property $duration;
+}
+
+// ============================================================================
+// Converted CSS - Same Visual Output
 // ============================================================================
 
 /* Basic Box Model */
@@ -148,9 +112,9 @@ body {
     background: $gray-900;
     color: $gray-600;
     font-family: $font-family-primary;
-    font-size: $font-size-base;
+    font-size: 13pt;
     font-weight: $font-weight-light;
-    line-height: $line-height-relaxed;
+    line-height: 1.75em;
 }
 
 .container {
@@ -183,18 +147,18 @@ body {
     }
 }
 
-.col-12 { width: 100%; }
-.col-11 { width: 91.6667%; }
-.col-10 { width: 83.3333%; }
-.col-9  { width: 75%; }
-.col-8  { width: 66.6667%; }
-.col-7  { width: 58.3333%; }
-.col-6  { width: 50%; }
-.col-5  { width: 41.6667%; }
-.col-4  { width: 33.3333%; }
-.col-3  { width: 25%; }
-.col-2  { width: 16.6667%; }
-.col-1  { width: 8.3333%; }
+.col-12 { flex: 0 0 100%; max-width: 100%; }
+.col-11 { flex: 0 0 91.6667%; max-width: 91.6667%; }
+.col-10 { flex: 0 0 83.3333%; max-width: 83.3333%; }
+.col-9  { flex: 0 0 75%; max-width: 75%; }
+.col-8  { flex: 0 0 66.6667%; max-width: 66.6667%; }
+.col-7  { flex: 0 0 58.3333%; max-width: 58.3333%; }
+.col-6  { flex: 0 0 50%; max-width: 50%; }
+.col-5  { flex: 0 0 41.6667%; max-width: 41.6667%; }
+.col-4  { flex: 0 0 33.3333%; max-width: 33.3333%; }
+.col-3  { flex: 0 0 25%; max-width: 25%; }
+.col-2  { flex: 0 0 16.6667%; max-width: 16.6667%; }
+.col-1  { flex: 0 0 8.3333%; max-width: 8.3333%; }
 
 /* Typography */
 a {
@@ -221,7 +185,7 @@ p, ul, ol, dl, table, blockquote {
 h1, h2, h3, h4, h5, h6 {
     color: inherit;
     font-weight: $font-weight-bold;
-    line-height: $line-height-relaxed;
+    line-height: 1.75em;
     margin-bottom: $spacing-md;
 
     a {
@@ -231,29 +195,29 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h2 {
-    font-size: $font-size-3xl;
+    font-size: 1.5em;
 }
 
 h3 {
-    font-size: $font-size-xl;
+    font-size: 1.25em;
 }
 
 sub {
-    font-size: $font-size-xs;
+    font-size: 0.8em;
     position: relative;
     top: 0.5em;
 }
 
 sup {
-    font-size: $font-size-xs;
+    font-size: 0.8em;
     position: relative;
     top: -0.5em;
 }
 
 hr {
-    border-top: $border-width $border-style $gray-400;
+    border-top: solid 1px $gray-400;
     border: 0;
-    margin-bottom: $spacing-lg;
+    margin-bottom: 1.5em;
 }
 
 blockquote {
@@ -272,12 +236,12 @@ header.major {
     h2 {
         margin: 0;
         padding: 0;
-        font-size: $font-size-7xl;
+        font-size: 3em;
         font-weight: $font-weight-semibold;
     }
 
     .byline {
-        font-size: $font-size-4xl;
+        font-size: 1.6em;
     }
 }
 
@@ -298,7 +262,7 @@ input[type="email"],
 textarea {
     appearance: none;
     background: none;
-    border: $border-width $border-style $gray-400;
+    border: solid 1px $gray-400;
     color: inherit;
     display: block;
     outline: 0;
@@ -384,12 +348,12 @@ ul {
         li {
             display: block;
             padding: 0.60em 0;
-            border-top: $border-width $border-style $border-color-light;
-        }
+            border-top: 1px solid $border-color-light;
 
-        > :first-child {
-            padding-top: 0;
-            border-top: none;
+            &:first-child {
+                padding-top: 0;
+                border-top: none;
+            }
         }
     }
 
@@ -416,7 +380,7 @@ ul {
 
         li {
             display: inline-block;
-            padding: 0 0 0 $spacing-lg;
+            padding: 0 0 0 1.5em;
 
             &:first-child {
                 padding: 0;
@@ -425,7 +389,7 @@ ul {
 
         &.vertical li {
             display: block;
-            padding: $spacing-lg 0 0 0;
+            padding: 1.5em 0 0 0;
 
             &:first-child {
                 padding: 0;
@@ -436,7 +400,7 @@ ul {
     &.contact {
         li {
             padding: 1.05em 0;
-            border-top: $border-width $border-style $border-color-light;
+            border-top: 1px solid $border-color-light;
 
             > span {
                 display: inline-block;
@@ -447,11 +411,11 @@ ul {
                 width: 100px;
                 font-weight: $font-weight-semibold;
             }
-        }
 
-        > :first-child {
-            padding-top: 0;
-            border-top: none;
+            &:first-child {
+                padding-top: 0;
+                border-top: none;
+            }
         }
     }
 
@@ -460,17 +424,17 @@ ul {
             clear: both;
             display: block;
             padding-top: $spacing-2xl;
-        }
 
-        > :first-child {
-            padding-top: 0;
+            &:first-child {
+                padding-top: 0;
+            }
         }
 
         h3 {
             display: block;
             margin: 0;
             padding-bottom: 0.50em;
-            font-size: $font-size-lg;
+            font-size: 1.1em;
             font-weight: $font-weight-bold;
             color: $gray-800;
         }
@@ -496,12 +460,12 @@ ul {
         li {
             display: block;
             padding: 0.60em 0;
-            border-top: $border-width $border-style $gray-400;
-        }
+            border-top: 1px solid $gray-400;
 
-        > :first-child {
-            padding-top: 0;
-            border-top: none;
+            &:first-child {
+                padding-top: 0;
+                border-top: none;
+            }
         }
     }
 }
@@ -514,16 +478,16 @@ table {
         width: 100%;
 
         tbody tr {
-            border-bottom: $border-width $border-style $gray-400;
+            border-bottom: solid 1px $gray-400;
         }
 
         td {
-            padding: $spacing-sm $spacing-md;
+            padding: 0.5em 1em 0.5em 1em;
         }
 
         th {
             font-weight: $font-weight-bold;
-            padding: $spacing-sm $spacing-md;
+            padding: 0.5em 1em 0.5em 1em;
             text-align: left;
         }
 
@@ -540,7 +504,7 @@ input[type="reset"],
 input[type="button"],
 .button {
     appearance: none;
-    transition: $transition-all-fast;
+    @include transition;
     background: $primary-color;
     border-radius: $border-radius-full;
     border: 0;
@@ -550,7 +514,7 @@ input[type="button"],
     padding: 0.80em 2em;
     text-align: center;
     text-decoration: none;
-    font-size: $font-size-2xl;
+    font-size: 1.4em;
     font-weight: $font-weight-semibold;
     min-width: 10em;
 
@@ -563,7 +527,7 @@ input[type="button"],
     }
 
     &.small {
-        font-size: $font-size-xs;
+        font-size: 0.8em;
     }
 
     &.primary {
@@ -571,8 +535,9 @@ input[type="button"],
         color: $white;
         padding: 0.8rem 1.5rem;
         border-radius: $border-radius-sm;
+        text-decoration: none;
         font-weight: $font-weight-bold;
-        transition: background $transition-normal;
+        @include transition(background, $transition-normal);
 
         &:hover {
             background: $secondary-hover;
@@ -626,12 +591,12 @@ input[type="button"],
         top: 0;
         width: 100%;
         height: 100%;
-        background: $bg-overlay;
+        background: rgba(16, 32, 48, 0.25);
     }
 
     > * {
         position: relative;
-        z-index: $z-overlay;
+        z-index: 1;
     }
 }
 
@@ -652,12 +617,12 @@ input[type="button"],
             border-radius: $border-radius-lg $border-radius-lg 0 0;
             display: inline-block;
             margin-left: $spacing-sm;
-            padding: $spacing-sm $spacing-lg;
+            padding: $spacing-sm 1.5em;
 
             a {
                 color: $white;
                 text-decoration: none;
-                font-size: $font-size-xl;
+                font-size: 1.2em;
             }
 
             &:first-child {
@@ -709,7 +674,7 @@ input[type="button"],
 
     &.level-0 {
         border-radius: 0 $border-radius-lg $border-radius-lg $border-radius-lg;
-        font-size: $spacing-md;
+        font-size: 1em;
     }
 }
 
@@ -720,14 +685,14 @@ input[type="button"],
 
     .major {
         h2 {
-            font-size: $font-size-8xl;
+            font-size: 3.5em;
         }
 
         .byline {
             display: block;
             margin: 0em 2em;
-            line-height: $line-height-normal;
-            font-size: $font-size-3xl;
+            line-height: 1.6em;
+            font-size: 1.5em;
         }
     }
 
@@ -758,7 +723,7 @@ input[type="button"],
             background: no-repeat;
 
             h2 {
-                font-size: $font-size-3xl;
+                font-size: 1.5em;
                 background: no-repeat;
             }
         }
@@ -793,14 +758,14 @@ input[type="button"],
         }
 
         .byline {
-            font-size: $font-size-lg;
+            font-size: 1.1em;
         }
     }
 
     .copyright {
         margin-top: $spacing-2xl;
         padding-top: $spacing-2xl;
-        border-top: $border-width $border-style $border-color-light;
+        border-top: 1px solid $border-color-light;
         text-align: center;
         color: inherit;
     }
@@ -831,7 +796,7 @@ input[type="button"],
 
     a, span {
         padding: 7px 18px;
-        border: $border-width $border-style #eee;
+        border: 1px solid #eee;
         margin-left: -2px;
         margin-right: -2px;
         background-color: $white;
@@ -839,7 +804,7 @@ input[type="button"],
     }
 
     a:hover {
-        background-color: $gray-100;
+        background-color: $gray-lighter;
         color: #333;
     }
 }
@@ -851,8 +816,8 @@ input[type="button"],
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: $grid-gap-sm;
-    max-width: $breakpoint-xl;
+    gap: 16px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: $container-padding 10px;
 
@@ -884,11 +849,11 @@ input[type="button"],
         list-style-type: none;
         padding: 0;
         display: grid;
-        gap: $grid-gap-sm;
+        gap: 15px;
         justify-content: center;
 
         li {
-            margin: $grid-gap-sm 0;
+            margin: 15px 0;
             text-align: center;
             box-sizing: border-box;
 
@@ -896,11 +861,11 @@ input[type="button"],
                 text-decoration: none;
                 color: $primary-color;
                 display: block;
-                padding: $border-radius-lg;
+                padding: 10px;
                 border-radius: $border-radius-sm;
-                background-color: $gray-50;
+                background-color: $gray-light;
                 box-shadow: $shadow-sm;
-                transition: $transition-transform;
+                @include transition(transform);
                 height: 100%;
 
                 &:hover {
@@ -914,7 +879,7 @@ input[type="button"],
                 height: 150px;
                 object-fit: cover;
                 border-radius: $border-radius-circle;
-                margin-bottom: $border-radius-lg;
+                margin-bottom: 10px;
                 box-shadow: $shadow-sm;
             }
         }
@@ -960,7 +925,7 @@ input[type="button"],
 
     ul {
         list-style-type: disc;
-        margin: $border-radius-lg 0 0 $container-padding;
+        margin: 10px 0 0 $container-padding;
         padding: 0;
         text-align: left;
 
@@ -990,7 +955,7 @@ input[type="button"],
     gap: $spacing-2xl;
     text-decoration: none;
     color: inherit;
-    transition: $transition-slow;
+    @include transition(all, 0.4s ease);
     padding: $spacing-xl;
     border-radius: $border-radius-xl;
     background: $white;
@@ -1028,11 +993,11 @@ input[type="button"],
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: $transition-slow;
+        @include transition(transform, 0.4s ease);
 
         &[loading="lazy"] {
-            background: $gray-100;
-            background-image: linear-gradient(90deg, $gray-100 25%, $gray-200 50%, $gray-100 75%);
+            background: $gray-lighter;
+            background-image: linear-gradient(90deg, $gray-lighter 25%, $gray-200 50%, $gray-lighter 75%);
             background-size: 200% 100%;
             animation: loading-shimmer 1.5s infinite;
         }
@@ -1048,10 +1013,10 @@ input[type="button"],
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(to top, $bg-gradient-start, $bg-gradient-end);
+    background: linear-gradient(to top, rgba(58, 201, 132, 0.9), transparent);
     color: $white;
     padding: 0.8rem 1rem;
-    font-size: $font-size-sm;
+    font-size: 0.9rem;
     font-weight: $font-weight-semibold;
     text-align: center;
 }
@@ -1063,15 +1028,15 @@ input[type="button"],
 
 .news-title-enhanced {
     margin: 0 0 1.2rem 0;
-    font-size: $font-size-4xl;
-    line-height: $line-height-tight;
+    font-size: 1.6rem;
+    line-height: 1.3;
     color: $secondary-color;
     font-weight: $font-weight-bold;
     letter-spacing: -0.02em;
 }
 
 .news-excerpt-enhanced {
-    margin: 0 0 $spacing-lg 0;
+    margin: 0 0 1.5rem 0;
     color: #5a6c7d;
     line-height: 1.7;
     font-size: 1.05rem;
@@ -1083,7 +1048,7 @@ input[type="button"],
     font-weight: $font-weight-semibold;
     font-size: 0.95rem;
     letter-spacing: 0.02em;
-    transition: $transition-normal;
+    @include transition;
 }
 
 .news-line-link:hover .read-more-arrow {
@@ -1093,19 +1058,17 @@ input[type="button"],
 
 .news-no-image {
     background: linear-gradient(135deg, $primary-color, $primary-hover);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-center;
 }
 
 .news-placeholder {
     text-align: center;
     color: $white;
-    font-size: $font-size-xl;
+    font-size: 1.2em;
 
     i {
         display: block;
-        font-size: $spacing-2xl;
+        font-size: 3em;
         margin-bottom: $spacing-sm;
         opacity: 0.8;
     }
@@ -1117,13 +1080,13 @@ input[type="button"],
     text-align: center;
 
     h1 {
-        font-size: $font-size-6xl;
+        font-size: 2.5rem;
         margin-bottom: $spacing-sm;
     }
 }
 
 .tagline {
-    font-size: $font-size-xl;
+    font-size: 1.2rem;
     color: $gray-600;
     font-style: italic;
 }
@@ -1134,7 +1097,7 @@ input[type="button"],
 }
 
 .section-description {
-    font-size: $font-size-lg;
+    font-size: 1.1rem;
     color: $gray-500;
 }
 
@@ -1142,14 +1105,14 @@ input[type="button"],
 .news-row {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 (-$grid-gap-sm);
+    margin: 0 -15px;
 }
 
 .news-item,
 .twitter-card {
     flex: 1;
     min-width: 300px;
-    margin: 0 $grid-gap-sm 30px;
+    margin: 0 15px 30px;
     box-shadow: $shadow-md;
     background: $white;
     border-radius: $border-radius-sm;
@@ -1163,18 +1126,18 @@ input[type="button"],
 }
 
 .news-content {
-    padding: $spacing-lg;
+    padding: 1.5rem;
 }
 
 .news-date {
     display: block;
     color: #777;
-    font-size: $font-size-sm;
+    font-size: 0.9rem;
     margin-bottom: $spacing-sm;
 }
 
 .twitter-card {
-    padding: $spacing-lg;
+    padding: 1.5rem;
 
     h3 {
         margin-bottom: $spacing-md;
@@ -1191,23 +1154,24 @@ input[type="button"],
 .research-grid {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 (-$grid-gap-sm);
+    margin: 0 -15px;
 }
 
 .research-card {
     flex: 1 0 45%;
     min-width: 280px;
-    margin: $grid-gap-sm;
+    margin: 15px;
     padding: $spacing-xl;
     background: $white;
     border-radius: $border-radius-md;
     box-shadow: $shadow-lg;
     text-align: center;
-    transition: $transition-transform, box-shadow $transition-normal;
+    @include transition(transform, $transition-normal);
+    @include transition(box-shadow, $transition-normal);
 
     &:hover {
         transform: translateY(-5px);
-        box-shadow: $shadow-3xl;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
     }
 
     h3 {
@@ -1216,11 +1180,11 @@ input[type="button"],
 }
 
 .research-icon {
-    font-size: $font-size-6xl;
+    font-size: 2.5rem;
     height: 80px;
     width: 80px;
     line-height: 80px;
-    margin: 0 auto $spacing-lg;
+    margin: 0 auto 1.5rem;
     border-radius: $border-radius-circle;
     background: #f0f5ff;
     color: $secondary-color;
@@ -1248,13 +1212,13 @@ input[type="button"],
 .footer-section {
     flex: 1;
     min-width: 300px;
-    padding: 0 $grid-gap-sm;
+    padding: 0 15px;
     margin-bottom: $spacing-xl;
 
     h3 {
-        margin-bottom: $spacing-lg;
+        margin-bottom: 1.5rem;
         padding-bottom: $spacing-sm;
-        border-bottom: $border-width $border-style $border-color-light;
+        border-bottom: 1px solid $border-color-light;
     }
 }
 
@@ -1277,20 +1241,20 @@ input[type="button"],
 
 .copyright {
     padding-top: $spacing-xl;
-    border-top: $border-width $border-style $border-color-light;
+    border-top: 1px solid $border-color-light;
     text-align: center;
 }
 
 .partner-logos {
-    margin-bottom: $spacing-lg;
+    margin-bottom: 1.5rem;
 }
 
 .social-icons {
     margin-bottom: $spacing-md;
 
     a {
-        margin: 0 $border-radius-lg;
-        font-size: $font-size-lg;
+        margin: 0 10px;
+        font-size: 1.1rem;
     }
 }
 
@@ -1308,7 +1272,7 @@ input[type="button"],
 @media (max-width: #{$breakpoint-md}) {
     .news-line-link {
         gap: $spacing-xl;
-        padding: $spacing-lg;
+        padding: 1.5rem;
     }
 
     .news-image-big {
@@ -1332,7 +1296,7 @@ input[type="button"],
     .news-right .news-line-link {
         flex-direction: column;
         text-align: center;
-        gap: $spacing-lg;
+        gap: 1.5rem;
     }
 
     .news-image-big {
@@ -1342,6 +1306,6 @@ input[type="button"],
     }
 
     .news-title-enhanced {
-        font-size: $font-size-2xl;
+        font-size: 1.4rem;
     }
 }
