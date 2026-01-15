@@ -1,0 +1,236 @@
+name: Gallery Bot - Slack to GitHub
+
+on:
+  schedule:
+    # Run every 30 minutes
+    - cron: '*/30 * * * *'
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  check-slack-and-update:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    
+    - name: Install dependencies
+      run: |
+        pip install slack-sdk pyyaml requests
+    
+    - name: Process Slack messages (add and delete)
+      env:
+        SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+        SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
+      run: |
+        python << 'EOF'
+        import os
+        import yaml
+        import requests
+        from slack_sdk import WebClient
+        from slack_sdk.errors import SlackApiError
+        from datetime import datetime, timedelta
+        import re
+        
+        # Initialize Slack client
+        client = WebClient(token=os.environ["SLACK_BOT_TOKEN"])
+        channel_id = os.environ["SLACK_CHANNEL_ID"]
+        
+        # Get messages from last 2 hours
+        two_hours_ago = (datetime.now() - timedelta(hours=2)).timestamp()
+        
+        changes_made = False
+        
+        try:
+            # Fetch recent messages
+            result = client.conversations_history(
+                channel=channel_id,
+                oldest=str(two_hours_ago),
+                limit=50
+            )
+            
+            messages = result["messages"]
+            new_entries = []
+            entries_to_delete = []
+            
+            # Load existing YAML
+            yaml_path = "_data/gallery/items.yml"
+            with open(yaml_path, "r") as f:
+                existing_entries = yaml.safe_load(f) or []
+            
+            # STEP 1: Check for deletions (messages with ❌ reaction)
+            for message in messages:
+                if "reactions" in message:
+                    for reaction in message["reactions"]:
+                        if reaction["name"] == "x":  # ❌ emoji is "x" in Slack
+                            # This message should be deleted
+                            if "files" in message:
+                                for file in message["files"]:
+                                    if file["mimetype"].startswith("image/"):
+                                        # Get the description to match
+                                        text = message.get("text", "").strip()
+                                        parts = [p.strip() for p in text.split("|")]
+                                        description = parts[0] if len(parts) > 0 else "Untitled"
+                                        
+                                        # Find matching entry in YAML (by description)
+                                        for entry in existing_entries:
+                                            if entry["description"] == description:
+                                                entries_to_delete.append(entry)
+                                                print(f"🗑️ Marked for deletion: {entry['description']}")
+            
+            # STEP 2: Check for new additions (messages with images, no ❌ reaction)
+            for message in messages:
+                # Skip if message has ❌ reaction (deletion)
+                has_x_reaction = False
+                if "reactions" in message:
+                    for reaction in message["reactions"]:
+                        if reaction["name"] == "x":
+                            has_x_reaction = True
+                            break
+                
+                if has_x_reaction:
+                    continue  # Skip deletion-marked messages
+                
+                # Check if message has file attachments (images)
+                if "files" in message:
+                    for file in message["files"]:
+                        # Only process image files
+                        if file["mimetype"].startswith("image/"):
+                            # Get message text (description)
+                            text = message.get("text", "").strip()
+                            
+                            # Skip if no description or if it's a bot message
+                            if not text or message.get("bot_id"):
+                                continue
+                            
+                            # Check if this description already exists (avoid duplicates)
+                            parts = [p.strip() for p in text.split("|")]
+                            description = parts[0] if len(parts) > 0 else "Untitled"
+                            
+                            already_exists = any(e["description"] == description for e in existing_entries)
+                            if already_exists:
+                                continue
+                            
+                            # Parse format: "Description | Year | Place" or "Description | Month Year | Place"
+                            year = None
+                            month = None
+                            place = None
+                            
+                            # Parse optional parts
+                            if len(parts) >= 2:
+                                time_part = parts[1].strip()
+                                if re.match(r'^\d{4}$', time_part):
+                                    year = time_part
+                                else:
+                                    year_match = re.search(r'\b(19|20)\d{2}\b', time_part)
+                                    if year_match:
+                                        year = year_match.group()
+                                        month_part = time_part.replace(year, '').strip()
+                                        if month_part:
+                                            month = month_part
+                            
+                            if len(parts) >= 3:
+                                place = parts[2].strip()
+                            
+                            # Generate filename
+                            timestamp = datetime.now().strftime("%Y%m%d-%H%M%S")
+                            clean_desc = re.sub(r'[^a-zA-Z0-9\s-]', '', description.lower())
+                            clean_desc = re.sub(r'\s+', '-', clean_desc)[:50]
+                            file_ext = file["name"].split(".")[-1]
+                            filename = f"{timestamp}-{clean_desc}.{file_ext}"
+                            
+                            # Download image
+                            print(f"⬇️ Downloading: {filename}")
+                            headers = {"Authorization": f"Bearer {os.environ['SLACK_BOT_TOKEN']}"}
+                            
+                            download_url = file.get("url_private_download", file.get("url_private"))
+                            img_response = requests.get(download_url, headers=headers)
+                            
+                            if img_response.status_code == 200:
+                                filepath = f"assets/gallery/{filename}"
+                                with open(filepath, "wb") as f:
+                                    f.write(img_response.content)
+                                print(f"✅ Saved: {filepath}")
+                                
+                                # Create YAML entry
+                                entry = {"filename": filename, "description": description}
+                                if year:
+                                    entry["year"] = int(year)
+                                if month:
+                                    entry["month"] = month
+                                if place:
+                                    entry["place"] = place
+                                
+                                new_entries.append(entry)
+                                changes_made = True
+                            else:
+                                print(f"❌ Failed to download: {img_response.status_code}")
+            
+            # STEP 3: Apply deletions
+            if entries_to_delete:
+                for entry in entries_to_delete:
+                    # Delete image file
+                    filepath = f"assets/gallery/{entry['filename']}"
+                    if os.path.exists(filepath):
+                        os.remove(filepath)
+                        print(f"🗑️ Deleted file: {filepath}")
+                    
+                    # Remove from entries
+                    existing_entries = [e for e in existing_entries if e["description"] != entry["description"]]
+                
+                changes_made = True
+            
+            # STEP 4: Add new entries
+            if new_entries:
+                existing_entries.extend(new_entries)
+                print(f"➕ Added {len(new_entries)} new entries")
+                changes_made = True
+            
+            # STEP 5: Save YAML if changes made
+            if changes_made:
+                with open(yaml_path, "w") as f:
+                    yaml.dump(existing_entries, f, default_flow_style=False, allow_unicode=True, sort_keys=False)
+                
+                # Signal changes for git commit
+                with open("/tmp/changes_made", "w") as f:
+                    f.write("yes")
+                
+                print("✅ Changes saved to YAML")
+            else:
+                print("ℹ️ No changes detected")
+                
+        except SlackApiError as e:
+            print(f"❌ Slack API Error: {e.response['error']}")
+            exit(1)
+        except Exception as e:
+            print(f"❌ Error: {str(e)}")
+            exit(1)
+        
+        EOF
+    
+    - name: Commit and push if changes
+      run: |
+        if [ -f /tmp/changes_made ]; then
+          git config user.name "Gallery Bot"
+          git config user.email "bot@quantchemdev.github.io"
+          git add assets/gallery/ _data/gallery/items.yml
+          
+          # Check if files were deleted
+          if git diff --cached --name-only | grep -q "^assets/gallery/"; then
+            git commit -m "🖼️ Update gallery (added/removed images from Slack)"
+          else
+            git commit -m "🖼️ Add new gallery images from Slack"
+          fi
+          
+          git push
+          echo "✅ Changes committed and pushed"
+        else
+          echo "ℹ️ No changes to commit"
+        fi
