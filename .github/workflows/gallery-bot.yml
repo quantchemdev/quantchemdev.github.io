@@ -62,30 +62,32 @@ jobs:
             print(f"   Full error: {e.response}")
             exit(1)
         
-        # Check bot scopes
-        print("\n3️⃣ Checking bot scopes...")
-        try:
-            # This will show us what scopes we have
-            scopes_response = client.apps_permissions_info()
-            print(f"   ✓ Bot scopes available:")
-            if 'scopes' in scopes_response:
-                for scope_type, scopes in scopes_response['scopes'].items():
-                    print(f"   - {scope_type}: {', '.join(scopes)}")
-        except SlackApiError as e:
-            print(f"   ⚠️ Could not fetch scopes: {e.response['error']}")
-        
         # Get channel info to verify type
-        print(f"\n4️⃣ Getting channel info for {channel_id}...")
+        print(f"\n3️⃣ Getting channel info for {channel_id}...")
         try:
             channel_info = client.conversations_info(channel=channel_id)
             print(f"   ✓ Channel info retrieved:")
             print(f"   - Name: {channel_info['channel']['name']}")
             print(f"   - Is Private: {channel_info['channel']['is_private']}")
             print(f"   - Is Member: {channel_info['channel']['is_member']}")
+            
+            if not channel_info['channel']['is_member']:
+                print(f"\n   ⚠️ WARNING: Bot is not a member of this channel!")
+                print(f"   Please invite the bot to #{channel_info['channel']['name']}")
+                exit(1)
+                
         except SlackApiError as e:
             print(f"   ❌ Failed to get channel info: {e.response['error']}")
             print(f"   Full error: {e.response}")
-            print(f"   Required scope: conversations.info or channels.read/groups.read")
+            
+            if e.response['error'] == 'missing_scope':
+                print(f"\n   💡 Required scope: conversations.info")
+                if 'needed' in e.response:
+                    print(f"   Needed scope: {e.response['needed']}")
+            elif e.response['error'] == 'channel_not_found':
+                print(f"\n   💡 Channel ID might be incorrect")
+                print(f"   Current ID: {channel_id}")
+            
             exit(1)
         
         # Get messages from last 2 hours
@@ -93,7 +95,7 @@ jobs:
         
         changes_made = False
         
-        print(f"\n5️⃣ Fetching messages from channel (last 2 hours)...")
+        print(f"\n4️⃣ Fetching messages from channel (last 2 hours)...")
         try:
             result = client.conversations_history(
                 channel=channel_id,
@@ -111,7 +113,7 @@ jobs:
             with open(yaml_path, "r") as f:
                 existing_entries = yaml.safe_load(f) or []
             
-            print(f"\n6️⃣ Processing messages...")
+            print(f"\n5️⃣ Processing messages...")
             
             # STEP 1: Check for deletions (messages with ❌ reaction)
             deletion_count = 0
@@ -221,7 +223,7 @@ jobs:
             
             # STEP 3: Apply deletions
             if entries_to_delete:
-                print(f"\n7️⃣ Applying deletions...")
+                print(f"\n6️⃣ Applying deletions...")
                 for entry in entries_to_delete:
                     filepath = f"assets/gallery/{entry['filename']}"
                     if os.path.exists(filepath):
@@ -235,7 +237,7 @@ jobs:
             # STEP 4: Add new entries
             if new_entries:
                 existing_entries.extend(new_entries)
-                print(f"\n8️⃣ Added {len(new_entries)} new entries")
+                print(f"\n7️⃣ Added {len(new_entries)} new entries")
                 changes_made = True
             
             # STEP 5: Save YAML if changes made
@@ -255,21 +257,25 @@ jobs:
             print("=" * 60)
                 
         except SlackApiError as e:
-            print(f"\n❌ Slack API Error at message fetching stage")
+            print(f"\n❌ Slack API Error at conversations_history")
             print(f"   Error type: {e.response['error']}")
             print(f"   Full response: {e.response}")
             
             # Helpful hints based on error
             if e.response['error'] == 'missing_scope':
-                print("\n💡 HINT: Missing scope detected!")
-                print("   For PRIVATE channels, you need:")
+                print("\n💡 MISSING SCOPE for conversations_history!")
+                
+                # Check if needed scope is in response
+                if 'needed' in e.response:
+                    print(f"   Needed scope: {e.response['needed']}")
+                
+                print("\n   For PRIVATE channels, add this scope:")
                 print("   - groups:history")
-                print("   - groups:read")
-                print("\n   For PUBLIC channels, you need:")
+                print("\n   For PUBLIC channels, add this scope:")
                 print("   - channels:history")
-                print("   - channels:read")
+                
             elif e.response['error'] == 'not_in_channel':
-                print("\n💡 HINT: Bot is not in the channel!")
+                print("\n💡 Bot is not in the channel!")
                 print("   1. Go to your Slack channel")
                 print("   2. Type: @Gallery Bot")
                 print("   3. Click 'Invite to Channel'")
