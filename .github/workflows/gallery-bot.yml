@@ -39,22 +39,68 @@ jobs:
         from datetime import datetime, timedelta
         import re
         
+        print("=" * 60)
+        print("🔍 DEBUGGING MODE - Detailed Slack API Calls")
+        print("=" * 60)
+        
         # Initialize Slack client
+        print("\n1️⃣ Initializing Slack client...")
         client = WebClient(token=os.environ["SLACK_BOT_TOKEN"])
         channel_id = os.environ["SLACK_CHANNEL_ID"]
+        print(f"   ✓ Channel ID: {channel_id}")
+        
+        # Test auth first
+        print("\n2️⃣ Testing authentication...")
+        try:
+            auth_test = client.auth_test()
+            print(f"   ✓ Auth successful!")
+            print(f"   - User: {auth_test['user']}")
+            print(f"   - Team: {auth_test['team']}")
+            print(f"   - Bot ID: {auth_test.get('bot_id', 'N/A')}")
+        except SlackApiError as e:
+            print(f"   ❌ Auth failed: {e.response['error']}")
+            print(f"   Full error: {e.response}")
+            exit(1)
+        
+        # Check bot scopes
+        print("\n3️⃣ Checking bot scopes...")
+        try:
+            # This will show us what scopes we have
+            scopes_response = client.apps_permissions_info()
+            print(f"   ✓ Bot scopes available:")
+            if 'scopes' in scopes_response:
+                for scope_type, scopes in scopes_response['scopes'].items():
+                    print(f"   - {scope_type}: {', '.join(scopes)}")
+        except SlackApiError as e:
+            print(f"   ⚠️ Could not fetch scopes: {e.response['error']}")
+        
+        # Get channel info to verify type
+        print(f"\n4️⃣ Getting channel info for {channel_id}...")
+        try:
+            channel_info = client.conversations_info(channel=channel_id)
+            print(f"   ✓ Channel info retrieved:")
+            print(f"   - Name: {channel_info['channel']['name']}")
+            print(f"   - Is Private: {channel_info['channel']['is_private']}")
+            print(f"   - Is Member: {channel_info['channel']['is_member']}")
+        except SlackApiError as e:
+            print(f"   ❌ Failed to get channel info: {e.response['error']}")
+            print(f"   Full error: {e.response}")
+            print(f"   Required scope: conversations.info or channels.read/groups.read")
+            exit(1)
         
         # Get messages from last 2 hours
         two_hours_ago = (datetime.now() - timedelta(hours=2)).timestamp()
         
         changes_made = False
         
+        print(f"\n5️⃣ Fetching messages from channel (last 2 hours)...")
         try:
-            # Fetch recent messages
             result = client.conversations_history(
                 channel=channel_id,
                 oldest=str(two_hours_ago),
                 limit=50
             )
+            print(f"   ✓ Retrieved {len(result['messages'])} messages")
             
             messages = result["messages"]
             new_entries = []
@@ -65,29 +111,33 @@ jobs:
             with open(yaml_path, "r") as f:
                 existing_entries = yaml.safe_load(f) or []
             
+            print(f"\n6️⃣ Processing messages...")
+            
             # STEP 1: Check for deletions (messages with ❌ reaction)
+            deletion_count = 0
             for message in messages:
                 if "reactions" in message:
                     for reaction in message["reactions"]:
                         if reaction["name"] == "x":  # ❌ emoji is "x" in Slack
-                            # This message should be deleted
+                            deletion_count += 1
                             if "files" in message:
                                 for file in message["files"]:
                                     if file["mimetype"].startswith("image/"):
-                                        # Get the description to match
                                         text = message.get("text", "").strip()
                                         parts = [p.strip() for p in text.split("|")]
                                         description = parts[0] if len(parts) > 0 else "Untitled"
                                         
-                                        # Find matching entry in YAML (by description)
                                         for entry in existing_entries:
                                             if entry["description"] == description:
                                                 entries_to_delete.append(entry)
-                                                print(f"🗑️ Marked for deletion: {entry['description']}")
+                                                print(f"   🗑️ Marked for deletion: {entry['description']}")
             
-            # STEP 2: Check for new additions (messages with images, no ❌ reaction)
+            if deletion_count > 0:
+                print(f"   Found {deletion_count} messages with ❌ reaction")
+            
+            # STEP 2: Check for new additions
+            addition_count = 0
             for message in messages:
-                # Skip if message has ❌ reaction (deletion)
                 has_x_reaction = False
                 if "reactions" in message:
                     for reaction in message["reactions"]:
@@ -96,34 +146,30 @@ jobs:
                             break
                 
                 if has_x_reaction:
-                    continue  # Skip deletion-marked messages
+                    continue
                 
-                # Check if message has file attachments (images)
                 if "files" in message:
                     for file in message["files"]:
-                        # Only process image files
                         if file["mimetype"].startswith("image/"):
-                            # Get message text (description)
                             text = message.get("text", "").strip()
                             
-                            # Skip if no description or if it's a bot message
                             if not text or message.get("bot_id"):
                                 continue
                             
-                            # Check if this description already exists (avoid duplicates)
                             parts = [p.strip() for p in text.split("|")]
                             description = parts[0] if len(parts) > 0 else "Untitled"
                             
                             already_exists = any(e["description"] == description for e in existing_entries)
                             if already_exists:
+                                print(f"   ⏭️ Skipping duplicate: {description}")
                                 continue
                             
-                            # Parse format: "Description | Year | Place" or "Description | Month Year | Place"
+                            addition_count += 1
+                            
                             year = None
                             month = None
                             place = None
                             
-                            # Parse optional parts
                             if len(parts) >= 2:
                                 time_part = parts[1].strip()
                                 if re.match(r'^\d{4}$', time_part):
@@ -139,15 +185,13 @@ jobs:
                             if len(parts) >= 3:
                                 place = parts[2].strip()
                             
-                            # Generate filename
                             timestamp = datetime.now().strftime("%Y%m%d-%H%M%S")
                             clean_desc = re.sub(r'[^a-zA-Z0-9\s-]', '', description.lower())
                             clean_desc = re.sub(r'\s+', '-', clean_desc)[:50]
                             file_ext = file["name"].split(".")[-1]
                             filename = f"{timestamp}-{clean_desc}.{file_ext}"
                             
-                            # Download image
-                            print(f"⬇️ Downloading: {filename}")
+                            print(f"   ⬇️ Downloading: {filename}")
                             headers = {"Authorization": f"Bearer {os.environ['SLACK_BOT_TOKEN']}"}
                             
                             download_url = file.get("url_private_download", file.get("url_private"))
@@ -157,9 +201,8 @@ jobs:
                                 filepath = f"assets/gallery/{filename}"
                                 with open(filepath, "wb") as f:
                                     f.write(img_response.content)
-                                print(f"✅ Saved: {filepath}")
+                                print(f"   ✅ Saved: {filepath}")
                                 
-                                # Create YAML entry
                                 entry = {"filename": filename, "description": description}
                                 if year:
                                     entry["year"] = int(year)
@@ -171,18 +214,20 @@ jobs:
                                 new_entries.append(entry)
                                 changes_made = True
                             else:
-                                print(f"❌ Failed to download: {img_response.status_code}")
+                                print(f"   ❌ Failed to download: {img_response.status_code}")
+            
+            if addition_count > 0:
+                print(f"   Found {addition_count} new images to add")
             
             # STEP 3: Apply deletions
             if entries_to_delete:
+                print(f"\n7️⃣ Applying deletions...")
                 for entry in entries_to_delete:
-                    # Delete image file
                     filepath = f"assets/gallery/{entry['filename']}"
                     if os.path.exists(filepath):
                         os.remove(filepath)
-                        print(f"🗑️ Deleted file: {filepath}")
+                        print(f"   🗑️ Deleted file: {filepath}")
                     
-                    # Remove from entries
                     existing_entries = [e for e in existing_entries if e["description"] != entry["description"]]
                 
                 changes_made = True
@@ -190,7 +235,7 @@ jobs:
             # STEP 4: Add new entries
             if new_entries:
                 existing_entries.extend(new_entries)
-                print(f"➕ Added {len(new_entries)} new entries")
+                print(f"\n8️⃣ Added {len(new_entries)} new entries")
                 changes_made = True
             
             # STEP 5: Save YAML if changes made
@@ -198,19 +243,42 @@ jobs:
                 with open(yaml_path, "w") as f:
                     yaml.dump(existing_entries, f, default_flow_style=False, allow_unicode=True, sort_keys=False)
                 
-                # Signal changes for git commit
                 with open("/tmp/changes_made", "w") as f:
                     f.write("yes")
                 
-                print("✅ Changes saved to YAML")
+                print("\n✅ Changes saved to YAML")
             else:
-                print("ℹ️ No changes detected")
+                print("\nℹ️ No changes detected")
+            
+            print("\n" + "=" * 60)
+            print("🎉 Script completed successfully!")
+            print("=" * 60)
                 
         except SlackApiError as e:
-            print(f"❌ Slack API Error: {e.response['error']}")
+            print(f"\n❌ Slack API Error at message fetching stage")
+            print(f"   Error type: {e.response['error']}")
+            print(f"   Full response: {e.response}")
+            
+            # Helpful hints based on error
+            if e.response['error'] == 'missing_scope':
+                print("\n💡 HINT: Missing scope detected!")
+                print("   For PRIVATE channels, you need:")
+                print("   - groups:history")
+                print("   - groups:read")
+                print("\n   For PUBLIC channels, you need:")
+                print("   - channels:history")
+                print("   - channels:read")
+            elif e.response['error'] == 'not_in_channel':
+                print("\n💡 HINT: Bot is not in the channel!")
+                print("   1. Go to your Slack channel")
+                print("   2. Type: @Gallery Bot")
+                print("   3. Click 'Invite to Channel'")
+            
             exit(1)
         except Exception as e:
-            print(f"❌ Error: {str(e)}")
+            print(f"\n❌ Unexpected Error: {str(e)}")
+            import traceback
+            traceback.print_exc()
             exit(1)
         
         EOF
@@ -222,7 +290,6 @@ jobs:
           git config user.email "bot@quantchemdev.github.io"
           git add assets/gallery/ _data/gallery/items.yml
           
-          # Check if files were deleted
           if git diff --cached --name-only | grep -q "^assets/gallery/"; then
             git commit -m "🖼️ Update gallery (added/removed images from Slack)"
           else
