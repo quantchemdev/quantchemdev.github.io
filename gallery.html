@@ -16,64 +16,12 @@ layout: main
               <h1>Gallery</h1>
             </header>
             <div class="gallery">
-              <img src="./assets/gallery/2022-aug-dft-brussels-gala-dinner-carmelo-mau.jpeg" loading="lazy"
-                alt="Carmelo and Mau at the DFT 2022 gala dinner in Brussels"
-                title="DFT Aug 2022 (Brussels), gala dinner.">
-
-              <img src="./assets/gallery/2022-aug-dft-brussels-presentation-edu-1.jpg" loading="lazy"
-                alt="Eduard Matito presentation at DFT Brussels" title="Edu presentation at DFT Aug 2022 (Brussels)">
-
-              <img src="./assets/gallery/2022-aug-dipc-internship-work-presentation-dobromila.jpg" loading="lazy"
-                alt="Dobromila presenting her internship work at DIPC"
-                title="Dobromila (internship student) work presentation at DIPC, Aug 2022">
-
-              <img src="./assets/gallery/2022-aug-krakow-accumolpro-project-eduard-matito-borys-osmialowski.jpeg"
-                loading="lazy" alt="Eduard Matito and Borys Osmiałowski in Krakow"
-                title="Eduard Matito and Borys Osmiałowski (AccuMolPro project) in Kraków, Aug 2022">
-
-              <img src="./assets/gallery/2022-july-donostia-thesis-defense-sebastian-sitkiewicz-1.jpg" loading="lazy"
-                alt="Sebastian Sitkiewicz thesis defense committee"
-                title="Sebastian’s thesis defense (Donostia, July 2022) with J.M. Luis, K. Ruud, M.C. Jiménez, S. Sitkiewicz, J. Ugalde and E. Matito">
-
-              <img src="./assets/gallery/2022-july-donostia-thesis-defense-sebastian-sitkiewicz-2.jpeg" loading="lazy"
-                alt="Sebastian Sitkiewicz during his defense" title="Sebastian Sitkiewicz at his thesis defense">
-
-              <img src="./assets/gallery/2022-july-donostia-dinner-before-sebastian-thesis-defense.jpeg" loading="lazy"
-                alt="Group dinner before thesis defense" title="Dinner before Sebastian’s thesis defense in Donostia">
-
-              <img src="./assets/gallery/2022-june-watoc-beer-girona-donostia.jpeg" loading="lazy"
-                alt="Girona and Donostia teams sharing beers at WATOC"
-                title="The Girona and Donostia teams sharing beers at the WATOC conference">
-
-              <img src="./assets/gallery/2022-france-conference-carmelo-poster-presentation.jpeg" loading="lazy"
-                alt="Carmelo presenting a poster in France"
-                title="Carmelo’s poster presentation at a conference in France">
-
-              <img src="./assets/gallery/2022-june-granada-rseq-bienal-ruben-presentation.jpeg" loading="lazy"
-                alt="Ruben presentation at RSEQ Bienal Granada"
-                title="Ruben's presentation at the RSEQ Bienal (Granada, June 2022)">
-
-              <img src="./assets/gallery/2022-june-granada-rseq-bienal-xiang-presentation.jpeg" loading="lazy"
-                alt="Xiang presentation at RSEQ Bienal Granada"
-                title="Xiang's presentation at the RSEQ Bienal (Granada, June 2022)">
-
-              <img src="./assets/gallery/2022-june-espa-conference-donostia-group.JPG" loading="lazy"
-                alt="Donostia Group at ESPA conference"
-                title="Donostia Group’s photo at the ESPA conference (June 2022)">
-
-              <img src="./assets/gallery/2022-june-espa-conference-donostia-group-xiang-carmelo-aaron-sebastian.jpeg"
-                loading="lazy" alt="Xiang, Carmelo, Aarón and Sebastian at ESPA"
-                title="Xiang, Carmelo, Aarón and Sebastian at the ESPA conference (June 2022)">
-
-              <img src="./assets/gallery/2022-june-torun-eduard-matito-jacek-kobus.jpeg" loading="lazy"
-                alt="Eduard Matito and Jacek Kobus in Torun" title="Eduard Matito and Jacek Kobus in Torun, June 2022">
-
-              <img src="./assets/gallery/2022-gastronomical-society-cooking-edu.jpeg" loading="lazy"
-                alt="Eduard cooking at a gastronomical society" title="Cooking at the gastronomical society (Edu)">
-
-              <img src="./assets/gallery/2018-october-iciq-wine-with-julio-lloret.jpeg" loading="lazy"
-                alt="Eduard and Julio Lloret with wine at ICIQ"
-                title="With Julio Lloret (ICIQ) after a talk at ICIQ (Tarragona), October 2018">
+              {% for item in site.data.gallery.items %}
+              <img src="./assets/gallery/{{ item.filename }}" 
+                   loading="lazy"
+                   alt="{{ item.description }}"
+                   title="{{ item.description }}{% if item.month %}, {{ item.month }}{% endif %}{% if item.year %} {{ item.year }}{% endif %}{% if item.place %} ({{ item.place }}){% endif %}">
+              {% endfor %}
             </div>
           </section>
         </div>
