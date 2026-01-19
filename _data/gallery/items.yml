@@ -74,18 +74,21 @@
   place: Tarragona
 - filename: 20260115-173406-martin-peeks-talking-to-luis-soriano-icesaa-dubrov.png
   description: Martin Peeks talking to Luis Soriano (ICESAA, Dubrovnik, June 2024)
+  year: 2024
+  month: June
+  place: Dubrovnik
 - filename: 20260116-105253-espa-conference-photo.jpeg
   description: ESPA conference photo
   year: 2024
   month: June
   place: Tarragona
 - filename: 20260116-105930-markels-talk.JPG
-  description: Markel’s talk
+  description: Markel's talk
   year: 2025
   month: February
   place: Valladolid
 - filename: 20260116-111531-opponent-committee-aarns-thesis.png
-  description: Opponent Committee Aarón’s thesis
+  description: Opponent Committee Aarón's thesis
   year: 2024
   month: March
   place: Donostia
@@ -100,173 +103,313 @@
   month: May
   place: IQCC, UdG, Girona
 - filename: 20260116-112516-javiers-talk.JPG
-  description: Javier’s talk
+  description: Javier's talk
   year: 2025
   month: February
   place: Valladolid
 - filename: MarkelTalkJuly2025.jpg
-  description: Markel’s Talk
+  description: Markel's Talk
   year: 2025
   month: July
   place: Donostia
 - filename: 20260116-112517-watoc-2025-edus-invited-talk.JPG
-  description: WATOC 2025. Edu’s invited talk
+  description: WATOC 2025. Edu's invited talk
   year: 2025
   month: June
-  place: Olso (Norway)
+  place: Oslo (Norway)
 - filename: 20260116-112518-qvest-conference.jpg
   description: QVEST conference
   year: 2025
   month: September
-  place: Ringberg Castle (Germany).
+  place: Ringberg Castle (Germany)
 - filename: 20260116-171439-markel-is-awarded-yet-another-prize-slightlysmilin.png
-  description: 'Markel is awarded yet another prize :slightly_smiling_face: (Feb 2025,
-    València)'
+  description: Markel is awarded yet another prize (Feb 2025, València)
+  year: 2025
+  month: February
+  place: València
 - filename: 20260116-171439-edus-talk.png
-  description: Edu’s talk
+  description: Edu's talk at ICESAA
   year: 2024
-  month: ICESAA  (July)
+  month: July
   place: Dubrovnik
 - filename: 20260116-171439-eloys-talk.png
-  description: Eloy’s talk
+  description: Eloy's talk at DFT
   year: 2024
-  month: DFT
   place: Paris
 - filename: 20260116-171440-markel-talk.png
-  description: Marke’l talk
+  description: Markel's talk
   year: 2024
   month: November
   place: Bayonne
 - filename: 20260116-171440-joans-talk.png
-  description: Joan’s talk
+  description: Joan's talk
   year: 2024
   month: November
   place: Bayonne
 - filename: 20260116-171441-joans-talk.png
-  description: Joan’s talk
+  description: Joan's talk
   year: 2025
   month: January
   place: Girona
 - filename: 20260116-171441-andreis-talk.png
-  description: Andrei’s talk
+  description: Andrei's talk
   year: 2025
   month: January
   place: Girona
 - filename: 20260116-224241-edu-with-xabi-and-gernot-frenking-at-watoc2022-jul.jpeg
-  description: Edu with Xabi and Gernot Frenking at WATOC2022 (July 2022, Vancouver)
+  description: Edu with Xabi and Gernot Frenking at WATOC2022
+  year: 2022
+  month: July
+  place: Vancouver
 - filename: 20260116-224241-carmelos-phd-defense-dec-2022-bordeaux.jpeg
-  description: Carmelo’s PhD defense (Dec. 2022, Bordeaux)
-- filename: 20260116-224241-carmelos-phd-defense-dec-2022-bordeaux.jpeg
-  description: Carmelo’s PhD defense (Dec. 2022, Bordeaux)
+  description: Carmelo's PhD defense
+  year: 2022
+  month: December
+  place: Bordeaux
 - filename: 20260116-224242-carmelos-phd-defense-dec-2022-bordeaux.jpeg
-  description: Carmelo’s PhD defense (Dec. 2022, Bordeaux)
+  description: Carmelo's PhD defense
+  year: 2022
+  month: December
+  place: Bordeaux
 - filename: 20260116-224242-javier-at-the-gastronomical-society-may-2023.jpeg
-  description: Javier at the Gastronomical Society (May 2023)
+  description: Javier at the Gastronomical Society
+  year: 2023
+  month: May
 - filename: 20260116-224242-meeting-with-gironas-group-may-2023-girona.jpeg
-  description: Meeting with Girona’s group (May 2023, Girona)
+  description: Meeting with Girona's group
+  year: 2023
+  month: May
+  place: Girona
 - filename: 20260116-224243-relaxing-time-at-icqc-bratislava-june-2023.jpeg
-  description: Relaxing time at ICQC (Bratislava, June 2023)
+  description: Relaxing time at ICQC
+  year: 2023
+  month: June
+  place: Bratislava
 - filename: 20260116-224243-javiers-poster-at-icqc-bratislava-june-2023.jpeg
-  description: Javier’s poster at ICQC (Bratislava, June 2023)
+  description: Javier's poster at ICQC
+  year: 2023
+  month: June
+  place: Bratislava
 - filename: 20260116-224243-group-retreat-beasain-nov-2023.jpeg
-  description: Group retreat (Beasain, Nov. 2023)
+  description: Group retreat
+  year: 2023
+  month: November
+  place: Beasain
 - filename: 20260116-224244-group-retreat-beasain-nov-2023.jpeg
-  description: Group retreat (Beasain, Nov. 2023)
-- filename: 20260116-224244-group-retreat-beasain-nov-2023.jpeg
-  description: Group retreat (Beasain, Nov., 2023)
-- filename: 20260116-224244-group-retreat-beasain-nov-2023.jpeg
-  description: Group retreat (Beasain, Nov. 2023)
+  description: Group retreat
+  year: 2023
+  month: November
+  place: Beasain
 - filename: 20260116-224245-group-retreat-beasain-nov-2023.jpeg
-  description: Group retreat (Beasain, Nov. 2023)
-- filename: 20260116-224245-group-retreat-beasain-nov-2023.jpeg
-  description: Group retreat (Beasain, Nov. 2023)
+  description: Group retreat
+  year: 2023
+  month: November
+  place: Beasain
 - filename: 20260116-224246-group-retreat-beasain-nov-2023.jpeg
-  description: Group retreat (Beasain, Nov. 2023)
+  description: Group retreat
+  year: 2023
+  month: November
+  place: Beasain
 - filename: 20260116-224246-return-from-the-group-retreat-beasain-nov-2023.jpeg
-  description: Return from the group retreat (Beasain, Nov. 2023)
+  description: Return from the group retreat
+  year: 2023
+  month: November
+  place: Beasain
 - filename: 20260116-224246-xiangs-phd-defense-nov-2023.jpeg
-  description: Xiang’s PhD defense (Nov. 2023)
+  description: Xiang's PhD defense
+  year: 2023
+  month: November
+  place: Donostia
 - filename: 20260116-224247-xiangs-phd-defense-nov-2023.jpeg
-  description: Xiang’s PhD defense (Nov. 2023)
-- filename: 20260116-224247-xiangs-phd-defense-nov-2023.jpeg
-  description: Xiang’s PhD defense (Nov. 2023)
+  description: Xiang's PhD defense
+  year: 2023
+  month: November
+  place: Donostia
 - filename: 20260116-224247-xiang-with-txapela-at-his-phd-defense-donostia-nov.jpeg
-  description: Xiang with Txapela at his PhD defense (Donostia, Nov. 2023)
+  description: Xiang with Txapela at his PhD defense
+  year: 2023
+  month: November
+  place: Donostia
 - filename: 20260116-224248-edus-talk-at-cctc3-lyon-dec-2023.jpeg
-  description: Edu’s talk at CCTC3 (Lyon, Dec. 2023)
+  description: Edu's talk at CCTC3
+  year: 2023
+  month: December
+  place: Lyon
 - filename: 20260116-230129-mireias-presentation-at-escb2-oviedo-sept-2018.jpeg
-  description: Mireia’s presentation at ESCB2 (Oviedo, Sept. 2018)
+  description: Mireia's presentation at ESCB2
+  year: 2018
+  month: September
+  place: Oviedo
 - filename: 20260116-230130-dinner-in-oviedo-with-vernica-postils-carme-miquel.jpeg
-  description: Dinner in Oviedo with Verònica Postils, Carme, Miquel Solà, Diego Andrada,
-    Israel Fernández and Edu (ESCB2, Sept. 2018)
+  description: Dinner in Oviedo with Verònica Postils, Carme, Miquel Solà, Diego Andrada, Israel Fernández and Edu (ESCB2)
+  year: 2018
+  month: September
+  place: Oviedo
 - filename: 20260116-230130-edus-presentation-at-escb2-oviedo-sept-2018.jpeg
-  description: Edu’s presentation at ESCB2 (Oviedo, Sept. 2018)
+  description: Edu's presentation at ESCB2
+  year: 2018
+  month: September
+  place: Oviedo
 - filename: 20260116-230131-sebastians-presentation-at-escb2-oviedo-sept-2018.jpeg
-  description: Sebastian’s presentation at ESCB2 (Oviedo, Sept. 2018)
+  description: Sebastian's presentation at ESCB2
+  year: 2018
+  month: September
+  place: Oviedo
 - filename: 20260116-230131-eloys-presentation-at-escb2-oviedo-sept-2018.jpeg
-  description: Eloy’s presentation at ESCB2 (Oviedo, Sept. 2018)
+  description: Eloy's presentation at ESCB2
+  year: 2018
+  month: September
+  place: Oviedo
 - filename: 20260116-230132-carmelo-at-his-poster-in-espa-vigo-june-2022.jpeg
-  description: Carmelo at his poster in ESPA (Vigo, June 2022)
+  description: Carmelo at his poster in ESPA
+  year: 2022
+  month: June
+  place: Vigo
 - filename: 20260116-230132-markel-at-his-poster-dft2022-brussels.jpeg
-  description: Markel at his poster (DFT2022, Brussels)
+  description: Markel at his poster (DFT2022)
+  year: 2022
+  month: August
+  place: Brussels
 - filename: 20260116-230133-javier-at-his-poster-dft2022-brussels.jpeg
-  description: Javier at his poster (DFT2022, Brussels)
+  description: Javier at his poster (DFT2022)
+  year: 2022
+  month: August
+  place: Brussels
 - filename: 20260116-233819-mireias-talk-at-a-meeting-in-vigo-june-2017.jpeg
-  description: Mireia’s talk at a meeting in Vigo (June 2017)
+  description: Mireia's talk at a meeting in Vigo
+  year: 2017
+  month: June
+  place: Vigo
 - filename: 20260116-233819-sebastians-talk-at-a-meeting-in-vigo-june-2017.jpeg
-  description: Sebastian’s talk at a meeting in Vigo (June 2017)
+  description: Sebastian's talk at a meeting in Vigo
+  year: 2017
+  month: June
+  place: Vigo
 - filename: 20260116-233820-irenes-talk-at-a-meeting-in-vigo-june-2017.jpeg
-  description: Irene’s talk at a meeting in Vigo (June 2017)
+  description: Irene's talk at a meeting in Vigo
+  year: 2017
+  month: June
+  place: Vigo
 - filename: 20260116-233820-group-dinner-at-ardatza-society-aug-2017.jpeg
-  description: Group Dinner at Ardatza Society (Aug. 2017)
+  description: Group Dinner at Ardatza Society
+  year: 2017
+  month: August
+  place: Donostia
 - filename: 20260116-233820-edus-talk-at-watoc2017-munich-aug-2017.jpeg
-  description: Edu’s talk at WATOC2017 (Munich, Aug. 2017)
+  description: Edu's talk at WATOC2017
+  year: 2017
+  month: August
+  place: Munich
 - filename: 20260116-233821-sebastian-at-his-watoc2017s-poster-munich-aug-2017.jpeg
-  description: Sebastian at his WATOC2017's poster (Munich, Aug. 2017)
+  description: Sebastian at his WATOC2017's poster
+  year: 2017
+  month: August
+  place: Munich
 - filename: 20260116-233821-edus-talk-at-cecam-on-rdmft-lausanne-sept-2017.jpeg
-  description: Edu’s talk at CECAM on RDMFT (Lausanne, Sept. 2017)
+  description: Edu's talk at CECAM on RDMFT
+  year: 2017
+  month: September
+  place: Lausanne
 - filename: 20260116-233822-mauricios-talk-at-cecam-on-rdmft-lausanne-sept-201.jpeg
-  description: Mauricio’s talk at CECAM on RDMFT (Lausanne, Sept. 2017)
+  description: Mauricio's talk at CECAM on RDMFT
+  year: 2017
+  month: September
+  place: Lausanne
 - filename: 20260116-233822-banquet-dinner-with-mario-piris-edu-peter-gill-mau.jpeg
-  description: Banquet dinner with Mario Piris, Edu, Peter Gill, Mauricio, Andreas
-    Savin and Paul Ayer (CECAM, Lausanne 2017)
+  description: Banquet dinner with Mario Piris, Edu, Peter Gill, Mauricio, Andreas Savin and Paul Ayer (CECAM)
+  year: 2017
+  month: September
+  place: Lausanne
 - filename: 20260116-233822-group-meeting-at-the-ardatza-society-donostia-july.jpeg
-  description: Group meeting at the Ardatza Society (Donostia, July 2018)
+  description: Group meeting at the Ardatza Society
+  year: 2018
+  month: July
+  place: Donostia
 - filename: 20260116-233823-edus-is-awarded-the-early-career-prize-halifax-jul.jpeg
-  description: Edu’s is awarded the Early Career Prize (Halifax, July 2018)
+  description: Edu is awarded the Early Career Prize
+  year: 2018
+  month: July
+  place: Halifax
 - filename: 20260116-233823-mauricios-group-meeting-july-2018.jpeg
-  description: Mauricio’s group meeting (July 2018)
+  description: Mauricio's group meeting
+  year: 2018
+  month: July
 - filename: 20260116-233824-edu-at-sagamore-conference-halifax-jul-2018.jpeg
-  description: Edu at Sagamore conference (Halifax, Jul. 2018)
+  description: Edu at Sagamore conference
+  year: 2018
+  month: July
+  place: Halifax
 - filename: 20260116-233824-irene-at-his-espa2018s-poster-toledo-july-2018.jpeg
-  description: Irene at his ESPA2018's poster (Toledo, July 2018)
+  description: Irene at her ESPA2018's poster
+  year: 2018
+  month: July
+  place: Toledo
 - filename: 20260116-233824-eloy-at-his-espa2018s-poster-toledo-july-2018.jpeg
-  description: Eloy at his ESPA2018's poster (Toledo, July 2018)
+  description: Eloy at his ESPA2018's poster
+  year: 2018
+  month: July
+  place: Toledo
 - filename: 20260116-233825-eloy-and-xiang-attending-a-lecture-at-the-espa2018.jpeg
-  description: Eloy and Xiang attending a lecture at the ESPA2018 (Toledo, July 2018)
+  description: Eloy and Xiang attending a lecture at the ESPA2018
+  year: 2018
+  month: July
+  place: Toledo
 - filename: 20260116-233825-mauricios-phd-defense-girona-july-2018.jpeg
-  description: Mauricio’s Ph.D. defense (Girona, July 2018)
+  description: Mauricio's PhD defense
+  year: 2018
+  month: July
+  place: Girona
 - filename: 20260116-233826-mauricios-phd-defense-girona-july-2018.jpeg
-  description: Mauricio’s Ph.D. defense (Girona, July 2018)
+  description: Mauricio's PhD defense
+  year: 2018
+  month: July
+  place: Girona
 - filename: 20260117-004354-maus-at-his-poster-july-2015.jpeg
-  description: Mau’s at his poster (July 2015)
+  description: Mau's at his poster
+  year: 2015
+  month: July
 - filename: 20260117-004354-jerzy-cioslowski-and-pedro-salvador-visit-donostia.jpeg
-  description: Jerzy Cioslowski and Pedro Salvador visit (Donostia, July 2015)
+  description: Jerzy Cioslowski and Pedro Salvador visit
+  year: 2015
+  month: July
+  place: Donostia
 - filename: 20260117-004355-sebastians-talk-at-young-espa-castell-june-2016.jpeg
-  description: Sebastian’s talk at young ESPA (Castelló, June 2016)
+  description: Sebastian's talk at young ESPA
+  year: 2016
+  month: June
+  place: Castelló
 - filename: 20260117-004355-edus-talk-at-espa-castell-june-2016.jpeg
-  description: Edu’s talk at ESPA (Castelló, June 2016)
+  description: Edu's talk at ESPA
+  year: 2016
+  month: June
+  place: Castelló
 - filename: 20260117-004355-mau-at-his-poster-in-espa-castell-june-2016.jpeg
-  description: Mau at his poster in ESPA (Castelló, June 2016)
+  description: Mau at his poster in ESPA
+  year: 2016
+  month: June
+  place: Castelló
 - filename: 20260117-004356-irene-at-her-poster-in-espa-castell-june-2016.jpeg
-  description: Irene at her poster in ESPA (Castelló, June 2016)
+  description: Irene at her poster in ESPA
+  year: 2016
+  month: June
+  place: Castelló
 - filename: 20260117-004356-after-a-group-dinner-at-ardatza-donostia-july-2016.jpeg
-  description: After a group dinner at Ardatza (Donostia, July 2016)
+  description: After a group dinner at Ardatza
+  year: 2016
+  month: July
+  place: Donostia
 - filename: 20260117-004356-irenes-tfm-talk-at-the-udg-sept-2016.jpeg
-  description: Irene’s TFM talk at the UdG (Sept. 2016)
+  description: Irene's TFM talk at the UdG
+  year: 2016
+  month: September
+  place: UdG
 - filename: 20260117-004357-eloys-talk-at-the-cttc-2016-sept-2016-trujillo.jpeg
-  description: Eloy’s talk at the CTTC 2016 (Sept. 2016, Trujillo)
+  description: Eloy's talk at the CTTC 2016
+  year: 2016
+  month: September
+  place: Trujillo
 - filename: 20260117-004357-visit-to-a-wine-celler-in-roja-gasteiz-nov-2016.jpeg
-  description: Visit to a Wine Celler in Roja (Gasteiz, Nov. 2016)
-- filename: 20260117-004357-visit-to-a-wine-celler-in-roja-gasteiz-nov-2016.jpeg
-  description: Visit to a Wine Celler in Roja (Gasteiz, Nov. 2016)
+  description: Visit to a Wine Cellar in Roja
+  year: 2016
+  month: November
+  place: Gasteiz
