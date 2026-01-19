@@ -5,15 +5,17 @@ layout: default
 <!-- Header -->
 <header id="header">
     <div class="container">
-        <!-- Logo (commented out, can be uncommented and adjusted if needed) -->
-        <!-- <h1><a href="#" id="logo">{{ page.title }}</a></h1> -->
-
-        <!-- Group title -->
-        <div class="group-title">
-            <h1>Quantum Chemistry Development Group</h1>
+        <div class="group-header-container" style="display: flex; align-items: center; gap: 20px;">
+            <div class="logo">
+                <img src="{{ '/assets/images/qcdg_logo_nobg.png' | relative_url }}"
+                     alt="QCDG Logo"
+                     style="height: 60px; width: auto;">
+            </div>
+            <div class="group-title">
+                <h1 style="margin: 0;">Quantum Chemistry Development Group</h1>
+            </div>
         </div>
 
-        <!-- Navigation -->
         {% include nav.html %}
     </div>
 </header>
