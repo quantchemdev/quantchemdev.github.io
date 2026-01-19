@@ -5,15 +5,18 @@ layout: default
 <!-- Header -->
 <header id="header">
     <div class="container">
-        <div class="group-header-container" style="display: flex; align-items: center; gap: 20px;">
+        <div class="group-header-container" style="display: flex; align-items: center; justify-content: center; gap: 30px; margin-bottom: 2em;">
+
+            <div class="group-title">
+                <h1 style="margin: 0; font-size: 2.5em;">Quantum Chemistry Development Group</h1>
+            </div>
+
             <div class="logo">
                 <img src="{{ '/assets/images/qcdg_logo_nobg.png' | relative_url }}"
                      alt="QCDG Logo"
-                     style="height: 60px; width: auto;">
+                     style="height: 120px; width: auto; display: block;">
             </div>
-            <div class="group-title">
-                <h1 style="margin: 0;">Quantum Chemistry Development Group</h1>
-            </div>
+
         </div>
 
         {% include nav.html %}
