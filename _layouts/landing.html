@@ -2,19 +2,18 @@
 layout: default
 ---
 
-<!-- Header -->
 <header id="header">
     <div class="container">
-        <div class="group-header-container" style="display: flex; align-items: center; justify-content: center; gap: 30px; margin-bottom: 2em;">
+        <div class="group-header-container" style="display: flex; align-items: center; justify-content: center; gap: 40px; margin-bottom: 2em;">
 
             <div class="group-title">
-                <h1 style="margin: 0; font-size: 2.5em;">Quantum Chemistry Development Group</h1>
+                <h1 style="margin: 0; font-size: 2.5em; line-height: 1.2;">Quantum Chemistry Development Group</h1>
             </div>
 
             <div class="logo">
                 <img src="{{ '/assets/images/qcdg_logo_nobg.png' | relative_url }}"
                      alt="QCDG Logo"
-                     style="height: 150px; width: auto; display: block;">
+                     style="height: 200px; width: auto; display: block; max-width: 100%;">
             </div>
 
         </div>
@@ -23,8 +22,7 @@ layout: default
     </div>
 </header>
 
-<!-- Content from the page -->
 {{ content }}
 
-<!-- Footer -->
 {% include footer.html %}
+
