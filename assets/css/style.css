@@ -755,32 +755,116 @@ body {
  }
 
 
-    /* Gallery */
+    /* Gallery - Masonry Layout */
 
- .gallery {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
+.gallery {
+  column-count: 4;
+  column-gap: 16px;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 20px 10px;
+  padding: 20px 16px;
 }
 
 .gallery img {
   width: 100%;
-  max-width: 350px;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 10px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.gallery::after {
-  content: "";
-  width: 350px;
+.gallery img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
+
+/* Responsive masonry columns */
+@media (max-width: 1200px) {
+  .gallery { column-count: 3; }
+}
+@media (max-width: 800px) {
+  .gallery { column-count: 2; }
+}
+@media (max-width: 500px) {
+  .gallery { column-count: 1; }
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.92);
+  z-index: 10000;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 4px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-caption {
+  color: #fff;
+  text-align: center;
+  margin-top: 16px;
+  font-size: 0.95rem;
+  opacity: 0.9;
+  max-width: 600px;
+  padding: 0 20px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  background: none;
+  border: none;
+  line-height: 1;
+}
+
+.lightbox-close:hover {
+  opacity: 1;
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 2.5rem;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  background: none;
+  border: none;
+  padding: 20px;
+  user-select: none;
+}
+
+.lightbox-nav:hover {
+  opacity: 1;
+}
+
+.lightbox-prev { left: 10px; }
+.lightbox-next { right: 10px; }
 
 /* styles.css */
 

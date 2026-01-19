@@ -3,24 +3,21 @@ title: Gallery
 layout: main
 ---
 
-<head>
-</head>
-
 <body>
   <main id="main" class="wrapper style1">
     <div class="container">
       <div class="row">
-        <div id="content" class="8u skel-cell-important">
+        <div id="content" class="12u skel-cell-important">
           <section>
             <header class="major">
               <h1>Gallery</h1>
             </header>
             <div class="gallery">
               {% for item in site.data.gallery.items %}
-              <img src="./assets/gallery/{{ item.filename }}" 
+              <img src="./assets/gallery/{{ item.filename }}"
                    loading="lazy"
                    alt="{{ item.description }}"
-                   title="{{ item.description }}{% if item.month %}, {{ item.month }}{% endif %}{% if item.year %} {{ item.year }}{% endif %}{% if item.place %} ({{ item.place }}){% endif %}">
+                   data-caption="{{ item.description }}{% if item.month %}, {{ item.month }}{% endif %}{% if item.year %} {{ item.year }}{% endif %}{% if item.place %} — {{ item.place }}{% endif %}">
               {% endfor %}
             </div>
           </section>
@@ -28,4 +25,15 @@ layout: main
       </div>
     </div>
   </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <button class="lightbox-nav lightbox-prev" aria-label="Previous">&#8249;</button>
+    <button class="lightbox-nav lightbox-next" aria-label="Next">&#8250;</button>
+    <img src="" alt="">
+    <div class="lightbox-caption"></div>
+  </div>
+
+  <script src="./assets/js/gallery.js"></script>
 </body>
