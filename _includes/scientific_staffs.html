@@ -1,1 +1,4 @@
-<li><a href="{{ site.baseurl }}/members/eloy_ramos_cordoba.html">Dr. Eloy Ramos-Cordoba</a></li>
+{% assign leaders = site.data.members | where: "position", "Leader" %}
+{% for member in leaders %}
+  <li><a href="{{ site.baseurl }}/members/{{ member.id }}/">{{ member.name }}</a></li>
+{% endfor %}

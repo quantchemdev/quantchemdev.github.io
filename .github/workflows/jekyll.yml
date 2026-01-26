@@ -25,5 +25,16 @@ jobs:
       - name: Install dependencies
         run: bundle install
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python dependencies
+        run: pip install pyyaml
+
+      - name: Generate member pages
+        run: python generate_members.py
+
       - name: Build site
         run: bundle exec jekyll build

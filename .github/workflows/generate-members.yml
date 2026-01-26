@@ -1,0 +1,40 @@
+name: Auto-generate member pages
+
+on:
+  push:
+    paths:
+      - '_data/members.yml'
+    branches: [main]
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install pyyaml
+
+      - name: Generate member pages
+        run: python generate_members.py
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if [[ -n $(git status --porcelain _members/) ]]; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add _members/
+          git commit -m "Auto-generate member pages from members.yml"
+          git push

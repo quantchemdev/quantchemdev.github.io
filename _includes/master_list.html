@@ -1,1 +1,4 @@
-
+{% assign masters = site.data.members | where: "position", "Master student" %}
+{% for member in masters %}
+  <li><a href="{{ site.baseurl }}/members/{{ member.id }}/">{{ member.name }}</a></li>
+{% endfor %}

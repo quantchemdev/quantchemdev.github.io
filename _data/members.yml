@@ -42,28 +42,70 @@
     - "Electron correlation, Coulomb holes and Density Functional development."
 
 # Postdocs
-- id: luis_antonio
-  name: "Dr. Luis Antonio Soriano Agueda"
+- id: ishita_bhattacharjee
+  name: "Dr. Ishita Bhattacharjee"
   position: Postdoc
-  photo: luisASA.png
-  email: lsorianoagueda@gmail.com
+  photo: ishita.jpg
+  email: imoon.2008@gmail.com
   personal_web:
   education:
-    - "PhD in Chemistry at the Universidad Autónoma Metropolitana-Iztapalapa. Advisor: Dra. Rubicelia Vargas."
-    - "Degree in Chemistry at the Universidad Autónoma Metropolitana-Iztapalapa. Advisor: Dra. Rubicelia Vargas."
+    - "2024: PhD in Science, Indian Association for the Cultivation of Science, Calcutta University, India."
+    - "2017: MSc in Chemistry, Calcutta University, India."
+    - "2017: BSc in Chemistry, Presidency University, Calcutta, India."
   experience:
-    - "Post-doctorate at the Centro de Investigación y de Estudios avanzados del Instituto Politécnico Nacional with Dr. Alberto Vela."
-    - "Post-doctorate at the National Autonomous University of Mexico with Dr. José Enrique Barquera."
+    - "01/01/2024-30/06/2024: Lecturer at Scottish Church College, India."
   research_topics:
-    - "Design and implementation of exchange and correlation functionals for the correct description of dynamic and non-dynamic correlation."
-    - "Intrinsic Reactivity."
-    - "Interaction of metallic compounds with DNA."
-    - "Analysis of the Theory of Atoms in Molecules starting from STO orbitals."
-    - "Programming in CUDA."
-    - "Spin Cross-over."
-    - "Aromaticity."
+    - "How quantum computing algorithms may perform in addressing the electron correlation effects in multi-reference systems."
+
+- id: jochen_eeckhoudt
+  name: "Dr. Jochen Eeckhoudt"
+  position: Postdoc
+  photo: jochen.jpg
+  email: jochen.eeckhoudt@gmail.com
+  personal_web:
+  education:
+    - "2025: PhD in Sciences (Computational Chemistry), Vrije Universiteit Brussel (VUB), Brussels, Belgium."
+    - "2016: MSc in Chemistry, Vrije Universiteit Brussel (VUB), Brussels, Belgium."
+    - "2015: BSc in Chemistry, Vrije Universiteit Brussel (VUB), Brussels, Belgium."
+  experience:
+  research_topics:
+    - "Electronic structure indices and methods."
+    - "High pressure molecular chemistry."
+
+- id: irene_casademont_reig
+  name: "Dr. Irene Casademont Reig"
+  position: Postdoc
+  photo: irene.png
+  email: irene.casademont@dipc.org
+  personal_web:
+  education:
+    - "2021: PhD in Theoretical and Computational Chemistry, Universidad del País Vasco/Euskal Herriko Unibersitatea (UPV/EHU), Donostia-San Sebastián, Spain."
+    - "2016: MSc in Chemistry, Master in Advanced Catalysis and Molecular Modelling (MACMoM), Universitat de Girona, Girona, Catalunya."
+    - "2015: BSc in Chemistry, Universitat de Girona (UdG), Girona, Catalunya."
+  experience:
+    - "Since 2024: Postdoctoral Researcher at Donostia International Physics Center (DIPC), Donostia-San Sebastián, Spain."
+    - "Sep 2024 - Oct 2024: Postdoctoral researcher at Vrije Universiteit Brussel (VUB), Algemene Chemie (ALGC), Brussels, Belgium."
+    - "Sep 2022 - Aug 2024: Marie Skłodowska Curie EUTOPIA-SIF COFUND Postdoctoral Fellow at Vrije Universiteit Brussel (VUB), Brussels, Belgium."
+    - "Mar 2022 - Sep 2022: Postdoctoral reseracher at Vrije Universiteit Brussel (VUB), Algemene Chemie (ALGC), Brussels, Belgium."
+    - "Jan 2021 - May 2021: Research assistant. Donostia International Physics Center (DIPC), Donostia-San Sebastián, Spain."
+  research_topics:
+    - "Chemical bonding, aromaticity, electride chemistry, photochemistry, and catalysis."
 
 # PhD Students (alphabetical by first name)
+- id: ander_aleson
+  name: "Ander Aleson"
+  position: PhD student
+  photo: ander.jpg
+  email: alesonander@gmail.com
+  personal_web:
+  education:
+    - "2025: Master in Theoretical Chemistry and Computational Modelling, UPV/EHU, Spain."
+    - "2023: BSc in Chemistry, Universidad del País Vasco/Euskal Herriko Unibersitatea (UPV/EHU), Donostia, Euskal Herria."
+  experience:
+  research_topics:
+    - "Aromaticity as a magnetic response and its connection with static electron delocalization."
+    - "The adequacy of DFA to compute electron delocalization measures."
+
 - id: andrei_paulau
   name: "Andrei Paulau"
   position: PhD student
@@ -104,7 +146,7 @@
     - "A joint PhD thesis between Donostia International Physics Center (DIPC) and Universitat de Girona (UdG), developing new density functional methods for the accurate calculation of the non-linear optical properties using the density functional theory."
 
 - id: javier_dominguez
-  name: "Javier Dominguez"
+  name: "Javier Domin"
   position: PhD student
   photo: javier.jpeg
   email: javier.dom.cal@gmail.com
@@ -120,7 +162,7 @@
   name: "Joan Grèbol"
   position: PhD student
   photo: joan.jpg
-  email: joangrebol@gmail.com
+  email: joangrebol@dipc.org
   personal_web:
   education:
     - "2023: MSc in Chemistry, Master's in Advanced Catalysis and Molecular Modelling (MACMoM), Universitat de Girona (UdG), Girona, Catalunya."
@@ -143,22 +185,44 @@
     - "Development, implementation, and applications of the intracule pair density."
     - "Development of machine learning based correlation diagnostics."
 
-# Master Students
-- id: petru_milev
-  name: "Petru Milev"
-  position: Master student
-  photo: petru.jpeg
-  email: petia.md36@gmail.com
+- id: selom_goto
+  name: "Selom Jedidah Goto"
+  position: PhD student
+  photo: selom.jpg
+  email: selomjgoto86@gmail.com
   personal_web:
   education:
-    - "Master in Chemical NanoEngineering, Marseille, France"
-    - "BSc in Chemistry at the University of Bucharest, Bucharest, Romania"
+    - "MSc in Chemistry, Physical Chemistry and Chemical Physics (PCCP), University of Bordeaux."
+    - "BSc in Chemistry, University of Bordeaux."
   experience:
   research_topics:
-    - "Spurious oscillations"
-    - "Nonlinear optical properties"
+    - "Joint PhD thesis between the Donostia International Physics Center (DIPC) and the Institut des Sciences Moléculaires (ISM) of the University of Bordeaux."
+    - "Prediction of Linear and Nonlinear Optical Properties of Organic Chromophores through Structural and Electronic Descriptors."
+
+# Master Students
+- id: maddi_vicente
+  name: "Maddi Vicente"
+  position: Master student
+  photo: maddi.png
+  email: maddivicente@gmail.com
+  personal_web:
+  education:
+    - "(ongoing) Master in Theoretical Chemistry and Computational Modelling, UPV/EHU, Spain."
+    - "2023: BSc in Chemistry, Universidad del País Vasco/Euskal Herriko Unibersitatea (UPV/EHU), Donostia, Euskal Herria."
+  experience:
+  research_topics:
 
 # Visitors
+- id: valerii_chuiko
+  name: "Valerii Chuiko"
+  position: Visitor
+  photo:
+  email:
+  personal_web:
+  education:
+  experience:
+  research_topics:
+
 - id: dobromila_dankova
   name: "Dobromila Danková"
   position: Visitor
@@ -170,7 +234,7 @@
   research_topics:
 
 - id: lea_serrano
-  name: "Lea Serrano"
+  name: "Léa Serrano"
   position: Visitor
   photo:
   email:
@@ -241,19 +305,26 @@
   research_topics:
     - "A joint PhD thesis between Donostia International Physics Center (DIPC) and University of Bordeaux about vdW interactions on nonlinear optical switches."
 
-- id: irene_casademont_reig
-  name: "Dr. Irene Casademont Reig"
+- id: luis_antonio
+  name: "Dr. Luis Antonio Soriano Agueda"
   position: Alumni
-  photo: irene.png
-  email: irenecasre@gmail.com
+  photo: luisASA.png
+  email: lsorianoagueda@gmail.com
   personal_web:
   education:
-    - "2021: PhD in Theoretical Chemistry and Computational Modeling (TCCM), University of Basque Country (UPV/EHU), San Sebastian, Basque Country."
-    - "2016: MSc in Chemistry, Master in Advanced Catalysis and Molecular Modelling (MACMoM), Universitat de Girona, Girona, Catalunya."
-    - "2015: BSc in Chemistry, Universitat de Girona (UdG), Girona, Catalunya."
+    - "PhD in Chemistry at the Universidad Autónoma Metropolitana-Iztapalapa. Advisor: Dra. Rubicelia Vargas."
+    - "Degree in Chemistry at the Universidad Autónoma Metropolitana-Iztapalapa. Advisor: Dra. Rubicelia Vargas."
   experience:
+    - "Post-doctorate at the Centro de Investigación y de Estudios avanzados del Instituto Politécnico Nacional with Dr. Alberto Vela."
+    - "Post-doctorate at the National Autonomous University of Mexico with Dr. José Enrique Barquera."
   research_topics:
-    - "TDDFT and aromaticity in porphyrinoid systems, nanoring."
+    - "Design and implementation of exchange and correlation functionals for the correct description of dynamic and non-dynamic correlation."
+    - "Intrinsic Reactivity."
+    - "Interaction of metallic compounds with DNA."
+    - "Analysis of the Theory of Atoms in Molecules starting from STO orbitals."
+    - "Programming in CUDA."
+    - "Spin Cross-over."
+    - "Aromaticity."
 
 - id: mauricio_rodriguez
   name: "Dr. Mauricio Rodríguez Mayorga"
@@ -295,6 +366,20 @@
   experience:
   research_topics:
     - "Electron correlation, Coulomb holes and density functional development."
+
+- id: petru_milev
+  name: "Petru Milev"
+  position: Alumni
+  photo: petru.jpeg
+  email: petia.md36@gmail.com
+  personal_web:
+  education:
+    - "Master in Chemical NanoEngineering, Marseille, France"
+    - "BSc in Chemistry at the University of Bucharest, Bucharest, Romania"
+  experience:
+  research_topics:
+    - "Spurious oscillations"
+    - "Nonlinear optical properties"
 
 - id: ruben_ferradas
   name: "Dr. Rubén R. Ferradás"

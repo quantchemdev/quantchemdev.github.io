@@ -1,3 +1,4 @@
-<li><a href="{{ site.baseurl }}/members/ruben_ferradas.html">Dr. Rubén R. Ferradás</a></li>
-<li><a href="{{ site.baseurl }}/members/luis_antonio.html">Dr. Luis Antonio Soriano Agueda</a></li>
-<li><a href="{{ site.baseurl }}/members/mesias_orozco_ic.html">Dr. Mesías Orozco Ic</a></li>
+{% assign postdocs = site.data.members | where: "position", "Postdoc" %}
+{% for member in postdocs %}
+  <li><a href="{{ site.baseurl }}/members/{{ member.id }}/">{{ member.name }}</a></li>
+{% endfor %}

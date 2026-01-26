@@ -1,7 +1,4 @@
-  <li><a href="{{ site.baseurl }}/members/xiang_xu.html">Xiang Xu</a></li>
-  <li><a href="{{ site.baseurl }}/members/silvia_escayola.html">Silvia Escayola</a></li>
-  <li><a href="{{ site.baseurl }}/members/arron_rodriguez.html">José Aarón Rodríguez Jiménez</a></li>
-  <li><a href="{{ site.baseurl }}/members/andrei_paulau.html">Andrei Paulau</a></li>
-  <li><a href="{{ site.baseurl }}/members/javier_dominguez.html">Javier Dominguez</a></li>
-  <li><a href="{{ site.baseurl }}/members/markel_gonzalez.html">Markel Gonzalez de Txabarri</a></li>
-  <li><a href="{{ site.baseurl }}/members/guillem_vila.html">Guillem Vila</a></li>
+{% assign phd_students = site.data.members | where: "position", "PhD student" %}
+{% for member in phd_students %}
+  <li><a href="{{ site.baseurl }}/members/{{ member.id }}/">{{ member.name }}</a></li>
+{% endfor %}

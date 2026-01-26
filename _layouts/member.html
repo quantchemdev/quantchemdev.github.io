@@ -14,39 +14,47 @@ title: "{{ page.name_surname }}"
                         <h1>{{ page.name_surname }}</h1>
                     </header>
 <div class="member-profile">
-  <img src="{{ site.url }}{{ site.baseurl }}/assets/member_photos/{{ page.photo }}" alt="{{ page.name_surname }}" loading="lazy">
-  <p><strong>Position:</strong> {{ page.position }}</p>
-  {% if page.email %}
-  <p><strong>Email:</strong> <a href="mailto:{{ page.email }}">{{ page.email }}</a></p>
+  <img src="{{ site.baseurl }}/assets/member_photos/{{ page.photo }}" alt="{{ page.name_surname }}" loading="lazy">
+  {% if page.position and page.position != "None" and page.position != "" %}
+    <p><strong>Position:</strong> {{ page.position }}</p>
   {% endif %}
-  {% if page.personal_web %}
+  {% if page.email and page.email != "None" and page.email != "" %}
+    <p><strong>Email:</strong> <a href="mailto:{{ page.email }}">{{ page.email }}</a></p>
+  {% endif %}
+  {% if page.personal_web and page.personal_web != "None" and page.personal_web != "" %}
     <p><strong>Website:</strong> <a href="{{ page.personal_web }}">{{ page.personal_web }}</a></p>
   {% endif %}
-  {% if page.experience %}
+  {% if page.experience and page.experience.size > 0 %}
     <h2>Experience</h2>
     <ul>
       {% for exp in page.experience %}
-        <li>{{ exp }}</li>
+        {% if exp and exp != "None" and exp != "" %}
+          <li>{{ exp }}</li>
+        {% endif %}
       {% endfor %}
     </ul>
   {% endif %}
-  {% if page.education %}
+  {% if page.education and page.education.size > 0 %}
     <h2>Education</h2>
     <ul>
       {% for edu in page.education %}
-        <li>{{ edu }}</li>
+        {% if edu and edu != "None" and edu != "" %}
+          <li>{{ edu }}</li>
+        {% endif %}
       {% endfor %}
     </ul>
   {% endif %}
-  {% if page.research_topics %}
+  {% if page.research_topics and page.research_topics.size > 0 %}
     <h2>Research Topics</h2>
     <ul>
       {% for topic in page.research_topics %}
-        <li>{{ topic }}</li>
+        {% if topic and topic != "None" and topic != "" %}
+          <li>{{ topic }}</li>
+        {% endif %}
       {% endfor %}
     </ul>
   {% endif %}
-  {% if page.visit_period %}
+  {% if page.visit_period and page.visit_period != "None" and page.visit_period != "" %}
     <h2>Visit Period</h2>
     <p>{{ page.visit_period }}</p>
   {% endif %}
