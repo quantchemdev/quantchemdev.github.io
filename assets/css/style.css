@@ -30,10 +30,25 @@ body {
     max-width: 1500px;
 }
 
-/* Modern Grid System using CSS Grid */
+/* Modern Row Handling using Flexbox */
 .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -20px;
+}
+
+.row > * {
+    padding-left: 20px;
+}
+
+.row.flush > * {
+    padding-left: 0;
+}
+
+/* Optional CSS Grid classes for explicit grid layouts */
+.grid {
     display: grid;
-    grid-template-columns: repeat(12, 1fr); /* 12 columns flexible grid */
+    grid-template-columns: repeat(12, 1fr);
     gap: 20px;
 }
 
@@ -48,22 +63,7 @@ body {
 .col-4  { grid-column: span 4;  }
 .col-3  { grid-column: span 3;  }
 .col-2  { grid-column: span 2;  }
-.col-1  { grid-column: span 1; }
-
-/* Modern Row Handling using Flexbox */
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: -20px; /* Adjust depending on column gap */
-}
-
-.row > * {
-    padding-left: 20px; /* Adjust depending on column gap */
-}
-
-.row.flush > * {
-    padding-left: 0;
-}
+.col-1  { grid-column: span 1;  }
 
 
 	body {

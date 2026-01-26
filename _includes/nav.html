@@ -1,96 +1,39 @@
-<!-- Nav -->
 <nav id="nav">
     <ul>
         {% assign current = page.url | downcase | split: '/' %}
         
-        <!-- Home Link -->
         <li {% if current[1] == 'index.html' %}class="current"{% endif %}>
             <a href="{{ site.baseurl }}/index.html">Home</a>
         </li>
         
-        <!-- Members Dropdown -->
-        <li {% if current[1] == 'members.html' %}class="current"{% endif %}>
+        <li {% if current[1] contains 'members' %}class="current"{% endif %}>
             <a href="{{ site.baseurl }}/members.html">Members</a>
-            <ul>
-                <li>
-                    <a href="{{ site.baseurl }}/members/eduard-matito.html">Group Leader</a>
-                    <ul>
-                        <li><a href="{{ site.baseurl }}/members/eduard-matito.html">Dr. Eduard Matito</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="{{ site.baseurl }}/members/eloy_ramos_cordoba.html">Scientific Staff</a>
-                    <ul>
-                        {% include scientific_staffs.html %}
-                    </ul>
-                </li>
-                <li>
-                    <a href="{{ site.baseurl }}/members/ruben_ferradas.html">Postdoc</a>
-                    <ul>
-                        {% include postdoc_list.html %}
-                    </ul>
-                </li>
-                <li>
-                    <a href="{{ site.baseurl }}/members/markel_gonzalez.html">PhD Students</a>
-                    <ul>
-                        {% include phd_list.html %}
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">Master Students</a>
-                    <ul>
-                        {% include master_list.html %}
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">Undergraduate Students</a>
-                </li>
-                <li>
-                    <a href="{{ site.baseurl }}/members/mauricio_rodriguez.html">Alumni</a>
-                    <ul>
-                        {% include alumni_list.html %}
-                    </ul>
-                </li>
-                <li>
-                    <a href="{{ site.baseurl }}/members/nina_szczotka.html">Visitors</a>
-                    <ul>
-                        {% include visitors_list.html %}
-                    </ul>
-                </li>
-            </ul>
         </li>
         
-        <!-- Research Link -->
         <li {% if current[1] == 'research.html' %}class="current"{% endif %}>
             <a href="{{ site.baseurl }}/research.html">Research</a>
         </li>
         
-        <!-- Fundings Link -->
         <li {% if current[1] == 'fundings.html' %}class="current"{% endif %}>
             <a href="{{ site.baseurl }}/fundings.html">Fundings</a>
         </li>
         
-        <!-- Publications Link -->
         <li {% if current[1] == 'publications' %}class="current"{% endif %}>
             <a href="{{ site.baseurl }}/publications.html">Publications</a>
         </li>
         
-        <!-- Resources Link -->
         <li {% if current[1] == 'resources.html' %}class="current"{% endif %}>
             <a href="{{ site.baseurl }}/resources.html">Resources</a>
         </li>
         
-        <!-- Openings Link -->
         <li {% if current[1] == 'openings' %}class="current"{% endif %}>
             <a href="{{ site.baseurl }}/openings.html">Openings</a>
         </li>
 
-        <!-- News -->
         <li {% if current[1] == 'news' %}class="current"{% endif %}>
             <a href="{{ site.baseurl }}/news.html">News</a>
         </li>
         
-        <!-- Gallery Link -->
         <li {% if current[1] == 'gallery' %}class="current"{% endif %}>
             <a href="{{ site.baseurl }}/gallery.html">Gallery</a>
         </li>
