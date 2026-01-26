@@ -4,16 +4,16 @@ layout: default
 
 <header id="header">
     <div class="container">
-        <div class="group-header-container" style="display: flex; align-items: center; justify-content: center; gap: 40px; margin-bottom: 2em;">
+        <div class="group-header-container" style="display: flex; align-items: center; justify-content: center; gap: 40px; margin-bottom: 2em; flex-wrap: nowrap;">
 
-            <div class="group-title">
+            <div class="group-title" style="flex-shrink: 1; min-width: 0;">
                 <h1 style="margin: 0; font-size: 2.5em; line-height: 1.2;">Quantum Chemistry Development Group</h1>
             </div>
 
-            <div class="logo">
+            <div class="logo" style="flex-shrink: 0;">
                 <img src="{{ '/assets/images/qcdg_logo_nobg.png' | relative_url }}"
                      alt="QCDG Logo"
-                     style="height: 150px; width: auto; display: block; max-width: 100%;">
+                     style="height: 150px; width: auto; display: block;">
             </div>
 
         </div>
