@@ -411,11 +411,15 @@
   year: 2016
   month: November
   place: Gasteiz
-- id: '1768996149_914369'
-  filename: 20260121-122021-irenes-invited-talk-at-icesaa4-trivandrum-january-.webp
-  description: Irene’s Invited Talk at ICESAA4 (Trivandrum, January 2026)
+- filename: 20260121-122021-irenes-invited-talk-at-icesaa4-trivandrum-january-.webp
+  description: Irene's Invited Talk at ICESAA4
+  year: 2026
+  month: January
+  place: Trivandrum
   slack_ts: '1768996149.914369'
-- id: '1768996059_045599'
-  filename: 20260121-122023-irenes-lecture-at-winter-school-of-icesaa4-trivand.webp
-  description: Irene’s lecture at Winter School of ICESAA4 (Trivandrum, January 2026)
+- filename: 20260121-122023-irenes-lecture-at-winter-school-of-icesaa4-trivand.webp
+  description: Irene's lecture at Winter School of ICESAA4
+  year: 2026
+  month: January
+  place: Trivandrum
   slack_ts: '1768996059.045599'
