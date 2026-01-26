@@ -1,11 +1,11 @@
 # Site settings
 name: Quantum Chemistry Development Group
 description: Website for the Quantum Chemistry Development Group at DIPC
+url: "https://quantchemdev.github.io"
+baseurl: ""
 author:
   name: Quantum Chemistry Development Group
   email: quantchemdev@gmail.com
-  url: "https://quantchemdev.github.io"
-  baseurl: "/"
 
 # Social media and repository links
 github: https://github.com/quantchemdev
