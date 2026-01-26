@@ -5,7 +5,7 @@ featured: images/selom.jpg
 layout: post
 ---
 <p style="text-align: justify; font-size: 20px;">
-    A warm welcome to MSc. Selom Goto, who has joined our research team to begin his PhD!
+    A warm welcome to MSc. Selom Goto, who has joined our research team to begin her PhD!
 </p>
 
 <p style="text-align: justify; font-size: 20px;">
@@ -17,6 +17,6 @@ layout: post
 </p>
 
 <p style="text-align: justify; font-size: 20px;">
-    We look forward to his contributions in our group. Welcome aboard, Selom!
+    We look forward to her contributions in our group. Welcome aboard, Selom!
 </p>
 
