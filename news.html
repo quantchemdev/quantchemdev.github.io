@@ -14,7 +14,7 @@ description: Latest news and updates from our research group
                     <div class="news-image-big">
                         <img src="{{ site.baseurl }}/assets/{{ post.featured }}" alt="{{ post.title | escape }}"
                             width="400" height="300" loading="lazy" decoding="async" style="object-fit: cover;"
-                            onerror="this.style.display='none';">
+                            class="news-featured-img">
                         <div class="news-date-overlay">{{ post.date | date: "%B %d, %Y" }}</div>
                     </div>
                     {% else %}
@@ -48,3 +48,13 @@ description: Latest news and updates from our research group
         </div>
     </div>
 </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.news-featured-img').forEach(function(img) {
+        img.addEventListener('error', function() {
+            this.style.display = 'none';
+        });
+    });
+});
+</script>

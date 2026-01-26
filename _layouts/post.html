@@ -9,7 +9,7 @@ layout: main
 			         <h2>{{ page.title }}</h2> 
 				 <span class="byline">{{ page.date | date_to_string }}</span>
 				</header>
-				<img src="{{ site.baseurl }}/assets/{{ page.featured }}" alt="" style="height: 50vw;" loading="lazy">
+				<img src="{{ site.baseurl }}/assets/{{ page.featured }}" alt="{{ page.title }}" style="height: 50vw;" loading="lazy">
 <!-- 				<img src="{{ site.baseurl }}/assets/{{ page.featured }}" alt="" style="height: 30vw;" loading="lazy"> -->
 				{{ page.content }}
 			</section>

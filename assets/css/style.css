@@ -30,10 +30,25 @@ body {
     max-width: 1500px;
 }
 
-/* Modern Grid System using CSS Grid */
+/* Modern Row Handling using Flexbox */
 .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -20px;
+}
+
+.row > * {
+    padding-left: 20px;
+}
+
+.row.flush > * {
+    padding-left: 0;
+}
+
+/* Optional CSS Grid classes for explicit grid layouts */
+.grid {
     display: grid;
-    grid-template-columns: repeat(12, 1fr); /* 12 columns flexible grid */
+    grid-template-columns: repeat(12, 1fr);
     gap: 20px;
 }
 
@@ -48,22 +63,7 @@ body {
 .col-4  { grid-column: span 4;  }
 .col-3  { grid-column: span 3;  }
 .col-2  { grid-column: span 2;  }
-.col-1  { grid-column: span 1; }
-
-/* Modern Row Handling using Flexbox */
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: -20px; /* Adjust depending on column gap */
-}
-
-.row > * {
-    padding-left: 20px; /* Adjust depending on column gap */
-}
-
-.row.flush > * {
-    padding-left: 0;
-}
+.col-1  { grid-column: span 1;  }
 
 
 	body {
@@ -758,16 +758,22 @@ body {
     /* Gallery - Masonry Layout */
 
 .gallery {
-  column-count: 4;
-  column-gap: 16px;
+  display: flex;
+  gap: 16px;
   max-width: 1400px;
   margin: 0 auto;
   padding: 20px 16px;
 }
 
+.gallery-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
 .gallery img {
   width: 100%;
-  margin-bottom: 16px;
   border-radius: 8px;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -777,17 +783,6 @@ body {
 .gallery img:hover {
   transform: scale(1.02);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-}
-
-/* Responsive masonry columns */
-@media (max-width: 1200px) {
-  .gallery { column-count: 3; }
-}
-@media (max-width: 800px) {
-  .gallery { column-count: 2; }
-}
-@media (max-width: 500px) {
-  .gallery { column-count: 1; }
 }
 
 /* Lightbox */

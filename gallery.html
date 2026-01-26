@@ -12,12 +12,14 @@ layout: main
             <header class="major">
               <h1>Gallery</h1>
             </header>
-            <div class="gallery">
+            <div class="gallery" style="opacity: 0;">
               {% for item in site.data.gallery.items %}
               <img src="./assets/gallery/{{ item.filename }}"
                    loading="lazy"
                    alt="{{ item.description }}"
-                   data-caption="{{ item.description }}{% if item.month %}, {{ item.month }}{% endif %}{% if item.year %} {{ item.year }}{% endif %}{% if item.place %} — {{ item.place }}{% endif %}">
+                   data-caption="{{ item.description }}{% if item.month %}, {{ item.month }}{% endif %}{% if item.year %} {{ item.year }}{% endif %}{% if item.place %} — {{ item.place }}{% endif %}"
+                   data-year="{{ item.year | default: 0 }}"
+                   data-month="{{ item.month }}">
               {% endfor %}
             </div>
           </section>

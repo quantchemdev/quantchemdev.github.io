@@ -159,31 +159,58 @@ jobs:
                             if already_exists:
                                 continue
                             
-                            # Parse format
-                            parts = [p.strip() for p in text.split("|")]
-                            description = parts[0] if len(parts) > 0 else "Untitled"
-                            
+                            # Parse format - supports both:
+                            # 1. "Description (Place, Month Year)" - e.g., "Edu's talk (Castelló, June 2016)"
+                            # 2. "Description (Month Year)" - e.g., "Mau's poster (July 2015)"
+                            # 3. "Description | Month Year | Place" - pipe-separated (legacy)
+
                             year = None
                             month = None
                             place = None
-                            
-                            if len(parts) >= 2:
-                                time_part = parts[1].strip()
-                                if re.match(r'^\d{4}$', time_part):
-                                    year = time_part
+
+                            # Try parentheses format first
+                            paren_match = re.match(r'^(.+?)\s*\(([^)]+)\)\s*$', text)
+                            if paren_match:
+                                description = paren_match.group(1).strip()
+                                inside_parens = paren_match.group(2).strip()
+
+                                # Extract year
+                                year_match = re.search(r'\b(19|20)\d{2}\b', inside_parens)
+                                if year_match:
+                                    year = year_match.group()
+
+                                # Check for comma: "Place, Month Year" vs "Month Year"
+                                if ',' in inside_parens:
+                                    comma_parts = inside_parens.split(',', 1)
+                                    place = comma_parts[0].strip()
+                                    time_part = comma_parts[1].strip()
                                 else:
-                                    year_match = re.search(r'\b(19|20)\d{2}\b', time_part)
-                                    if year_match:
-                                        year = year_match.group()
-                                        month_part = time_part.replace(year, '').strip()
-                                        if month_part:
-                                            month = month_part
-                            
-                            if len(parts) >= 3:
-                                place = parts[2].strip()
-                            
-                            # Generate unique ID
-                            unique_id = message_ts.replace(".", "_")
+                                    time_part = inside_parens
+
+                                # Extract month (remove year from time_part)
+                                if year:
+                                    month_part = time_part.replace(year, '').strip()
+                                    if month_part:
+                                        month = month_part
+                            else:
+                                # Fall back to pipe-separated format
+                                parts = [p.strip() for p in text.split("|")]
+                                description = parts[0] if len(parts) > 0 else "Untitled"
+
+                                if len(parts) >= 2:
+                                    time_part = parts[1].strip()
+                                    if re.match(r'^\d{4}$', time_part):
+                                        year = time_part
+                                    else:
+                                        year_match = re.search(r'\b(19|20)\d{2}\b', time_part)
+                                        if year_match:
+                                            year = year_match.group()
+                                            month_part = time_part.replace(year, '').strip()
+                                            if month_part:
+                                                month = month_part
+
+                                if len(parts) >= 3:
+                                    place = parts[2].strip()
                             
                             # Generate filename (always .webp)
                             timestamp = datetime.now().strftime("%Y%m%d-%H%M%S")
@@ -215,7 +242,6 @@ jobs:
                                 
                                 # Create YAML entry
                                 entry = {
-                                    "id": unique_id,
                                     "filename": filename,
                                     "description": description,
                                     "slack_ts": message_ts
@@ -242,7 +268,7 @@ jobs:
                         os.remove(filepath)
                         print(f"🗑️ Deleted: {filepath}")
                     
-                    existing_entries = [e for e in existing_entries if e.get("id") != entry.get("id")]
+                    existing_entries = [e for e in existing_entries if e.get("slack_ts") != entry.get("slack_ts")]
                 
                 changes_made = True
             
