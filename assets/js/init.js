@@ -5,7 +5,8 @@
     templated.co @templatedco
     Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 */
-(function($) {
+(function() {
+	'use strict';
 
 	skel.init({
 		reset: 'full',
@@ -44,24 +45,21 @@
 		}
 	});
 
-	$(function() {
+	// DOM ready handler
+	document.addEventListener('DOMContentLoaded', function() {
 
 		// Form submit button handler
-		var $form = $('form');
-		if ($form.length > 0) {
-			$form.find('.form-button-submit')
-				.on('click', function() {
-					$(this).parents('form').submit();
-					return false;
+		var forms = document.querySelectorAll('form');
+		forms.forEach(function(form) {
+			var submitBtns = form.querySelectorAll('.form-button-submit');
+			submitBtns.forEach(function(btn) {
+				btn.addEventListener('click', function(e) {
+					e.preventDefault();
+					form.submit();
 				});
-		}
-
-		// Dropdowns
-		$('#nav > ul').dropotron({
-			offsetY: -15,
-			hoverDelay: 0
+			});
 		});
 
 	});
 
-})(jQuery);
+})();
