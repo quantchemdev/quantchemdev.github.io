@@ -46,6 +46,7 @@ def create_member_page(member):
     email = member.get('email', '')
     position = member.get('position', '')
     personal_web = member.get('personal_web', '')
+    orcid = member.get('orcid', '')
     education = member.get('education', []) or []
     experience = member.get('experience', []) or []
     research_topics = member.get('research_topics', []) or []
@@ -58,6 +59,7 @@ def create_member_page(member):
         f.write(f"email: {email}\n")
         f.write(f"position: {position}\n")
         f.write(f"personal_web: {personal_web}\n")
+        f.write(f"orcid: {orcid}\n")
 
         f.write("education:\n")
         if education:

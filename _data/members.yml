@@ -5,6 +5,7 @@
   photo: eduard.png
   email: ematito@gmail.com
   personal_web: https://ematito.dipc.org
+  orcid: https://orcid.org/0000-0001-6895-4562
   education:
     - "2006: Ph.D. in Chemistry; thesis supervised by Prof. Miquel Solà i Puig and Prof. Miquel Duran i Portas, Universitat de Girona, Girona, Spain."
     - "2004: M.S. in Chemistry, University of Girona, Girona, Spain."
@@ -48,6 +49,7 @@
   photo: ishita.jpg
   email: imoon.2008@gmail.com
   personal_web:
+  orcid: https://orcid.org/0009-0004-7391-074X
   education:
     - "2024: PhD in Science, Indian Association for the Cultivation of Science, Calcutta University, India."
     - "2017: MSc in Chemistry, Calcutta University, India."
@@ -63,6 +65,7 @@
   photo: jochen.jpg
   email: jochen.eeckhoudt@gmail.com
   personal_web:
+  orcid: https://orcid.org/0000-0003-0973-5604
   education:
     - "2025: PhD in Sciences (Computational Chemistry), Vrije Universiteit Brussel (VUB), Brussels, Belgium."
     - "2016: MSc in Chemistry, Vrije Universiteit Brussel (VUB), Brussels, Belgium."
@@ -78,6 +81,7 @@
   photo: irene.png
   email: irene.casademont@dipc.org
   personal_web:
+  orcid: https://orcid.org/0000-0002-0842-1040
   education:
     - "2021: PhD in Theoretical and Computational Chemistry, Universidad del País Vasco/Euskal Herriko Unibersitatea (UPV/EHU), Donostia-San Sebastián, Spain."
     - "2016: MSc in Chemistry, Master in Advanced Catalysis and Molecular Modelling (MACMoM), Universitat de Girona, Girona, Catalunya."
@@ -98,6 +102,7 @@
   photo: ander.jpg
   email: alesonander@gmail.com
   personal_web:
+  orcid: https://orcid.org/0000-0002-9220-0952
   education:
     - "2025: Master in Theoretical Chemistry and Computational Modelling, UPV/EHU, Spain."
     - "2023: BSc in Chemistry, Universidad del País Vasco/Euskal Herriko Unibersitatea (UPV/EHU), Donostia, Euskal Herria."
@@ -125,6 +130,7 @@
   photo: babu.jpg
   email: janaarthana.perumal@dipc.org
   personal_web:
+  orcid: https://orcid.org/0009-0000-0593-162X
   education:
     - "2023: Master's degree in Chemistry (IISER-TVM)"
     - "2024: PhD student at the University of the Basque Country in Spain (DIPC)"
@@ -138,6 +144,7 @@
   photo: guillem.jpg
   email: gvila1999@gmail.com
   personal_web:
+  orcid: https://orcid.org/0000-0002-1724-9860
   education:
     - "2022: MSc in Chemistry, Master in Advanced Catalysis and Molecular Modelling (MACMoM), Universitat de Girona, Girona, Catalunya."
     - "2021: BSc in Chemistry, Universitat de Girona (UdG), Girona, Catalunya."
@@ -151,6 +158,7 @@
   photo: javier.jpeg
   email: javier.dom.cal@gmail.com
   personal_web:
+  orcid: https://orcid.org/0000-0001-8536-0109
   education:
     - "2019: Master in Theoretical Chemistry and Computational Modeling, Spain."
     - "2015: Bachelor in Chemistry, University of Valladolid, Spain."
@@ -164,6 +172,7 @@
   photo: joan.jpg
   email: joangrebol@dipc.org
   personal_web:
+  orcid: https://orcid.org/0000-0003-4345-2667
   education:
     - "2023: MSc in Chemistry, Master's in Advanced Catalysis and Molecular Modelling (MACMoM), Universitat de Girona (UdG), Girona, Catalunya."
     - "2022: BSc in Chemistry, Universitat de Girona (UdG), Girona, Catalunya."
@@ -177,6 +186,7 @@
   photo: markel.jpg
   email: markelgtx@gmail.com
   personal_web:
+  orcid: https://orcid.org/0000-0001-7238-9308
   education:
     - "2022: Master in Theoretical Chemistry and Computational Modeling, UPV/EHU, Spain."
     - "2020: BSc in Chemistry, Universidad del País Vasco/Euskal Herriko Unibertsitatea (UPV/EHU), Donostia, Euskal Herria."

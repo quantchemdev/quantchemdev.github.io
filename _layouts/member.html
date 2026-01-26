@@ -24,6 +24,9 @@ title: "{{ page.name_surname }}"
   {% if page.personal_web and page.personal_web != "None" and page.personal_web != "" %}
     <p><strong>Website:</strong> <a href="{{ page.personal_web }}">{{ page.personal_web }}</a></p>
   {% endif %}
+  {% if page.orcid and page.orcid != "None" and page.orcid != "" %}
+    <p><strong><i class="fa-brands fa-orcid" style="color: #a6ce39;"></i> ORCID:</strong> <a href="{{ page.orcid }}">{{ page.orcid }}</a></p>
+  {% endif %}
   {% if page.experience and page.experience.size > 0 %}
     <h2>Experience</h2>
     <ul>
