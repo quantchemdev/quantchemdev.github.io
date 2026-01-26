@@ -300,3 +300,143 @@
         font-size: 0.9rem;
     }
 }
+
+/* =====================================================
+   MOBILE RESPONSIVE FIXES FOR OLD GRID SYSTEM
+   Fixes for pages using legacy skel grid classes (8u, 4u, etc.)
+   ===================================================== */
+
+/* Tablet breakpoint - stack sidebar below content */
+@media (max-width: 980px) {
+    /* Make old grid columns full width */
+    .row > [class*="u"] {
+        width: 100% !important;
+        float: none !important;
+        padding-left: 0 !important;
+    }
+
+    .row {
+        margin-left: 0 !important;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Ensure content comes first, sidebar second */
+    #content.skel-cell-important {
+        order: 1;
+    }
+
+    #sidebar, .sidebar {
+        order: 2;
+        margin-top: 2em;
+    }
+
+    /* Main content padding adjustments */
+    #main {
+        padding: 3em 0;
+    }
+
+    #main .container {
+        padding: 0 15px;
+    }
+
+    /* Header adjustments */
+    #header {
+        padding: 3em 0;
+    }
+}
+
+/* Mobile breakpoint - tighter spacing */
+@media (max-width: 768px) {
+    #main {
+        padding: 2em 0;
+    }
+
+    #header {
+        padding: 2em 0;
+    }
+
+    header.major {
+        padding-bottom: 2em;
+    }
+
+    header h2 {
+        font-size: 2em;
+    }
+
+    #logo {
+        font-size: 1.5em;
+    }
+}
+
+/* Small mobile breakpoint */
+@media (max-width: 480px) {
+    #main {
+        padding: 1.5em 0;
+    }
+
+    #main .container {
+        padding: 0 10px;
+    }
+
+    header.major {
+        padding-bottom: 1.5em;
+    }
+
+    header h2 {
+        font-size: 1.6em;
+    }
+
+    #logo {
+        font-size: 1.3em;
+    }
+
+    /* Wrapper padding adjustments */
+    .wrapper.style2 {
+        padding: 3em 0;
+    }
+}
+
+/* =====================================================
+   GALLERY RESPONSIVE FIXES
+   ===================================================== */
+
+@media (max-width: 768px) {
+    .gallery {
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .gallery-column {
+        gap: 10px;
+    }
+
+    /* Lightbox navigation buttons */
+    .lightbox-nav {
+        padding: 10px;
+        font-size: 2rem;
+    }
+
+    .lightbox-close {
+        top: 10px;
+        right: 15px;
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery {
+        gap: 8px;
+        padding: 8px;
+    }
+
+    .lightbox img {
+        max-width: 95%;
+        max-height: 70vh;
+    }
+
+    .lightbox-caption {
+        font-size: 0.85rem;
+        padding: 0 15px;
+    }
+}

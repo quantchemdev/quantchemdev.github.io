@@ -150,21 +150,75 @@ h1, h2, h3 {
   }
   .members-page .postdoc,
   .members-page .phd-student,
-  .members-page .master-student,
+  .members-page .master-student {
+    grid-template-columns: repeat(2, 1fr);
+  }
   .members-page .alumni,
   .members-page .visitor {
-    grid-template-columns: repeat(2, 1fr); /* Adjust to two columns on medium screens */
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for alumni on tablets */
   }
 }
 
 @media (max-width: 768px) {
+  .members-page {
+    padding: 15px;
+  }
+
   .members-page .group-leader,
   .members-page .scientific-staff,
   .members-page .postdoc,
   .members-page .phd-student,
-  .members-page .master-student,
+  .members-page .master-student {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
   .members-page .alumni,
   .members-page .visitor {
-    grid-template-columns: repeat(1, 1fr); /* Adjust to single column on smaller screens */
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for alumni on mobile */
+  }
+
+  .members-page ul li img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .member-profile {
+    padding: 15px;
+    margin: 10px auto;
+  }
+
+  .member-profile img {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .members-page {
+    padding: 10px;
+  }
+
+  .members-page .alumni,
+  .members-page .visitor {
+    grid-template-columns: repeat(2, 1fr); /* Keep 2 columns for alumni on small phones */
+  }
+
+  .members-page ul li img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .members-page ul li a {
+    padding: 8px;
+    font-size: 0.9em;
+  }
+
+  .member-profile img {
+    width: 120px;
+    height: 120px;
+  }
+
+  h2, h3 {
+    font-size: 1.2em;
   }
 }
