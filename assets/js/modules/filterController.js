@@ -48,7 +48,7 @@ export class FilterController {
       "Paulau, A.",
       "Perumali, J.B.",
       "Vila, G.",
-      "Dominguez, J.",
+      "Domin, J.",
       "Grèbol-Tomàs, J.",
       "Ylla, M.",
       // Master Students
