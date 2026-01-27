@@ -1,0 +1,79 @@
+---
+# Main SCSS file - Jekyll will compile this to CSS
+---
+
+// ============================================
+// MAIN SCSS ENTRY POINT
+// Quantum Chemistry Development Group Website
+// ============================================
+//
+// This is the main entry point that compiles all SCSS partials
+// into a single CSS file. The order of imports matters!
+//
+// Structure:
+// 1. Abstracts - Variables, mixins (no CSS output)
+// 2. Base - Reset, typography, base elements
+// 3. Components - Reusable UI components
+// 4. Layout - Page structure (header, footer, grid)
+// 5. Pages - Page-specific styles
+//
+// To compile:
+//   sass assets/scss/main.scss assets/css/main.css
+//
+// For development with watch:
+//   sass --watch assets/scss/main.scss:assets/css/main.css
+//
+// For production (minified):
+//   sass assets/scss/main.scss assets/css/main.css --style=compressed
+//
+// ============================================
+
+// --------------------------------------------
+// 1. ABSTRACTS
+// Variables and mixins - must be loaded first
+// These don't output any CSS on their own
+// --------------------------------------------
+@use 'abstracts/variables' as *;
+@use 'abstracts/mixins' as *;
+
+// --------------------------------------------
+// 2. BASE
+// Reset, typography, and base element styles
+// --------------------------------------------
+@use 'base/reset';
+@use 'base/typography';
+@use 'base/base';
+
+// --------------------------------------------
+// 3. COMPONENTS
+// Reusable UI components
+// --------------------------------------------
+@use 'components/buttons';
+@use 'components/forms';
+@use 'components/cards';
+@use 'components/images';
+@use 'components/icons';
+@use 'components/lightbox';
+@use 'components/lists';
+@use 'components/tables';
+@use 'components/pagination';
+
+// --------------------------------------------
+// 4. LAYOUT
+// Page structure and layout
+// --------------------------------------------
+@use 'layout/grid';
+@use 'layout/container';
+@use 'layout/header';
+@use 'layout/navigation';
+@use 'layout/main';
+@use 'layout/footer';
+@use 'layout/wrapper';
+
+// --------------------------------------------
+// 5. PAGES
+// Page-specific styles
+// --------------------------------------------
+@use 'pages/members';
+@use 'pages/news';
+@use 'pages/gallery';

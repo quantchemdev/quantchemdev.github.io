@@ -1,0 +1,163 @@
+// ============================================
+// HEADER
+// Site header and banner styles
+// ============================================
+
+@use '../abstracts' as *;
+
+#header {
+  background: $color-text-dark url("../images/Donosti.webp") no-repeat;
+  background-size: cover;
+  background-position: 0% 65%;
+  color: $color-white;
+  padding: $spacing-4xl 0;
+  text-align: center;
+  position: relative;
+  z-index: $z-modal !important;
+
+  // Overlay
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(16, 32, 48, 0.25);
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .major h2 {
+    font-size: $font-size-3xl;
+    color: $color-white;
+  }
+
+  .major .byline {
+    font-size: $font-size-lg;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  @include breakpoint-down(lg) {
+    padding: $spacing-2xl 0;
+  }
+
+  @include breakpoint-down(md) {
+    padding: $spacing-xl 0;
+  }
+}
+
+// Homepage-specific header
+.homepage #header {
+  padding: 8em 0;
+  background-position: center;
+}
+
+// Logo
+#logo {
+  font-size: $font-size-3xl;
+
+  @include breakpoint-down(md) {
+    font-size: $font-size-2xl;
+  }
+
+  @include breakpoint-down(sm) {
+    font-size: 1.3em;
+  }
+}
+
+// Banner section
+#banner {
+  text-align: center;
+  padding: $spacing-3xl 0 0 0;
+
+  .major h2 {
+    font-size: $font-size-6xl;
+  }
+
+  .major .byline {
+    display: block;
+    margin: 0em 2em;
+    line-height: $line-height-normal;
+    font-size: $font-size-2xl;
+  }
+
+  a {
+    color: inherit;
+  }
+}
+
+// Group header for landing page
+.group-header-container {
+  flex-wrap: wrap !important;
+
+  @include breakpoint-down(md) {
+    gap: 20px !important;
+    flex-direction: column !important;
+  }
+}
+
+.group-title {
+  padding: $spacing-xl 0;
+  text-align: center;
+
+  h1 {
+    font-size: $font-size-4xl;
+    margin-bottom: $spacing-sm;
+
+    @include breakpoint-down(md) {
+      font-size: $font-size-3xl !important;
+    }
+
+    @include breakpoint-down(sm) {
+      font-size: 1.6em !important;
+    }
+
+    @include breakpoint-down(xs) {
+      font-size: 1.4em !important;
+    }
+  }
+}
+
+.tagline {
+  font-size: 1.2rem;
+  color: $color-gray-dark;
+  font-style: italic;
+}
+
+.logo img {
+  @include breakpoint-down(md) {
+    height: 120px !important;
+  }
+
+  @include breakpoint-down(sm) {
+    height: 100px !important;
+  }
+
+  @include breakpoint-down(xs) {
+    height: 80px !important;
+  }
+}
+
+// Section headers
+.section-header {
+  text-align: center;
+  margin-bottom: $spacing-xl;
+
+  h2 {
+    @include breakpoint-down(sm) {
+      font-size: $font-size-2xl;
+    }
+  }
+}
+
+.section-description {
+  font-size: $font-size-lg;
+  color: $color-gray;
+}

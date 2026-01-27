@@ -1,0 +1,50 @@
+// ============================================
+// ICONS
+// Icon styles and Font Awesome integration
+// ============================================
+
+@use '../abstracts' as *;
+
+// Base icon styles
+.icon {
+  position: relative;
+
+  &::before {
+    content: "";
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-transform: none !important;
+  }
+
+  > .label {
+    @include visually-hidden;
+  }
+}
+
+// Social icons
+.social-icons {
+  margin-bottom: $spacing-md;
+
+  a {
+    margin: 0 10px;
+    font-size: $font-size-lg;
+  }
+}
+
+// Social link styling
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  svg {
+    transition: transform $transition-fast;
+  }
+
+  &:hover svg {
+    transform: scale(1.1);
+  }
+}

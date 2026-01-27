@@ -1,0 +1,215 @@
+// ============================================
+// MEMBERS PAGE
+// Team member listing and profile styles
+// ============================================
+
+@use '../abstracts' as *;
+
+// Members page container
+.members-page {
+  padding: $gutter;
+  max-width: $container-width;
+  margin: 0 auto;
+  background-color: $color-white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  img {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: $border-radius-md;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    gap: 15px;
+    justify-content: center;
+  }
+
+  // Grid layouts for different member categories
+  .group-leader {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .scientific-staff {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .postdoc,
+  .phd-student {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .master-student {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .alumni,
+  .visitor {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  ul li {
+    margin: 15px 0;
+    text-align: center;
+    box-sizing: border-box;
+
+    a {
+      text-decoration: none;
+      color: $color-accent;
+      display: block;
+      padding: 10px;
+      border-radius: $border-radius-md;
+      background-color: $bg-light;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      transition: transform $transition-fast;
+      height: 100%;
+
+      &:hover {
+        color: $color-accent-dark;
+        transform: scale(1.05);
+      }
+    }
+
+    img {
+      @include avatar(150px);
+      margin-bottom: 10px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  // Responsive adjustments
+  @include breakpoint-down(xl) {
+    .group-leader,
+    .scientific-staff {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .postdoc,
+    .phd-student,
+    .master-student {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .alumni,
+    .visitor {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @include breakpoint-down(md) {
+    padding: 15px;
+
+    .group-leader,
+    .scientific-staff,
+    .postdoc,
+    .phd-student,
+    .master-student {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .alumni,
+    .visitor {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    ul li img {
+      width: 120px;
+      height: 120px;
+    }
+  }
+
+  @include breakpoint-down(sm) {
+    padding: 10px;
+
+    .alumni,
+    .visitor {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    ul li {
+      img {
+        width: 100px;
+        height: 100px;
+      }
+
+      a {
+        padding: 8px;
+        font-size: $font-size-sm;
+      }
+    }
+  }
+}
+
+// Member profile page
+.member-profile {
+  padding: $gutter;
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: $color-white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+
+  img {
+    @include avatar(200px);
+    margin-bottom: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+
+  h1 {
+    margin-top: 0;
+  }
+
+  p {
+    font-size: $font-size-lg;
+    margin: 10px 0;
+  }
+
+  a {
+    color: $color-accent;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-accent-dark;
+    }
+  }
+
+  h2 {
+    margin-top: 30px;
+  }
+
+  ul {
+    list-style-type: disc;
+    margin: 10px 0 0 20px;
+    padding: 0;
+    text-align: left;
+
+    li {
+      margin-bottom: 5px;
+    }
+  }
+
+  @include breakpoint-down(md) {
+    padding: 15px;
+    margin: 10px auto;
+
+    img {
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  @include breakpoint-down(sm) {
+    img {
+      width: 120px;
+      height: 120px;
+    }
+
+    h2, h3 {
+      font-size: 1.2em;
+    }
+  }
+}

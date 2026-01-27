@@ -1,0 +1,64 @@
+// ============================================
+// BASE
+// Core element styles
+// ============================================
+
+@use '../abstracts' as *;
+
+// Body
+body {
+  background: $bg-body;
+  min-width: 320px;
+}
+
+// Form elements inherit colors
+input, select, textarea {
+  color: $color-text;
+}
+
+// Sections and articles
+section.special,
+article.special {
+  text-align: center;
+}
+
+// Headers
+header.major {
+  padding-bottom: 4em;
+
+  @include breakpoint-down(md) {
+    padding-bottom: 2em;
+  }
+
+  @include breakpoint-down(sm) {
+    padding-bottom: 1.5em;
+  }
+}
+
+header h2 {
+  margin: 0;
+  padding: 0;
+  font-size: $font-size-5xl;
+  font-weight: $font-weight-semibold;
+
+  @include breakpoint-down(md) {
+    font-size: $font-size-3xl;
+  }
+
+  @include breakpoint-down(sm) {
+    font-size: 1.6em;
+  }
+}
+
+header .byline {
+  font-size: 1.6em;
+}
+
+// Footers
+footer > :last-child {
+  margin-bottom: 0;
+}
+
+footer.major {
+  padding-top: 3em;
+}

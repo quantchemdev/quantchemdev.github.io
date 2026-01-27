@@ -1,0 +1,25 @@
+// ============================================
+// PAGINATION
+// Pagination styles
+// ============================================
+
+@use '../abstracts' as *;
+
+.pagination {
+  text-align: center;
+
+  a,
+  span {
+    padding: 7px 18px;
+    border: 1px solid $color-gray-lighter;
+    margin-left: -2px;
+    margin-right: -2px;
+    background-color: $color-white;
+    display: inline-block;
+  }
+
+  a:hover {
+    background-color: #f1f1f1;
+    color: $color-text-dark;
+  }
+}

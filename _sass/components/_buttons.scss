@@ -1,0 +1,50 @@
+// ============================================
+// BUTTONS
+// Button styles and variants
+// ============================================
+
+@use '../abstracts' as *;
+
+// Base button styles
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+.button {
+  @include button-base;
+  background: $color-primary;
+  color: $color-white;
+  min-width: 10em;
+
+  &:hover {
+    background-color: $color-primary-dark;
+  }
+
+  // Size variants
+  &.small {
+    font-size: $font-size-xs;
+  }
+
+  &.fit {
+    width: 100%;
+  }
+}
+
+// Primary button variant
+.button.primary {
+  display: inline-block;
+  background: $color-secondary;
+  color: $color-white;
+  padding: 0.8rem 1.5rem;
+  border-radius: $border-radius-md;
+  font-weight: $font-weight-bold;
+  transition: background $transition-base;
+
+  &:hover {
+    background: $color-secondary-light;
+  }
+
+  @include breakpoint-down(xs) {
+    padding: 0.6rem 1rem;
+    font-size: $font-size-sm;
+  }
+}

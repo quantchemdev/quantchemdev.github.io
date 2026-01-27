@@ -1,0 +1,31 @@
+// ============================================
+// CONTAINER
+// Container layouts and wrappers
+// ============================================
+
+@use '../abstracts' as *;
+
+.container {
+  margin: 0 auto;
+  padding: 0 $gutter;
+  max-width: $container-width;
+  width: 100%;
+  background: no-repeat;
+
+  // Size modifiers
+  &.small {
+    max-width: $container-small;
+  }
+
+  &.big {
+    max-width: $container-large;
+  }
+
+  @include breakpoint-down(sm) {
+    padding: 0 10px;
+  }
+
+  @include breakpoint-down(xs) {
+    padding: 0 10px;
+  }
+}
