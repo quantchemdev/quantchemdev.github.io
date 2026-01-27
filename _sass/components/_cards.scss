@@ -3,8 +3,6 @@
 // Card components for content blocks
 // ============================================
 
-@use '../abstracts' as *;
-
 // News cards
 .news-item,
 .twitter-card {
@@ -107,5 +105,17 @@
 
   &:hover {
     text-decoration: underline;
+  }
+}
+
+// MolProLab logo on landing page
+.molprolab-logo {
+  text-align: center;
+  margin-bottom: $spacing-lg;
+
+  img {
+    display: block;
+    max-width: 250px;
+    margin: 0 auto $spacing-lg;
   }
 }

@@ -17,15 +17,6 @@
 // 4. Layout - Page structure (header, footer, grid)
 // 5. Pages - Page-specific styles
 //
-// To compile:
-//   sass assets/scss/main.scss assets/css/main.css
-//
-// For development with watch:
-//   sass --watch assets/scss/main.scss:assets/css/main.css
-//
-// For production (minified):
-//   sass assets/scss/main.scss assets/css/main.css --style=compressed
-//
 // ============================================
 
 // --------------------------------------------
@@ -33,47 +24,50 @@
 // Variables and mixins - must be loaded first
 // These don't output any CSS on their own
 // --------------------------------------------
-@use 'abstracts/variables' as *;
-@use 'abstracts/mixins' as *;
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
 
 // --------------------------------------------
 // 2. BASE
 // Reset, typography, and base element styles
 // --------------------------------------------
-@use 'base/reset';
-@use 'base/typography';
-@use 'base/base';
+@import 'base/reset';
+@import 'base/typography';
+@import 'base/base';
 
 // --------------------------------------------
 // 3. COMPONENTS
 // Reusable UI components
 // --------------------------------------------
-@use 'components/buttons';
-@use 'components/forms';
-@use 'components/cards';
-@use 'components/images';
-@use 'components/icons';
-@use 'components/lightbox';
-@use 'components/lists';
-@use 'components/tables';
-@use 'components/pagination';
+@import 'components/buttons';
+@import 'components/forms';
+@import 'components/cards';
+@import 'components/images';
+@import 'components/icons';
+@import 'components/lightbox';
+@import 'components/lists';
+@import 'components/tables';
+@import 'components/pagination';
 
 // --------------------------------------------
 // 4. LAYOUT
 // Page structure and layout
 // --------------------------------------------
-@use 'layout/grid';
-@use 'layout/container';
-@use 'layout/header';
-@use 'layout/navigation';
-@use 'layout/main';
-@use 'layout/footer';
-@use 'layout/wrapper';
+@import 'layout/grid';
+@import 'layout/container';
+@import 'layout/header';
+@import 'layout/navigation';
+@import 'layout/main';
+@import 'layout/footer';
+@import 'layout/wrapper';
 
 // --------------------------------------------
 // 5. PAGES
 // Page-specific styles
 // --------------------------------------------
-@use 'pages/members';
-@use 'pages/news';
-@use 'pages/gallery';
+@import 'pages/members';
+@import 'pages/news';
+@import 'pages/gallery';
+@import 'pages/openings';
+@import 'pages/fundings';
+@import 'pages/research';

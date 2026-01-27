@@ -1,12 +1,4 @@
 // ============================================
 // LAYOUT INDEX
-// Import all layout modules
+// Layout modules are imported directly in main.scss
 // ============================================
-
-@forward 'grid';
-@forward 'container';
-@forward 'header';
-@forward 'navigation';
-@forward 'main';
-@forward 'footer';
-@forward 'wrapper';

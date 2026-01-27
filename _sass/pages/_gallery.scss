@@ -3,8 +3,6 @@
 // Image gallery with masonry layout
 // ============================================
 
-@use '../abstracts' as *;
-
 .gallery {
   display: flex;
   gap: 16px;

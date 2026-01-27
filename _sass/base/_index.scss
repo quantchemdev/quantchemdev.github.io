@@ -1,8 +1,4 @@
 // ============================================
 // BASE INDEX
-// Import base modules in order
+// Base modules are imported directly in main.scss
 // ============================================
-
-@forward 'reset';
-@forward 'typography';
-@forward 'base';

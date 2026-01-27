@@ -1,8 +1,4 @@
 // ============================================
 // PAGES INDEX
-// Import all page-specific modules
+// Page modules are imported directly in main.scss
 // ============================================
-
-@forward 'members';
-@forward 'news';
-@forward 'gallery';

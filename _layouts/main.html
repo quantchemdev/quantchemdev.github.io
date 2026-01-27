@@ -2,16 +2,21 @@
 layout: default
 ---
 <!-- Header -->
-			<div id="header">
-				<div class="container">
+<header id="header">
+    <div class="container">
+        <div class="section-header-container">
+            <h1 class="section-title"><a href="{{ '/' | relative_url }}">{{ page.title }}</a></h1>
+            <div class="header-logo">
+                <a href="{{ '/' | relative_url }}">
+                    <img src="{{ '/assets/images/qcdg_logo_nobg.png' | relative_url }}" alt="QCDG Logo">
+                </a>
+            </div>
+        </div>
 
-					<!-- Logo -->
-						<h1><a href="#" id="logo">{{ page.title }}</a></h1>
+        {% include nav.html %}
+    </div>
+</header>
 
-					{% include nav.html %}
+{{ content }}
 
-				</div>
-			</div>
-			{{content}}
-
-			{% include footer.html %}
+{% include footer.html %}

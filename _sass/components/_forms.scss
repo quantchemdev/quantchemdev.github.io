@@ -3,15 +3,13 @@
 // Form elements and inputs
 // ============================================
 
-@use '../abstracts' as *;
-
 // Text inputs
 input[type="text"],
 input[type="password"],
 input[type="email"],
 textarea {
-  @include input-base;
   line-height: 1em;
+  @include input-base;
 }
 
 // Select elements

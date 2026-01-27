@@ -3,8 +3,6 @@
 // Site header and banner styles
 // ============================================
 
-@use '../abstracts' as *;
-
 #header {
   background: $color-text-dark url("../images/Donosti.webp") no-repeat;
   background-size: cover;
@@ -95,32 +93,49 @@
 
 // Group header for landing page
 .group-header-container {
-  flex-wrap: wrap !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: nowrap;
+  margin-bottom: 2em;
 
   @include breakpoint-down(md) {
-    gap: 20px !important;
-    flex-direction: column !important;
+    gap: 20px;
+    flex-direction: column;
+    flex-wrap: wrap;
   }
 }
 
 .group-title {
-  padding: $spacing-xl 0;
+  flex-shrink: 1;
+  min-width: 0;
   text-align: center;
 
   h1 {
-    font-size: $font-size-4xl;
-    margin-bottom: $spacing-sm;
+    margin: 0;
+    font-size: 2.5em;
+    line-height: 1.2;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      &:hover {
+        opacity: 0.9;
+      }
+    }
 
     @include breakpoint-down(md) {
-      font-size: $font-size-3xl !important;
+      font-size: $font-size-3xl;
     }
 
     @include breakpoint-down(sm) {
-      font-size: 1.6em !important;
+      font-size: 1.6em;
     }
 
     @include breakpoint-down(xs) {
-      font-size: 1.4em !important;
+      font-size: 1.4em;
     }
   }
 }
@@ -131,21 +146,29 @@
   font-style: italic;
 }
 
-.logo img {
-  @include breakpoint-down(md) {
-    height: 120px !important;
-  }
+.logo {
+  flex-shrink: 0;
 
-  @include breakpoint-down(sm) {
-    height: 100px !important;
-  }
+  img {
+    height: 150px;
+    width: auto;
+    display: block;
 
-  @include breakpoint-down(xs) {
-    height: 80px !important;
+    @include breakpoint-down(md) {
+      height: 120px;
+    }
+
+    @include breakpoint-down(sm) {
+      height: 100px;
+    }
+
+    @include breakpoint-down(xs) {
+      height: 80px;
+    }
   }
 }
 
-// Section headers
+// Section headers (for content sections)
 .section-header {
   text-align: center;
   margin-bottom: $spacing-xl;
@@ -160,4 +183,65 @@
 .section-description {
   font-size: $font-size-lg;
   color: $color-gray;
+}
+
+// Section page header container (title + logo on right)
+.section-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 2em;
+
+  @include breakpoint-down(md) {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+}
+
+.section-title {
+  margin: 0;
+  font-size: 2.4em;
+  flex: 1;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  @include breakpoint-down(md) {
+    font-size: 2em;
+  }
+
+  @include breakpoint-down(sm) {
+    font-size: 1.6em;
+  }
+}
+
+.header-logo {
+  flex-shrink: 0;
+
+  img {
+    height: 100px;
+    width: auto;
+    display: block;
+
+    @include breakpoint-down(md) {
+      height: 80px;
+    }
+
+    @include breakpoint-down(sm) {
+      height: 60px;
+    }
+  }
+}
+
+// Landing header variant (for individual pages like news, members)
+.landing-header {
+  justify-content: center;
 }

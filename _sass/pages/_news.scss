@@ -3,8 +3,6 @@
 // News listing and article styles
 // ============================================
 
-@use '../abstracts' as *;
-
 // News list container
 .news-list {
   max-width: 1000px;
@@ -131,7 +129,7 @@
 
 .news-excerpt-enhanced {
   margin: 0 0 $spacing-lg 0;
-  color: $color-text-light;
+  color: $color-text-dark;
   line-height: $line-height-loose;
   font-size: 1.05rem;
   font-weight: $font-weight-normal;
@@ -187,5 +185,54 @@
     font-size: 3em;
     margin-bottom: 0.5em;
     opacity: 0.8;
+  }
+}
+
+// Individual post article
+.post-article {
+  background: $color-white;
+  padding: $spacing-xl;
+  border-radius: $border-radius-lg;
+  box-shadow: $box-shadow-md;
+
+  .major {
+    text-align: center;
+    margin-bottom: $spacing-xl;
+
+    h2 {
+      margin-bottom: $spacing-sm;
+    }
+
+    .byline {
+      color: $color-gray;
+      font-size: $font-size-sm;
+    }
+  }
+}
+
+.post-featured-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  object-fit: contain;
+  border-radius: $border-radius-lg;
+  margin: 0 auto $spacing-xl;
+  display: block;
+}
+
+.post-content {
+  color: $color-text-dark;
+  line-height: $line-height-loose;
+  font-size: 1.05rem;
+
+  p {
+    margin-bottom: $spacing-lg;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: $border-radius-md;
+    margin: $spacing-lg 0;
   }
 }
