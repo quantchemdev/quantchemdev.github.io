@@ -1,0 +1,67 @@
+// ============================================
+// FUNDINGS PAGE
+// Project funding cards
+// ============================================
+
+// Section headers for funding categories
+.funding-section {
+  margin-bottom: $spacing-2xl;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Project cards
+.project-card {
+  background: $color-white;
+  border: 1px solid $color-gray-lighter;
+  border-left: 4px solid $color-primary;
+  border-radius: $border-radius-md;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-lg;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.project-title {
+  font-size: 1.1em;
+  font-weight: $font-weight-semibold;
+  color: $color-primary;
+  margin: 0 0 $spacing-md 0;
+  line-height: 1.4;
+}
+
+.project-details {
+  color: $color-text-dark;
+  line-height: $line-height-normal;
+  margin: 0;
+
+  strong {
+    color: $color-heading;
+  }
+}
+
+// Badge for active projects
+.project-badge {
+  display: inline-block;
+  padding: 0.2em 0.6em;
+  border-radius: $border-radius-sm;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  text-transform: uppercase;
+  margin-left: $spacing-sm;
+  vertical-align: middle;
+}
+
+.project-badge-active {
+  background: #d4edda;
+  color: #155724;
+}
+
+.project-badge-completed {
+  background: $color-gray-pale;
+  color: $color-gray-dark;
+}

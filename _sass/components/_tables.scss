@@ -1,0 +1,31 @@
+// ============================================
+// TABLES
+// Table styles
+// ============================================
+
+table {
+  width: 100%;
+}
+
+table.default {
+  width: 100%;
+
+  tbody tr {
+    border-bottom: solid 1px $color-gray-light;
+  }
+
+  td {
+    padding: $spacing-sm 1em;
+  }
+
+  th {
+    font-weight: $font-weight-bold;
+    padding: $spacing-sm 1em;
+    text-align: left;
+  }
+
+  thead {
+    background: $color-gray-dark;
+    color: $color-white;
+  }
+}

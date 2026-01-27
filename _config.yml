@@ -14,7 +14,7 @@ twitter: https://twitter.com/DonostiaChemDev
 # Build settings
 markdown: kramdown
 sass:
-  sass_dir: assets/css
+  sass_dir: _sass
   style: compressed
 
 # Collections

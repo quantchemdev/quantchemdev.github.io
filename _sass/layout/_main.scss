@@ -1,0 +1,88 @@
+// ============================================
+// MAIN CONTENT
+// Main content area and sidebar styles
+// ============================================
+
+#main {
+  padding: $spacing-4xl 0;
+
+  .major {
+    background: no-repeat;
+  }
+
+  .sidebar {
+    .major {
+      padding-bottom: $spacing-xl;
+      background: no-repeat;
+
+      h2 {
+        font-size: $font-size-2xl;
+        background: no-repeat;
+      }
+    }
+
+    .default li {
+      border-color: $color-gray-lighter;
+      background: no-repeat;
+    }
+
+    .default a {
+      color: #464646;
+      background: no-repeat;
+    }
+
+    > :first-child {
+      margin-bottom: 1em;
+    }
+  }
+
+  .container {
+    @include breakpoint-down(lg) {
+      padding: 0 15px;
+    }
+
+    @include breakpoint-down(sm) {
+      padding: 0 10px;
+    }
+  }
+
+  @include breakpoint-down(lg) {
+    padding: $spacing-2xl 0;
+  }
+
+  @include breakpoint-down(md) {
+    padding: $spacing-xl 0;
+  }
+
+  @include breakpoint-down(sm) {
+    padding: $spacing-lg 0;
+  }
+}
+
+// Sidebar layout variations
+.no-sidebar #main .major,
+.left-sidebar #main .major,
+.right-sidebar #main .major {
+  text-align: left;
+  background: no-repeat;
+}
+
+.homepage #main .major {
+  text-align: center;
+  background: no-repeat;
+}
+
+// Sidebar ordering for responsive
+#content.skel-cell-important {
+  @include breakpoint-down(lg) {
+    order: 1;
+  }
+}
+
+#sidebar,
+.sidebar {
+  @include breakpoint-down(lg) {
+    order: 2;
+    margin-top: $spacing-xl;
+  }
+}

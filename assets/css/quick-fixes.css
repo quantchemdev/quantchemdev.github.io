@@ -270,7 +270,6 @@
     width: auto;
     max-width: 100%;
     object-fit: contain;
-    transition: transform 0.2s ease;
 }
 
 

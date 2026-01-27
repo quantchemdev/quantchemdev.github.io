@@ -1,0 +1,73 @@
+---
+# Main SCSS file - Jekyll will compile this to CSS
+---
+
+// ============================================
+// MAIN SCSS ENTRY POINT
+// Quantum Chemistry Development Group Website
+// ============================================
+//
+// This is the main entry point that compiles all SCSS partials
+// into a single CSS file. The order of imports matters!
+//
+// Structure:
+// 1. Abstracts - Variables, mixins (no CSS output)
+// 2. Base - Reset, typography, base elements
+// 3. Components - Reusable UI components
+// 4. Layout - Page structure (header, footer, grid)
+// 5. Pages - Page-specific styles
+//
+// ============================================
+
+// --------------------------------------------
+// 1. ABSTRACTS
+// Variables and mixins - must be loaded first
+// These don't output any CSS on their own
+// --------------------------------------------
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+// --------------------------------------------
+// 2. BASE
+// Reset, typography, and base element styles
+// --------------------------------------------
+@import 'base/reset';
+@import 'base/typography';
+@import 'base/base';
+
+// --------------------------------------------
+// 3. COMPONENTS
+// Reusable UI components
+// --------------------------------------------
+@import 'components/buttons';
+@import 'components/forms';
+@import 'components/cards';
+@import 'components/images';
+@import 'components/icons';
+@import 'components/lightbox';
+@import 'components/lists';
+@import 'components/tables';
+@import 'components/pagination';
+
+// --------------------------------------------
+// 4. LAYOUT
+// Page structure and layout
+// --------------------------------------------
+@import 'layout/grid';
+@import 'layout/container';
+@import 'layout/header';
+@import 'layout/navigation';
+@import 'layout/main';
+@import 'layout/footer';
+@import 'layout/wrapper';
+
+// --------------------------------------------
+// 5. PAGES
+// Page-specific styles
+// --------------------------------------------
+@import 'pages/members';
+@import 'pages/news';
+@import 'pages/gallery';
+@import 'pages/openings';
+@import 'pages/fundings';
+@import 'pages/research';

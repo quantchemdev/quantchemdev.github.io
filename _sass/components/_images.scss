@@ -1,0 +1,40 @@
+// ============================================
+// IMAGES
+// Image utilities and styles
+// ============================================
+
+// Base image styles
+.image {
+  border: 0;
+  position: relative;
+
+  &.fit {
+    display: block;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &.feature {
+    display: block;
+    margin: 0 0 2em 0;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+// Resize utility (legacy)
+.resize {
+  width: 300px;
+  height: 300px;
+
+  &:hover {
+    height: 900px;
+    width: 900px;
+  }
+}

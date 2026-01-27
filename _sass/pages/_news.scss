@@ -1,0 +1,238 @@
+// ============================================
+// NEWS PAGE
+// News listing and article styles
+// ============================================
+
+// News list container
+.news-list {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.news-line {
+  margin: $spacing-2xl 0;
+
+  &:first-child {
+    margin-top: $spacing-md;
+  }
+}
+
+// News card link
+.news-line-link {
+  display: flex;
+  align-items: center;
+  gap: $spacing-2xl;
+  text-decoration: none;
+  color: inherit;
+  transition: all $transition-slow;
+  padding: $spacing-xl;
+  border-radius: $border-radius-2xl;
+  background: $color-white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: $box-shadow-xl;
+  }
+
+  &:focus {
+    outline: 3px solid $color-link;
+    outline-offset: 2px;
+  }
+
+  @include breakpoint-down(lg) {
+    gap: $spacing-xl;
+    padding: $spacing-lg;
+  }
+}
+
+// Alternating layout
+.news-left .news-line-link {
+  flex-direction: row;
+}
+
+.news-right .news-line-link {
+  flex-direction: row-reverse;
+}
+
+// News image
+.news-image-big {
+  min-width: 300px;
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: $border-radius-xl;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+  img {
+    @include img-cover;
+    transition: transform $transition-slow;
+
+    &[loading="lazy"] {
+      background: #f0f0f0;
+      background-image: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+      background-size: 200% 100%;
+      animation: loading-shimmer 1.5s infinite;
+    }
+  }
+
+  @include breakpoint-down(lg) {
+    min-width: 250px;
+    width: 250px;
+    height: 170px;
+  }
+
+  @include breakpoint-down(md) {
+    min-width: auto;
+    width: 100%;
+    height: 200px;
+  }
+}
+
+.news-line-link:hover .news-image-big img {
+  transform: scale(1.08);
+}
+
+// Date overlay
+.news-date-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 122, 204, 0.9), transparent);
+  color: $color-white;
+  padding: 0.8rem 1rem;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  text-align: center;
+}
+
+// News content
+.news-content-enhanced {
+  flex: 1;
+  padding: $spacing-sm 0;
+}
+
+.news-title-enhanced {
+  margin: 0 0 1.2rem 0;
+  font-size: 1.6rem;
+  line-height: $line-height-tight;
+  color: $color-secondary;
+  font-weight: $font-weight-bold;
+  letter-spacing: -0.02em;
+
+  @include breakpoint-down(md) {
+    font-size: 1.4rem;
+  }
+}
+
+.news-excerpt-enhanced {
+  margin: 0 0 $spacing-lg 0;
+  color: $color-text-dark;
+  line-height: $line-height-loose;
+  font-size: 1.05rem;
+  font-weight: $font-weight-normal;
+}
+
+// Read more arrow
+.read-more-arrow {
+  color: $color-link;
+  font-weight: $font-weight-semibold;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  transition: all $transition-base;
+}
+
+.news-line-link:hover .read-more-arrow {
+  color: $color-link-dark;
+  transform: translateX(5px);
+}
+
+// Mobile responsive
+@include breakpoint-down(md) {
+  .news-left .news-line-link,
+  .news-right .news-line-link {
+    flex-direction: column;
+    text-align: center;
+    gap: $spacing-lg;
+  }
+}
+
+// Loading shimmer animation
+@keyframes loading-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+// Fallback for posts without images
+.news-no-image {
+  background: linear-gradient(135deg, #8cc051, #7ab842);
+  @include flex-center;
+}
+
+.news-placeholder {
+  text-align: center;
+  color: $color-white;
+  font-size: 1.2em;
+
+  i {
+    display: block;
+    font-size: 3em;
+    margin-bottom: 0.5em;
+    opacity: 0.8;
+  }
+}
+
+// Individual post article
+.post-article {
+  background: $color-white;
+  padding: $spacing-xl;
+  border-radius: $border-radius-lg;
+  box-shadow: $box-shadow-md;
+
+  .major {
+    text-align: center;
+    margin-bottom: $spacing-xl;
+
+    h2 {
+      margin-bottom: $spacing-sm;
+    }
+
+    .byline {
+      color: $color-gray;
+      font-size: $font-size-sm;
+    }
+  }
+}
+
+.post-featured-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  object-fit: contain;
+  border-radius: $border-radius-lg;
+  margin: 0 auto $spacing-xl;
+  display: block;
+}
+
+.post-content {
+  color: $color-text-dark;
+  line-height: $line-height-loose;
+  font-size: 1.05rem;
+
+  p {
+    margin-bottom: $spacing-lg;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: $border-radius-md;
+    margin: $spacing-lg 0;
+  }
+}

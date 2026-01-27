@@ -2,16 +2,23 @@
 layout: default
 ---
 <!-- Header -->
-			<div id="header">
-				<div class="container">
+<header id="header">
+    <div class="container">
+        <div class="group-header-container landing-header">
+            <div class="group-title">
+                <h1><a href="{{ '/' | relative_url }}">Quantum Chemistry Development Group</a></h1>
+            </div>
+            <div class="logo">
+                <a href="{{ '/' | relative_url }}">
+                    <img src="{{ '/assets/images/qcdg_logo_nobg.png' | relative_url }}" alt="QCDG Logo">
+                </a>
+            </div>
+        </div>
 
-					<!-- Logo -->
-						<h1><a href="#" id="logo">Quantum Chemistry Development Group</a></h1>
+        {% include nav.html %}
+    </div>
+</header>
 
-					{% include nav.html %}
+{{ content }}
 
-				</div>
-			</div>
-			{{content}}
-
-			{% include footer.html %}
+{% include footer.html %}

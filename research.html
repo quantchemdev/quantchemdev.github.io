@@ -2,113 +2,54 @@
 title: Research
 layout: main
 ---
-<style>
-    /* This creates the horizontal list layout */
-    .research-item {
-        display: flex;
-        align-items: center;
-        border-bottom: 1px solid #e0e0e0; /* light separator line */
-        padding: 1.5em 0;
-        transition: background-color 0.3s ease;
-        text-decoration: none; /* removes underline from link */
-        border-radius: 6px;
-    }
-    /* Hover effect to show it is clickable */
-    .research-item:hover {
-        background-color: #f9f9f9;
-        padding-left: 10px; /* slight movement for effect */
-    }
-    /* The small image container */
-    .research-image {
-        flex: 0 0 80px; /* Fixed width for image */
-        height: 80px;
-        margin-right: 1.5em;
-        overflow: hidden;
-        border-radius: 50%; /* Makes image circular */
-        border: 2px solid #8cc051; /* Green border to match your theme */
-    }
-    /* Ensures the image fills the circle nicely */
-    .research-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    /* The text styling */
-    .research-text h3 {
-        margin: 0;
-        color: #3b3b3b;
-        font-size: 1.4em;
-    }
-    /* Optional: Style for description text if you add it later */
-    .research-text p {
-        margin: 0.2em 0 0 0;
-        font-size: 0.9em;
-        color: #666;
-    }
-</style>
+
 <div id="main" class="wrapper style1">
     <div class="container">
-        <div class="row">
-            <div id="content" class="8u skel-cell-important">
-                <section>
-                    <header class="major">
-                        <h2>Research fields</h2>
-                        <span class="byline">Discover our main research areas</span>
-                    </header>
+        <section>
+            <header class="major">
+                <h2>Research Fields</h2>
+                <span class="byline">Discover our main research areas</span>
+            </header>
 
-                    <a href="{{ site.baseurl }}/researchs/aromaticity.html" class="research-item">
-                        <div class="research-image" style="height: 80px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
-                            <img src="{{ site.baseurl }}/assets/images/Aroma2.png"
-                                 alt="Aromaticity"
-                                 loading="lazy"
-                                 style="width: 100%; height: 100%; object-fit: contain; background: transparent;">
-                        </div>
-                        <div class="research-text">
-                            <h3>Aromaticity and Chemical Bonding</h3>
-                            <p>Study of electron delocalization and stability in rings.</p>
-                        </div>
-                    </a>
+            <a href="{{ site.baseurl }}/researchs/aromaticity.html" class="research-item">
+                <div class="research-image">
+                    <img src="{{ site.baseurl }}/assets/images/Aroma2.png" alt="Aromaticity" loading="lazy">
+                </div>
+                <div class="research-text">
+                    <h3>Aromaticity and Chemical Bonding</h3>
+                    <p>Study of electron delocalization and stability in rings.</p>
+                </div>
+            </a>
 
-                    <a href="{{ site.baseurl }}/researchs/dft.html" class="research-item">
-                        <div class="research-image" style="height: 80px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
-                            <img src="{{ site.baseurl }}/assets/images/dft2.png"
-                                 alt="DFT & RDMFT Development"
-                                 loading="lazy"
-                                 style="width: 100%; height: 100%; object-fit: contain; background: transparent;">
-                        </div>
-                        <div class="research-text">
-                            <h3>DFT & RDMFT Development</h3>
-                            <p>Development and application of functional approximations for electronic structure.</p>
-                        </div>
-                    </a>
+            <a href="{{ site.baseurl }}/researchs/dft.html" class="research-item">
+                <div class="research-image">
+                    <img src="{{ site.baseurl }}/assets/images/dft2.png" alt="DFT & RDMFT Development" loading="lazy">
+                </div>
+                <div class="research-text">
+                    <h3>DFT & RDMFT Development</h3>
+                    <p>Development and application of functional approximations for electronic structure.</p>
+                </div>
+            </a>
 
-                    <a href="{{ site.baseurl }}/researchs/ecorr.html" class="research-item">
-                        <div class="research-image" style="height: 80px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
-                            <img src="{{ site.baseurl }}/assets/images/ecorr1.png"
-                                 alt="Electron Correlation"
-                                 loading="lazy"
-                                 style="width: 100%; height: 100%; object-fit: contain; background: transparent;">
-                        </div>
-                        <div class="research-text">
-                            <h3>Electron Correlation</h3>
-                            <p>Separation of strong and weak correlations, modelling dispersion effects.</p>
-                        </div>
-                    </a>
+            <a href="{{ site.baseurl }}/researchs/ecorr.html" class="research-item">
+                <div class="research-image">
+                    <img src="{{ site.baseurl }}/assets/images/ecorr1.png" alt="Electron Correlation" loading="lazy">
+                </div>
+                <div class="research-text">
+                    <h3>Electron Correlation</h3>
+                    <p>Separation of strong and weak correlations, modelling dispersion effects.</p>
+                </div>
+            </a>
 
-                    <a href="{{ site.baseurl }}/researchs/molpro.html" class="research-item">
-                        <div class="research-image" style="height: 80px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
-                            <img src="{{ site.baseurl }}/assets/images/molpro1.jpg"
-                                 alt="Molecular Properties"
-                                 loading="lazy"
-                                 style="width: 100%; height: 100%; object-fit: contain; background: transparent;">
-                        </div>
-                        <div class="research-text">
-                            <h3>Molecular Properties</h3>
-                            <p>Development of Non-Linear Optical Properties, NLO switches with large VdW interaction.</p>
-                        </div>
-                    </a>
-                </section>
-            </div>
-</div>
+            <a href="{{ site.baseurl }}/researchs/molpro.html" class="research-item">
+                <div class="research-image">
+                    <img src="{{ site.baseurl }}/assets/images/molpro1.jpg" alt="Molecular Properties" loading="lazy">
+                </div>
+                <div class="research-text">
+                    <h3>Molecular Properties</h3>
+                    <p>Development of Non-Linear Optical Properties, NLO switches with large VdW interaction.</p>
+                </div>
+            </a>
+        </section>
     </div>
 </div>
