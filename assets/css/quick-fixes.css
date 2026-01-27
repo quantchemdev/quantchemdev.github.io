@@ -273,9 +273,6 @@
     transition: transform 0.2s ease;
 }
 
-.partner-logos img:hover {
-    transform: scale(1.05);
-}
 
 .social-icons {
     margin-bottom: 1rem;
