@@ -1,7 +1,6 @@
 ---
 title: Summer 2026 Internship Positions
 subtitle: <b>February 3, 2026</b>
-featured: images/internship2026.png
 layout: post
 ---
 <p style="text-align: justify; font-size: 20px;">
