@@ -5,7 +5,7 @@ featured: images/ishita.jpg
 layout: post
 ---
 <p style="text-align: justify; font-size: 20px;">
-We are happy to share that one of our postdoctoral reseraches, Dr. Ishita Bhattacharjee, has obtained the prestigious Marie Skłodowska-Curie Actions (HORIZON) fellowship!
+We are happy to share that one of our postdoctoral researches, Dr. Ishita Bhattacharjee, has obtained the prestigious Marie Skłodowska-Curie Actions (HORIZON) fellowship!
 </p>
 
 <p style="text-align: justify; font-size: 20px;">
