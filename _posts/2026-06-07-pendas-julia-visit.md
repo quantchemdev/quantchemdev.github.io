@@ -1,7 +1,7 @@
 ---
 title: A visit from Dr. Martín Pendás and Dr. Contreras García
 subtitle: <b>July 7, 2026</b>
-featured: images/pendas2026.png
+featured: images/pendas2026.JPG
 layout: post
 ---
 <p style="text-align: justify; font-size: 20px;">

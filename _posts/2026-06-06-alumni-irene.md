@@ -1,7 +1,7 @@
 ---
 title: Irene Casademont receives UdG Alumni Award 2025
 subtitle: <b>June 6, 2026</b>
-featured: images/irenealumni2026.png
+featured: images/irenealumni2026.jpeg
 layout: post
 ---
 <p style="text-align: justify; font-size: 20px;">
