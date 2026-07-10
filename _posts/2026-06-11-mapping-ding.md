@@ -1,7 +1,7 @@
 ---
 title: Our article featured in Mapping Ignorance 
 subtitle: <b>July 11, 2026</b>
-featured: images/mapign-ding.png 
+featured: images/mapping-ding.png 
 layout: post
 ---
 <p style="text-align: justify; font-size: 20px;">
